@@ -151,8 +151,8 @@ set laststatus=2
 "wraps git commit message up to 72 columns
 autocmd Filetype gitcommit setlocal textwidth=72
 
-"have esc also remove highlighted words
-:nnoremap <esc> :noh<return><esc>
+"have enter also remove highlighted words
+nnoremap <CR> :noh<CR><CR>
 
 "ctags
 set tags=./tags;/
