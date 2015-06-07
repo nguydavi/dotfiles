@@ -3,8 +3,9 @@
 map <Space> <Leader>
 
 " Clipboard
-nnoremap <Leader>c "+y
+nnoremap <Leader>c "+yy
 nnoremap <Leader>v "+p
+vnoremap <Leader>c "+y
 
 " Unmap the arrow keys
 noremap <down> <Nop>
