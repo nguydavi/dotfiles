@@ -11,3 +11,6 @@ ln -s $PWD/.screenrc ~/.screenrc
 
 # ZSH install
 ln -s $PWD/.zshrc ~/.zshrc
+
+# Git hooks install
+ln -s $PWD/.git_template ~/.git_template
