@@ -8,3 +8,6 @@ ln -s $PWD/.vim ~/.vim
 
 # Screen install
 ln -s $PWD/.screenrc ~/.screenrc
+
+# ZSH install
+ln -s $PWD/.zshrc ~/.zshrc
