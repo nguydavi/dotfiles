@@ -9,14 +9,17 @@ call vundle#begin()
     " let Vundle manage Vundle, required
     Plugin 'gmarik/Vundle.vim'
 
-    Plugin 'bling/vim-airline'
-    "Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
-    Plugin 'kien/ctrlp.vim'
     Plugin 'Lokaltog/vim-easymotion'
-    Plugin 'scrooloose/nerdtree'
+    Plugin 'Valloric/YouCompleteMe'
+    Plugin 'bling/vim-airline'
+    Plugin 'kien/ctrlp.vim'
+    " Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
+    " Plugin 'scrooloose/nerdtree'
+    Plugin 'tpope/vim-commentary'
     Plugin 'tpope/vim-fugitive'
     Plugin 'tpope/vim-repeat'
     Plugin 'tpope/vim-surround'
+    Plugin 'tpope/vim-vinegar'
 
     " Vim color schemes
     "Plugin 'altercation/vim-colors-solarized'
