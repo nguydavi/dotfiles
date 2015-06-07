@@ -1,4 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
-let g:netrw_dirhist_1='/home/nguydavi/.vim/bundle/pt_black/colors'
-let g:netrw_dirhist_2='/home/nguydavi/.vim/boot'
