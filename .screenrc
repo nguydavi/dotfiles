@@ -15,6 +15,10 @@ vbell_msg "   Wuff  ----  Wuff!!  "
 # scroll back
 defscrollback 1024
 
+# Set the altscreen so that when you quit vi, it will go back to
+# what it was before
+altscreen on
+
 # ------------------------------------------------------------------------------
 # SCREEN KEYBINDINGS
 # ------------------------------------------------------------------------------
