@@ -4,5 +4,5 @@ let g:airline_powerline_fonts = 1               " Use powerline fonts
 let g:airline_theme='murmur'
 
 " Easymotion
-map f <Plug>(easymotion-f)
-map / <Plug>(easymotion-sn)
+map <Leader>f <Plug>(easymotion-f)
+map <Leader>/ <Plug>(easymotion-sn)
