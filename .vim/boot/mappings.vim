@@ -30,14 +30,3 @@ nnoremap <Leader>r :%s/\<<C-r><C-w>\>//g<Left><Left>
 
 " Remove highlighting
 nnoremap <Tab> :noh<CR><Tab>
-
-"Use TAB to complete when typing words, else inserts TABs as usual.
-""Note: usual completion is on <C-n> but more trouble to press all the time.
-function! TabOrComplete()
-  if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
-      return "\<C-N>"
-  else
-      return "\<Tab>"
-  endif
-endfunction
-inoremap <Tab> <C-R>=TabOrComplete()<CR>
