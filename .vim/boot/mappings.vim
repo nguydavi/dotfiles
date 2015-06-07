@@ -31,3 +31,5 @@ nnoremap <Leader>r :%s/\<<C-r><C-w>\>//g<Left><Left>
 
 " Remove highlighting
 nnoremap <Tab> :noh<CR><Tab>
+" Tab left with Shift+Tab
+inoremap <S-Tab> <C-d>
