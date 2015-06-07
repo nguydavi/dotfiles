@@ -5,4 +5,5 @@ let g:airline_theme='murmur'
 
 " Easymotion
 map <Leader>f <Plug>(easymotion-f)
+map <Leader>F <Plug>(easymotion-F)
 map <Leader>/ <Plug>(easymotion-sn)
