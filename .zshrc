@@ -42,6 +42,16 @@ alias go='gnome-open'
 unalias rm
 unalias cp
 
+
+######################### history options ############################
+setopt EXTENDED_HISTORY         # store time in history
+setopt HIST_EXPIRE_DUPS_FIRST   # unique events are more useful to me
+setopt HIST_VERIFY              # make those history commands nice
+setopt INC_APPEND_HISTORY       # immediately insert history into history file
+HISTSIZE=16000                  # spots for duplicates/uniques
+SAVEHIST=15000                  # unique events guarenteed
+setopt histignoredups           # ignore duplicates of the previous event
+
 ##################### precmd & preexec functions #####################
 typeset -ga precmd_functions
 typeset -ga preexec_functions
