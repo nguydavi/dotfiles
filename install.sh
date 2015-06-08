@@ -14,3 +14,4 @@ ln -s $PWD/.zshrc ~/.zshrc
 
 # Git hooks install
 ln -s $PWD/.git_template ~/.git_template
+git config --global init.templatedir '~/.git_template'
