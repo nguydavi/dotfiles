@@ -42,6 +42,14 @@ alias go='gnome-open'
 unalias rm
 unalias cp
 
+if [[ "$(uname)" == "Darwin" ]]; then
+    # ls --color not supported on Mac
+    unalias ls
+
+    # for colored ls
+    export CLICOLOR=1
+    export LSCOLORS=ExFxCxDxBxegedabagacad
+fi
 
 ######################### history options ############################
 setopt EXTENDED_HISTORY         # store time in history
