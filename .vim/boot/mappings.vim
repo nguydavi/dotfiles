@@ -28,6 +28,7 @@ nnoremap <Leader>w :bd<CR>
 
 " Replace word under cursor
 nnoremap <Leader>r :%s/\<<C-r><C-w>\>//g<Left><Left>
+vnoremap <Leader>r :s/\<\>//g<Left><Left><Left><Left><Left>
 
 " Remove highlighting
 nnoremap <Tab> :noh<CR><Tab>
