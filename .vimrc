@@ -14,7 +14,7 @@ call vundle#begin()
     Plugin 'bling/vim-airline'
     Plugin 'kien/ctrlp.vim'
     " Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
-    " Plugin 'scrooloose/nerdtree'
+    Plugin 'scrooloose/nerdtree'
     Plugin 'tpope/vim-commentary'
     Plugin 'tpope/vim-fugitive'
     Plugin 'tpope/vim-repeat'
