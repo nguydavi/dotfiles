@@ -1,5 +1,5 @@
 " Set Space as Leader (not using mapleader so that it appears in showcmd in later version of Vim)
-" let mapleader = " "
+let mapleader = " "
 map <Space> <Leader>
 
 " Clipboard
