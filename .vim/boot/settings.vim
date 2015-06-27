@@ -40,7 +40,7 @@ set shiftwidth=4              " Goes along with tabstop
 set virtualedit=block         " let blocks be in virutal edit mode
 set wildmenu                  " This is used with wildmode(full) to cycle options
 
-"Longer Set options
+" Longer Set options
 set listchars=tab:▸\ ,eol:¬                  " prefix tabs with a > and trails with - in list mode
 set tags+=./.tags;/,./tags;/                 " set ctags
 set whichwrap+=h,l                           " arrow keys can wrap in normal and insert modes
@@ -57,5 +57,5 @@ set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.i
 " don't run syntax and other expensive things on files larger than NUM megs
 let g:LargeFile = 100
 
-"Turn on syntax highlighting
+" Turn on syntax highlighting
 syntax on
