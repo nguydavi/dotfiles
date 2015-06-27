@@ -10,8 +10,10 @@ call vundle#begin()
     Plugin 'gmarik/Vundle.vim'
 
     Plugin 'Lokaltog/vim-easymotion'
+    Plugin 'Shougo/vimproc.vim'         " required for vim-vebugger
     Plugin 'Valloric/YouCompleteMe'
     Plugin 'bling/vim-airline'
+    Plugin 'idanarye/vim-vebugger'
     Plugin 'kien/ctrlp.vim'
     Plugin 'scrooloose/nerdtree'
     Plugin 'tpope/vim-commentary'
