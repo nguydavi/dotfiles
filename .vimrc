@@ -13,7 +13,6 @@ call vundle#begin()
     Plugin 'Valloric/YouCompleteMe'
     Plugin 'bling/vim-airline'
     Plugin 'kien/ctrlp.vim'
-    " Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
     Plugin 'scrooloose/nerdtree'
     Plugin 'tpope/vim-commentary'
     Plugin 'tpope/vim-fugitive'
@@ -22,13 +21,6 @@ call vundle#begin()
     Plugin 'tpope/vim-vinegar'
 
     " Vim color schemes
-    "Plugin 'altercation/vim-colors-solarized'
-    "Plugin 'duythinht/inori'
-    "Plugin 'duythinht/vim-coffee'
-    "Plugin 'gosukiwi/vim-atom-dark'
-    "Plugin 'sickill/vim-sunburst'
-    "Plugin 'tomasr/molokai'
-    "Plugin 'whatyouhide/vim-gotham'
     Plugin 'yantze/pt_black'
 
 call vundle#end()            " required
