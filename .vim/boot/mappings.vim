@@ -34,3 +34,6 @@ vnoremap <Leader>r :s/\<\>//g<Left><Left><Left><Left><Left>
 nnoremap <Tab> :noh<CR><Tab>
 " Tab left with Shift+Tab
 inoremap <S-Tab> <BS>
+
+" Build the project
+nnoremap <Leader>b :make<CR>
