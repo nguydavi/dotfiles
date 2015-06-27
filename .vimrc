@@ -16,6 +16,7 @@ call vundle#begin()
     Plugin 'idanarye/vim-vebugger'
     Plugin 'kien/ctrlp.vim'
     Plugin 'scrooloose/nerdtree'
+    Plugin 'tpope/vim-abolish'
     Plugin 'tpope/vim-commentary'
     Plugin 'tpope/vim-fugitive'
     Plugin 'tpope/vim-repeat'
