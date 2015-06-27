@@ -13,3 +13,6 @@ autocmd BufEnter,BufFilePost * call SetTitle()      " Run it every time we chang
 autocmd Filetype gitcommit setlocal textwidth=72    " git commit textwidth
 
 autocmd VimEnter,WinEnter * match Error /\s\+$/     " Show trailing whitespaces
+
+autocmd QuickFixCmdPost [^l]* nested cwindow        " Open quickfix window on :make
+autocmd QuickFixCmdPost l* nested lwindow
