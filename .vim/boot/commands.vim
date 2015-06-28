@@ -20,3 +20,6 @@ autocmd VimEnter,WinEnter * match Error /\s\+$/
 " Open quickfix window on :make
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost l* nested lwindow
+
+" Check for unused imports whenever we change or write buffers
+autocmd BufEnter,BufWritePost *.java UnusedImports
