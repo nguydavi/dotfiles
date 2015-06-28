@@ -8,11 +8,15 @@ function! SetTitle()
         endif
     endif
 endfunction
-autocmd BufEnter,BufFilePost * call SetTitle()      " Run it every time we change buffers
+" Set screen title every time we change buffers
+autocmd BufEnter,BufFilePost * call SetTitle()
 
-autocmd Filetype gitcommit setlocal textwidth=72    " git commit textwidth
+" git commit textdwith
+autocmd Filetype gitcommit setlocal textwidth=72
 
-autocmd VimEnter,WinEnter * match Error /\s\+$/     " Show trailing whitespaces
+" Show trailing whitespaces
+autocmd VimEnter,WinEnter * match Error /\s\+$/
 
-autocmd QuickFixCmdPost [^l]* nested cwindow        " Open quickfix window on :make
+" Open quickfix window on :make
+autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost l* nested lwindow
