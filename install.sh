@@ -11,6 +11,7 @@ ln -s $PWD/.screenrc ~/.screenrc
 
 # ZSH install
 ln -s $PWD/.zshrc ~/.zshrc
+ln -s $PWD/nguydavi.zsh-theme ~/.oh-my-zsh/themes
 
 # Git hooks install
 ln -s $PWD/.git_template ~/.git_template
