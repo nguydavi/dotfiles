@@ -36,6 +36,9 @@ vnoremap <Leader>R :S///g<Left><Left><Left><Left><Left>
 nnoremap 1 :noh<CR><Tab>
 " Tab left with Shift+Tab
 inoremap <S-Tab> <BS>
+" Loop through windows
+nnoremap <Tab> <C-w>w
+nnoremap <S-Tab> <C-w>W
 
 " Build the project
 nnoremap <Leader>b :make<CR>
