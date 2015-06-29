@@ -42,6 +42,9 @@ alias go='gnome-open'
 unalias rm
 unalias cp
 
+# Highlight selection when using Tab
+zstyle ':completion:*' menu select
+
 if [[ "$(uname)" == "Darwin" ]]; then
     # ls --color not supported on Mac
     unalias ls
