@@ -33,7 +33,7 @@ nnoremap <Leader>R :%S/<C-r><C-w>//g<Left><Left>
 vnoremap <Leader>R :S///g<Left><Left><Left><Left><Left>
 
 " Remove highlighting
-nnoremap 1 :noh<CR><Tab>
+nnoremap <F1> :noh<CR><Tab>
 " Tab left with Shift+Tab
 inoremap <S-Tab> <BS>
 " Loop through windows
