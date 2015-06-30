@@ -4,6 +4,7 @@ set background=dark           " dark backgruond
 set backspace=2               " allow backspacing over everything in insert mode
 set cindent                   " c code indenting
 set colorcolumn=121           " show red column at 121st column
+set cursorline                " show a line below current line
 set diffopt=filler,iwhite     " keep files synced and ignore whitespace
 set expandtab                 " Get rid of tabs altogether and replace with spaces
 set foldcolumn=0              " set a column incase we need it
