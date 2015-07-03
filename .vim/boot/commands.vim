@@ -21,5 +21,5 @@ autocmd VimEnter,WinEnter * match Error /\s\+$/
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost l* nested lwindow
 
-" Check for unused imports whenever we change or write buffers
-autocmd BufEnter,BufWritePost *.java UnusedImports
+" Automatically go to next line when opening curly bracket and have matching on next line
+autocmd Filetype java,cpp inoremap { {<CR>}<Esc>O
