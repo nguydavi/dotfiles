@@ -21,5 +21,3 @@ autocmd VimEnter,WinEnter * match Error /\s\+$/
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost l* nested lwindow
 
-" Automatically go to next line when opening curly bracket and have matching on next line
-autocmd Filetype java,cpp,sh inoremap { {<CR>}<Esc>O
