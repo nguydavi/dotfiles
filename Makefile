@@ -1,23 +1,26 @@
 SHELL := /bin/bash
 PWD = $(shell pwd)
 
+# If link exists, do nothing, otherwise set up the symlink
+setlink = @test -e $2 || (ln -s $1 $2 && echo "Symlink for '$1' done")
+
 all:
 	@echo "Nothing to compile"
 
 install:
 	@# Vim install
-	@ln -s ${PWD}/vimrc ~/.vimrc
-	@ln -s ${PWD}/vim ~/.vim
+	$(call setlink,${PWD}/vimrc,~/.vimrc)
+	$(call setlink,${PWD}/vim,~/.vim)
 
 	@# Screen install
-	@ln -s ${PWD}/screenrc ~/.screenrc
+	$(call setlink,${PWD}/screenrc,~/.screenrc)
 
 	@# ZSH install
-	@ln -s ${PWD}/zshrc ~/.zshrc
-	@ln -s ${PWD}/nguydavi.zsh-theme ~/.oh-my-zsh/themes
+	$(call setlink,${PWD}/zshrc,~/.zshrc)
+	$(call setlink,${PWD}/nguydavi.zsh-theme,~/.oh-my-zsh/themes/nguydavi.zsh-theme)
 
 	@# Git hooks install
-	@ln -s ${PWD}/git_template ~/.git_template
+	$(call setlink,${PWD}/git_template,~/.git_template)
 	@git config --global init.templatedir '~/.git_template'
 
 clean:
