@@ -23,9 +23,13 @@ install:
 	$(call setlink,${PWD}/git_template,~/.git_template)
 	@git config --global init.templatedir '~/.git_template'
 
+	@# i3 install
+	$(call setlink,${PWD}/i3config,~/.i3/config)
+
 clean:
 	@rm -f ~/.vimrc
 	@rm -f ~/.vim
 	@rm -f ~/.screenrc
 	@rm -f ~/.zshrc
 	@rm -f ~/.git_template
+	@rm -f ~/.i3/config
