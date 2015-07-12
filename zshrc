@@ -37,7 +37,6 @@ bindkey '^[[B' history-substring-search-down
 
 # aliases
 alias ll='ls -lArh'
-alias go='gnome-open'
 # remove default zsh aliases
 unalias rm
 unalias cp
@@ -45,13 +44,19 @@ unalias cp
 # Highlight selection when using Tab
 zstyle ':completion:*' menu select
 
-if [[ "$(uname)" == "Darwin" ]]; then
+if [[ "$(uname)" == "Darwin" ]]
+then
     # ls --color not supported on Mac
     unalias ls
 
+    alias go='open'
     # for colored ls
     export CLICOLOR=1
     export LSCOLORS=ExFxCxDxBxegedabagacad
+
+elif [[ "$(uname)" == "Linux" ]]
+then
+    alias go='gnome-open'
 fi
 
 ######################### history options ############################
