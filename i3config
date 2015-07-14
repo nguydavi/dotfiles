@@ -109,6 +109,9 @@ bindsym $mod+Shift+0 move container to workspace 10
 bindsym $mod+Shift+Left move container to workspace prev
 bindsym $mod+Shift+Right move container to workspace next
 
+# lock with a black screen
+bindsym Control+$mod+l exec i3lock -c 000000
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
