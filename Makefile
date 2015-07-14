@@ -28,7 +28,7 @@ install:
 
 clean:
 	@rm -f ~/.vimrc
-	@rm -f ~/.vim
+	@rm -rf ~/.vim
 	@rm -f ~/.screenrc
 	@rm -f ~/.zshrc
 	@rm -f ~/.git_template
