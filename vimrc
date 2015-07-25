@@ -14,7 +14,6 @@ call vundle#begin()
     Plugin 'Valloric/YouCompleteMe'
     Plugin 'akhaku/vim-java-unused-imports'
     Plugin 'bling/vim-airline'
-    Plugin 'bling/vim-bufferline'
     Plugin 'idanarye/vim-vebugger'
     Plugin 'kien/ctrlp.vim'
     Plugin 'scrooloose/nerdtree'
