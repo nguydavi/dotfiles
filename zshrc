@@ -32,6 +32,26 @@ export VISUAL=vim
 export TERM=xterm-256color  # use 256 color terminal for 'screen' to spawn those
 set -o vi   # use vi for commands in the terminal :)
 
+# Set up right prompt to show vi mode
+vim_ins_mode="[INSERT]"
+vim_cmd_mode="[NORMAL]"
+vim_mode=$vim_ins_mode
+
+function zle-keymap-select {
+  vim_mode="${${KEYMAP/vicmd/${vim_cmd_mode}}/(main|viins)/${vim_ins_mode}}"
+  zle reset-prompt
+}
+zle -N zle-keymap-select
+
+function zle-line-finish {
+  vim_mode=$vim_ins_mode
+}
+zle -N zle-line-finish
+RPROMPT='${vim_mode}'
+RPROMPT2='${vim_mode}'
+setopt transient_rprompt        # Do not display mode for previous lines
+
+
 # make search up and down work, so partially type and hit up/down to find relevant stuff
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
