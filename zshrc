@@ -53,8 +53,8 @@ setopt transient_rprompt        # Do not display mode for previous lines
 
 
 # make search up and down work, so partially type and hit up/down to find relevant stuff
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
+bindkey -M vicmd 'k' history-substring-search-up
+bindkey -M vicmd 'j' history-substring-search-down
 
 # aliases
 alias ll='ls -lArh'
