@@ -1,6 +1,7 @@
 " Airline
+let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#tabline#enabled = 1        " Display tabline
-let g:airline#extensions#tabline#show_buffers = 0   " Do not show buffers in tabline
+let g:airline#extensions#tabline#show_buffers = 1   " Do not show buffers in tabline
 let g:airline#extensions#tabline#tab_nr_type = 1    " Display tab number
 let g:airline_powerline_fonts = 1                   " Use powerline fonts
 let g:airline_theme='murmur'
