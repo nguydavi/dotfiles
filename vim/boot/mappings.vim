@@ -22,18 +22,9 @@ vnoremap <right> <Nop>
 vnoremap <up> <Nop>
 
 " Buffers
-nnoremap <C-h> :bp<CR>
-nnoremap <C-l> :bn<CR>
-nnoremap <Leader>w :bd<CR>
-nnoremap g1 :b1<CR>
-nnoremap g2 :b2<CR>
-nnoremap g3 :b3<CR>
-nnoremap g4 :b4<CR>
-nnoremap g5 :b5<CR>
-nnoremap g6 :b6<CR>
-nnoremap g7 :b7<CR>
-nnoremap g8 :b8<CR>
-nnoremap g9 :b9<CR>
+nnoremap <C-h> :tabp<CR>
+nnoremap <C-l> :tabn<CR>
+nnoremap <Leader>w :tabclose<CR>
 
 " Replace word under cursor
 nnoremap <Leader>r :%s/\<<C-r><C-w>\>//g<Left><Left>
