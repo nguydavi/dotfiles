@@ -24,6 +24,8 @@ call vundle#begin()
     Plugin 'tpope/vim-surround'
     Plugin 'tpope/vim-unimpaired'
     Plugin 'tpope/vim-vinegar'
+    Plugin 'xolox/vim-easytags'
+    Plugin 'xolox/vim-misc'
 
     " Vim color schemes
     Plugin 'yantze/pt_black'
