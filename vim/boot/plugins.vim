@@ -23,6 +23,11 @@ map <Leader>/ <Plug>(easymotion-sn)
 let g:easytags_async = 1            " Update tags asynchronously
 let g:easytags_auto_highlight = 0   " Disable tag highlighting
 
+" Javacomplete2
+autocmd FileType java setlocal omnifunc=javacomplete#Complete
+let g:JavaComplete_ImportSortType = 'packageName'
+let g:JavaComplete_ImportOrder = ['*', 'java.', 'javax.']
+
 " YouCompleteMe
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
