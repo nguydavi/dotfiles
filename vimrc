@@ -12,7 +12,6 @@ call vundle#begin()
     Plugin 'Lokaltog/vim-easymotion'
     Plugin 'Shougo/vimproc.vim'         " required for vim-vebugger
     Plugin 'Valloric/YouCompleteMe'
-    Plugin 'akhaku/vim-java-unused-imports'
     Plugin 'bling/vim-airline'
     Plugin 'idanarye/vim-vebugger'
     Plugin 'kien/ctrlp.vim'
