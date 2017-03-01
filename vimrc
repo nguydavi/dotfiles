@@ -15,6 +15,7 @@ call vundle#begin()
     Plugin 'bling/vim-airline'
     Plugin 'idanarye/vim-vebugger'
     Plugin 'kien/ctrlp.vim'
+    Plugin 'mileszs/ack.vim'
     Plugin 'scrooloose/nerdtree'
     Plugin 'tpope/vim-abolish'
     Plugin 'tpope/vim-commentary'
