@@ -25,6 +25,7 @@ call vundle#begin()
     Plugin 'tpope/vim-surround'
     Plugin 'tpope/vim-unimpaired'
     Plugin 'tpope/vim-vinegar'
+    Plugin 'vim-airline/vim-airline-themes'
     Plugin 'xolox/vim-easytags'
     Plugin 'xolox/vim-misc'
 
