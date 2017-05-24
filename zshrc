@@ -34,6 +34,7 @@ export TERM=xterm-256color  # use 256 color terminal for 'screen' to spawn those
 # make search up and down work, so partially type and hit up/down to find relevant stuff
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
+bindkey '^[[Z' autosuggest-accept
 
 # aliases
 alias ll='ls -lArh'
