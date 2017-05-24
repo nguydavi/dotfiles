@@ -2,7 +2,7 @@
 ZSH=$HOME/.oh-my-zsh        # path to oh-my-zsh configuration
 ZSH_THEME="nguydavi"
 
-plugins=(git colored-man compleat history-substring-search cp common-aliases mvn)
+plugins=(git colored-man compleat history-substring-search cp common-aliases zsh-autosuggestions mvn)
 
 source $ZSH/oh-my-zsh.sh
 
