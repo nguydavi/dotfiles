@@ -14,6 +14,9 @@ autocmd BufEnter,BufFilePost * call SetTitle()
 " git commit textdwith
 autocmd Filetype gitcommit setlocal textwidth=72
 
+" python max line length
+autocmd Filetype python setlocal colorcolumn=101 textwidth=100
+
 " Show trailing whitespaces
 autocmd VimEnter,WinEnter * match Error /\s\+$/
 
