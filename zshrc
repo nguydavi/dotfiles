@@ -38,6 +38,8 @@ bindkey '^[[Z' autosuggest-accept
 
 # aliases
 alias ll='ls -lArh'
+alias egrep='egrep --color'
+alias fgrep='fgrep --color'
 # remove default zsh aliases
 unalias rm
 unalias cp
