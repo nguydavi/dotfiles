@@ -17,6 +17,7 @@ call vundle#begin()
     Plugin 'idanarye/vim-vebugger'
     Plugin 'kien/ctrlp.vim'
     Plugin 'mileszs/ack.vim'
+    Plugin 'octol/vim-cpp-enhanced-highlight'
     Plugin 'scrooloose/nerdtree'
     Plugin 'tpope/vim-abolish'
     Plugin 'tpope/vim-commentary'
