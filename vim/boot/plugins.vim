@@ -1,6 +1,8 @@
 " Ack
 let g:ackprg = 'ag --vimgrep'
+let g:ack_qhandler = "botright copen 40"
 map <Leader>a :Ack!<Space>
+map <Leader>A :Ack! <C-r><C-w>
 
 " Airline
 " let g:airline#extensions#tabline#buffer_nr_show = 1
