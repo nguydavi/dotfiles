@@ -23,6 +23,9 @@ install:
 	$(call setlink,${PWD}/git_template,~/.git_template)
 	@git config --global init.templatedir '~/.git_template'
 
+	@# gdbinit install
+	@wget -P ~ https://git.io/.gdbinit
+
 	@# i3 install
 	$(call setlink,${PWD}/i3config,~/.i3/config)
 
