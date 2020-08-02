@@ -24,6 +24,7 @@ set nobackup                  " Don't keep a backup file
 set nocompatible              " Use Vim defaults (much better!)
 set nofen                     " disable folds
 set noshowmode                " do not show what mode we are in
+set noswapfile                " disable swap files
 set notimeout                 " i like to be pokey
 set number                    " show line numbers
 set pastetoggle=<F2>          " Switch for paste mode
