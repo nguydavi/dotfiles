@@ -67,9 +67,11 @@ setopt EXTENDED_HISTORY         # store time in history
 setopt HIST_EXPIRE_DUPS_FIRST   # unique events are more useful to me
 setopt HIST_VERIFY              # make those history commands nice
 setopt INC_APPEND_HISTORY       # immediately insert history into history file
-HISTSIZE=16000                  # spots for duplicates/uniques
-SAVEHIST=15000                  # unique events guarenteed
-setopt histignoredups           # ignore duplicates of the previous event
+setopt SHARE_HISTORY            # share history between processes
+setopt HISTIGNOREDUPS           # ignore duplicates of the previous event
+
+export HISTSIZE=100000
+export SAVEHIST=100000
 
 ##################### precmd & preexec functions #####################
 typeset -ga precmd_functions
