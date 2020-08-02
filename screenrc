@@ -13,7 +13,7 @@ vbell on
 vbell_msg "   Wuff  ----  Wuff!!  "
 
 # scroll back
-defscrollback 1024
+defscrollback 100000
 
 # Set the altscreen so that when you quit vi, it will go back to
 # what it was before
