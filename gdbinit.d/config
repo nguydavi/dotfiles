@@ -1,0 +1,3 @@
+add-auto-load-safe-path /home/nguydavi/workplace/
+dashboard -layout breakpoints expressions history memory source stack threads variables
+dashboard source -style height 45
