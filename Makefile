@@ -31,6 +31,15 @@ install:
 	@mkdir -p ~/.i3
 	$(call setlink,${PWD}/i3config,~/.i3/config)
 
+	@# Install ZSH autosuggestion plugin
+	@git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+
+	@# Install Vim Vundle
+	@git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+	@echo 'Install Powerline font https://github.com/powerline/fonts'
+	@echo 'Complete installing YCM https://github.com/ycm-core/YouCompleteMe#installation'
+
 clean:
 	@rm -f ~/.vimrc
 	@rm -rf ~/.vim
