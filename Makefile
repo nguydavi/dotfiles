@@ -25,9 +25,10 @@ install:
 
 	@# gdbinit install
 	@wget -P ~ https://git.io/.gdbinit
-	$(call setlink,${PWD}/gdbinit.d,~/.gdbinit.d}
+	$(call setlink,${PWD}/gdbinit.d,~/.gdbinit.d)
 
 	@# i3 install
+	@mkdir -p ~/.i3
 	$(call setlink,${PWD}/i3config,~/.i3/config)
 
 clean:
