@@ -46,8 +46,11 @@ install:
 
 clean:
 	@rm -f ~/.vimrc
-	@rm -rf ~/.vim
+	@rm -r ~/.vim
 	@rm -f ~/.screenrc
 	@rm -f ~/.zshrc
 	@rm -f ~/.git_template
+	@rm -f ~/.gdbinit
+	@rm -r ~/.gdbinit.d
 	@rm -f ~/.i3/config
+	@rm -rf ~/.oh-my-zsh
