@@ -15,7 +15,11 @@ install:
 	@# Screen install
 	$(call setlink,${PWD}/screenrc,~/.screenrc)
 
+	@# Install Oh My Zsh
+	@sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 	@# ZSH install
+	@mv ~/.zshrc ~/.zshrc_orig
 	$(call setlink,${PWD}/zshrc,~/.zshrc)
 	$(call setlink,${PWD}/nguydavi.zsh-theme,~/.oh-my-zsh/themes/nguydavi.zsh-theme)
 
