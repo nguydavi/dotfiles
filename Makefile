@@ -41,8 +41,8 @@ install:
 	@# Install Vim Vundle
 	@git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
-	@echo 'Install Powerline font https://github.com/powerline/fonts'
-	@echo 'Complete installing YCM https://github.com/ycm-core/YouCompleteMe#installation'
+	@echo 'Need manual installation of Powerline font https://github.com/powerline/fonts'
+	@echo 'Need manual installation YCM https://github.com/ycm-core/YouCompleteMe#installation'
 
 clean:
 	@rm -f ~/.vimrc
