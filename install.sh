@@ -48,5 +48,11 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
 
 echo
-echo '-> Need manual installation of Powerline font https://github.com/powerline/fonts'
-echo '-> Need manual installation YCM https://github.com/ycm-core/YouCompleteMe#installation'
+cat << EOM
+The following need manual installation depending on the platform
+* Powerline font https://github.com/powerline/fonts
+* YouCompleteMe https://github.com/ycm-core/YouCompleteMe#installation
+* Ripgrep https://github.com/BurntSushi/ripgrep#installation
+* termshark https://github.com/gcla/termshark#install-packages
+* delta diff https://github.com/dandavison/delta#installation
+EOM
