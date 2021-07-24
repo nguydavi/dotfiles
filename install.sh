@@ -50,4 +50,3 @@ vim +PluginInstall +qall
 echo
 echo '-> Need manual installation of Powerline font https://github.com/powerline/fonts'
 echo '-> Need manual installation YCM https://github.com/ycm-core/YouCompleteMe#installation'
-
