@@ -29,9 +29,9 @@ install_symlink ~/.oh-my-zsh/themes/nguydavi.zsh-theme ${PWD}/nguydavi.zsh-theme
 # Install Oh My Zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-# Git hooks install
+# Git config install
 install_symlink ~/.git_template ${PWD}/git_template
-git config --global init.templatedir '~/.git_template'
+install_symlink ~/.gitconfig ${PWD}/gitconfig
 
 # gdbinit install
 wget -qP ~ https://git.io/.gdbinit
