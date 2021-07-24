@@ -36,7 +36,7 @@ call vundle#begin()
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-colorscheme pt_black
+colorscheme darkblue
 
 " Load custom settings
 source ~/.vim/boot/commands.vim
