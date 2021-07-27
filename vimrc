@@ -30,9 +30,6 @@ call vundle#begin()
     Plugin 'xolox/vim-easytags'
     Plugin 'xolox/vim-misc'
 
-    " Vim color schemes
-    Plugin 'yantze/pt_black'
-
 call vundle#end()            " required
 filetype plugin indent on    " required
 
