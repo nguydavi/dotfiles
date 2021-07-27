@@ -14,7 +14,7 @@ path=(
     /usr/bin
     /sbin
     /bin
-    ~/go/bin/
+    ~/go/bin
 )
 
 DIRSTACKSIZE=20             # number of directories in your pushd/popd stack
