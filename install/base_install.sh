@@ -77,4 +77,4 @@ vim +PluginInstall +qall
 
 # fzf
 clone_repo https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install
+~/.fzf/install --all
