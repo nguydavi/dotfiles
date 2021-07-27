@@ -45,7 +45,8 @@ clone_repo() {
 }
 
 PWD=$(pwd)
-install_symlink ~/.vimrc $PWD/vimrc
+install_symlink ~/.vimrc ${PWD}/vimrc
+install_symlink ~/.vim ${PWD}/vim
 install_symlink ~/.screenrc ${PWD}/screenrc
 
 # Install Oh My Zsh
