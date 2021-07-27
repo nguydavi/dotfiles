@@ -48,12 +48,12 @@ PWD=$(pwd)
 install_symlink ~/.vimrc $PWD/vimrc
 install_symlink ~/.screenrc ${PWD}/screenrc
 install_symlink ~/.zshrc ${PWD}/zshrc
-install_symlink ~/.oh-my-zsh/themes/nguydavi.zsh-theme ${PWD}/nguydavi.zsh-theme
 
 # Install Oh My Zsh
 if [ ! -e ~/.oh-my-zsh ]; then
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi
+install_symlink ~/.oh-my-zsh/themes/nguydavi.zsh-theme ${PWD}/nguydavi.zsh-theme
 
 # Git config install
 install_symlink ~/.git_template ${PWD}/git_template
