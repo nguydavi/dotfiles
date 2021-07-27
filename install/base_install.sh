@@ -47,12 +47,13 @@ clone_repo() {
 PWD=$(pwd)
 install_symlink ~/.vimrc $PWD/vimrc
 install_symlink ~/.screenrc ${PWD}/screenrc
-install_symlink ~/.zshrc ${PWD}/zshrc
 
 # Install Oh My Zsh
 if [ ! -e ~/.oh-my-zsh ]; then
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi
+mv ~/.zshrc ~/.zshrc_bak
+install_symlink ~/.zshrc ${PWD}/zshrc
 install_symlink ~/.oh-my-zsh/themes/nguydavi.zsh-theme ${PWD}/nguydavi.zsh-theme
 
 # Git config install
