@@ -14,8 +14,7 @@ path=(
     /usr/bin
     /sbin
     /bin
-    /usr/games
-    /usr/local/games
+    ~/go/bin/
 )
 
 DIRSTACKSIZE=20             # number of directories in your pushd/popd stack
@@ -37,9 +36,10 @@ bindkey '^[[B' history-substring-search-down
 bindkey '^[[Z' autosuggest-accept
 
 # aliases
-alias ll='ls -lArh'
+alias ll='lsd -lArh'
 alias egrep='egrep --color'
 alias fgrep='fgrep --color'
+alias rg='rg --smart-case'
 # remove default zsh aliases
 unalias rm
 unalias cp
@@ -134,3 +134,6 @@ preexec_auto_title_screens() {
 
 preexec_functions+='preexec_auto_title_screens'
 precmd_functions+='precmd_auto_title_screens'
+
+# fzf key bindings and completion
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
