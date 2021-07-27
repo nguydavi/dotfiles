@@ -1,8 +1,21 @@
 #!/bin/bash
 
+set -e
+
+echo_color() {
+    local color_code=$1
+    local message=$2
+    echo "$(tput setaf $color_code)${message}$(tput sgr0)"
+}
+
 echo_yellow() {
     local message=$1
-    echo "$(tput setaf 3)${message}$(tput sgr0)"
+    echo_color 3 "$message"
+}
+
+echo_green() {
+    local message=$1
+    echo_color 2 "$message"
 }
 
 install_symlink() {
@@ -20,6 +33,17 @@ install_symlink() {
     echo "Symlink for $symlink done"
 }
 
+clone_repo() {
+    local repo=$1
+    local target_dir=$2
+    if [ -e "$target_dir" ]; then
+        echo_yellow "Warning: $target_dir already exists"
+        return 0
+    fi
+
+    git clone "$repo" "$target_dir"
+}
+
 PWD=$(pwd)
 install_symlink ~/.vimrc $PWD/vimrc
 install_symlink ~/.screenrc ${PWD}/screenrc
@@ -27,7 +51,9 @@ install_symlink ~/.zshrc ${PWD}/zshrc
 install_symlink ~/.oh-my-zsh/themes/nguydavi.zsh-theme ${PWD}/nguydavi.zsh-theme
 
 # Install Oh My Zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+if [ ! -e ~/.oh-my-zsh ]; then
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+fi
 
 # Git config install
 install_symlink ~/.git_template ${PWD}/git_template
@@ -41,18 +67,12 @@ install_symlink ~/.gdbinit.d ${PWD}/gdbinit.d
 mkdir -p ~/.i3
 install_symlink ~/.i3/config ${PWD}/i3config
 
-git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+clone_repo https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+clone_repo https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 # Install Vim plugins
 vim +PluginInstall +qall
 
-echo
-cat << EOM
-The following need manual installation depending on the platform
-* Powerline font https://github.com/powerline/fonts
-* YouCompleteMe https://github.com/ycm-core/YouCompleteMe#installation
-* Ripgrep https://github.com/BurntSushi/ripgrep#installation
-* termshark https://github.com/gcla/termshark#install-packages
-* delta diff https://github.com/dandavison/delta#installation
-EOM
+# fzf
+clone_repo https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
