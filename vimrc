@@ -13,7 +13,7 @@ call vundle#begin()
     Plugin 'Shougo/vimproc.vim'         " required for vim-vebugger
     Plugin 'Valloric/YouCompleteMe'
     Plugin 'artur-shaik/vim-javacomplete2'
-    Plugin 'bling/vim-airline'
+    Plugin 'vim-airline/vim-airline'
     Plugin 'idanarye/vim-vebugger'
     Plugin 'junegunn/fzf'
     Plugin 'junegunn/fzf.vim'
