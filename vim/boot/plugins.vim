@@ -12,10 +12,6 @@ let g:airline#extensions#tabline#tab_nr_type = 0    " Display tab number
 let g:airline_powerline_fonts = 1                   " Use powerline fonts
 let g:airline_theme='murmur'
 
-" Ctrlp
-" Open in a new tab by default
-let g:ctrlp_prompt_mappings = { 'AcceptSelection("e")':['<c-t>'], 'AcceptSelection("t")':['<cr>','<2-LeftMouse>'] }
-
 " Easymotion
 map <Leader>f <Plug>(easymotion-f)
 map <Leader>F <Plug>(easymotion-F)
@@ -24,6 +20,10 @@ map <Leader>/ <Plug>(easymotion-sn)
 " Easytags
 let g:easytags_async = 1            " Update tags asynchronously
 let g:easytags_auto_highlight = 0   " Disable tag highlighting
+
+" Fzf
+nmap <C-P> :Files<CR>
+nmap <C-B> :Buffers<CR>
 
 " Javacomplete2
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
