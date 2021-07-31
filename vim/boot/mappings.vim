@@ -40,5 +40,5 @@ inoremap <S-Tab> <BS>
 nnoremap <Tab> <C-w>w
 nnoremap <S-Tab> <C-w>W
 
-" Build the project
-nnoremap <Leader>b :make<CR>
+" Show git blame
+nnoremap <Leader>b :Gblame<CR>
