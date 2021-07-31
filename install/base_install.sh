@@ -69,8 +69,10 @@ install_symlink ~/.gdbinit.d ${PWD}/gdbinit.d
 mkdir -p ~/.i3
 install_symlink ~/.i3/config ${PWD}/i3config
 
+# Misc repos
 clone_repo https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 clone_repo https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+clone_repo https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # Install Vim plugins
 vim +PluginInstall +qall
