@@ -48,6 +48,7 @@ PWD=$(pwd)
 install_symlink ~/.vimrc ${PWD}/vimrc
 install_symlink ~/.vim ${PWD}/vim
 install_symlink ~/.screenrc ${PWD}/screenrc
+install_symlink ~/.tmux.conf ${PWD}/tmux.conf
 
 # Install Oh My Zsh
 if [ ! -e ~/.oh-my-zsh ]; then
