@@ -13,6 +13,11 @@ brew install \
     ripgrep \
     termshark
 
+# pip
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+python get-pip.py
+rm get-pip.py
+
 # YouCompleteMe
 brew install cmake python mono go nodejs java
 sudo ln -sfn /usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
