@@ -1,5 +1,5 @@
 " Ack
-let g:ackprg = 'ag --vimgrep'
+let g:ackprg = 'rg --vimgrep'
 let g:ack_qhandler = "botright copen 40"
 map <Leader>a :Ack!<Space>
 map <Leader>A :Ack! <C-r><C-w>
