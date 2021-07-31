@@ -1,15 +1,12 @@
+" Set tmux title every time we change buffers
 function! SetTitle()
-    if $TERM =~ "^screen" || $TERM =~ "^xterm-256"
-        let l:title = 'vi: ' . expand('%:t')
+    let l:title = 'vi: ' . expand("%:t")
+    let l:truncTitle = strpart(l:title, 0, 15)
 
-        if (l:title != 'vi: __Tag_List__')
-            let l:truncTitle = strpart(l:title, 0, 15)
-            silent exe '!echo -e -n "\033k' . l:truncTitle . '\033\\"'
-        endif
-    endif
+    call system("tmux rename-window '" . l:truncTitle . "'")
 endfunction
-" Set screen title every time we change buffers
-autocmd BufEnter,BufFilePost * call SetTitle()
+autocmd BufEnter,BufFilePost,BufReadPost,FileReadPost,BufNewFile * call SetTitle()
+autocmd VimLeave * call system("tmux setw automatic-rename")
 
 " git commit textdwith
 autocmd Filetype gitcommit setlocal textwidth=72
