@@ -13,6 +13,7 @@ The following need manual installation depending on the platform
 * lsd https://github.com/Peltoche/lsd#installation
 * jq https://github.com/stedolan/jq
 * glances https://github.com/nicolargo/glances#installation
+* pytz package for tmux-world-clock
 EOM
 # Can look for other useful tools at https://github.com/ibraheemdev/modern-unix
 echo_green "All done!"

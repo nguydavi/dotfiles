@@ -39,6 +39,9 @@ python3 install.py --all
 # glances
 sudo pip install glances
 
+# pytz is needed for tmux-world-clock
+sudo pip install pytz
+
 echo
 echo_green 'All done!'
 echo 'Make sure to install the Nerd font 'FantasqueSansMono' https://github.com/ryanoasis/nerd-fonts/releases'

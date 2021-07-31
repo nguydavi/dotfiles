@@ -18,6 +18,9 @@ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 python get-pip.py
 rm get-pip.py
 
+# pytz is needed for tmux-world-clock
+sudo pip install pytz
+
 # YouCompleteMe
 brew install cmake python mono go nodejs java
 sudo ln -sfn /usr/local/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk

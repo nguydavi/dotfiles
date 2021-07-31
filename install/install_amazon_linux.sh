@@ -43,5 +43,8 @@ go get github.com/gcla/termshark/v2/cmd/termshark
 sudo yum install -y pip
 sudo pip install glances
 
+# pytz is needed for tmux-world-clock
+sudo pip install pytz
+
 echo_green "All done!"
 echo "Make sure to install the Nerd font 'FantasqueSansMono' https://github.com/ryanoasis/nerd-fonts/releases"
