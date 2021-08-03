@@ -79,40 +79,40 @@ typeset -ga preexec_functions
 
 # if you are at a zsh prompt, make your tmux window title your current directory
 precmd_auto_title_tmux_window() {
-  local TITLE=${PWD:t}
-  tmux rename-window "$TITLE"
+    local TITLE=${PWD:t}
+    tmux rename-window "$TITLE"
 }
 
 # if you are running a command, make your tmux window title the command you're running
 preexec_auto_title_tmux_window() {
-  local CMDS
-  local CMD
-  set -A CMDS $(echo $1)
-  #Use first word from command line, but treat sudo and ssh specially
-  if [[ $CMDS[1] == "sudo" ]]; then
-      CMD="sudo $CMDS[2]"
-  elif [[ $CMDS[1] == "ssh" ]]; then
-      #Try to find target host for ssh
-      CMD="ssh"
-      local SKIP=1 #skip first arg
-      for c in $CMDS; do
-          if [[ $SKIP == 1 ]]; then
-              SKIP=0
-          elif [[ $c =~ "^-[1246AaCfgkMNnqsTtVvXxY]+" ]]; then
-              #Option with no argument
-          elif [[ $c =~ "^-.*" ]]; then
-              #skip next entry after option that expects an argument
-              SKIP=1
-          else
-              # found host name, strip out user name
-              CMD=`echo $c | sed 's/.*@\(.*\)/\1/'`
-              break
-          fi
-      done;
-  else
-      CMD=$CMDS[1]
-  fi
-  tmux rename-window "$CMD"
+    local CMDS
+    local CMD
+    set -A CMDS $(echo $1)
+    # Use first word from command line, but treat sudo and ssh specially
+    if [[ $CMDS[1] == "sudo" ]]; then
+        CMD="sudo $CMDS[2]"
+    elif [[ $CMDS[1] == "ssh" ]]; then
+        # Try to find target host for ssh
+        CMD="ssh"
+        local SKIP=1 #skip first arg
+        for c in $CMDS; do
+            if [[ $SKIP == 1 ]]; then
+                SKIP=0
+            elif [[ $c =~ "^-[1246AaCfgkMNnqsTtVvXxY]+" ]]; then
+                # Option with no argument
+            elif [[ $c =~ "^-.*" ]]; then
+                # skip next entry after option that expects an argument
+                SKIP=1
+            else
+                # found host name, strip out user name
+                CMD=`echo $c | sed 's/.*@\(.*\)/\1/'`
+                break
+            fi
+        done;
+    else
+        CMD=$CMDS[1]
+    fi
+    tmux rename-window "$CMD"
 }
 
 preexec_functions+='preexec_auto_title_tmux_window'
