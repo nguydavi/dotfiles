@@ -77,24 +77,14 @@ export SAVEHIST=100000
 typeset -ga precmd_functions
 typeset -ga preexec_functions
 
-# if you are at a zsh prompt, make your screen title your current directory
-precmd_auto_title_screens() {
+# if you are at a zsh prompt, make your tmux window title your current directory
+precmd_auto_title_tmux_window() {
   local TITLE=${PWD:t}
-  # 'screen' sets STY as well, so for users who override the TERM
-  # environment variable, checking STY is nice
-  setopt UNSET # Avoid errors from undefined STY for users with 'NOUNSET'
-  if [[ $TERM == "screen" || $TERM == "xterm-256color" || -n $STY ]]; then
-      echo -ne "\ek$TITLE\e\\"
-  fi
-  if [[ $TERM == "xterm" ]]; then
-      echo -ne "\e]0;$TITLE\a"
-  fi
-  setopt LOCAL_OPTIONS # restore value of UNSET
+  tmux rename-window "$TITLE"
 }
 
-# if you are running a command, make your screen title the command you're
-# running
-preexec_auto_title_screens() {
+# if you are running a command, make your tmux window title the command you're running
+preexec_auto_title_tmux_window() {
   local CMDS
   local CMD
   set -A CMDS $(echo $1)
@@ -122,18 +112,11 @@ preexec_auto_title_screens() {
   else
       CMD=$CMDS[1]
   fi
-  setopt UNSET # Avoid errors from undefined STY for users with 'NOUNSET'
-  if [[ $TERM == "screen" || $TERM == "xterm-256colors" || -n "$STY" ]]; then
-    echo -ne "\ek$CMD\e\\"
-  fi
-  if [[ $TERM == "xterm" ]]; then
-    echo -ne "\e]0;$CMD\a"
-  fi
-  setopt LOCAL_OPTIONS # restore value of UNSET
+  tmux rename-window "$CMD"
 }
 
-preexec_functions+='preexec_auto_title_screens'
-precmd_functions+='precmd_auto_title_screens'
+preexec_functions+='preexec_auto_title_tmux_window'
+precmd_functions+='precmd_auto_title_tmux_window'
 
 # fzf key bindings and completion
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
