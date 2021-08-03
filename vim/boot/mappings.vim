@@ -41,4 +41,4 @@ nnoremap <Tab> <C-w>w
 nnoremap <S-Tab> <C-w>W
 
 " Show git blame
-nnoremap <Leader>b :Gblame<CR>
+nnoremap <Leader>b :Git blame<CR>
