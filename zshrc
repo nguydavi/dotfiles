@@ -79,12 +79,20 @@ typeset -ga preexec_functions
 
 # if you are at a zsh prompt, make your tmux window title your current directory
 precmd_auto_title_tmux_window() {
+    if [ -z "$TMUX" ]; then
+        return
+    fi
+
     local TITLE=${PWD:t}
     tmux rename-window "$TITLE"
 }
 
 # if you are running a command, make your tmux window title the command you're running
 preexec_auto_title_tmux_window() {
+    if [ -z "$TMUX" ]; then
+        return
+    fi
+
     local CMDS
     local CMD
     set -A CMDS $(echo $1)
