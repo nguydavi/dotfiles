@@ -126,5 +126,8 @@ preexec_auto_title_tmux_window() {
 preexec_functions+='preexec_auto_title_tmux_window'
 precmd_functions+='precmd_auto_title_tmux_window'
 
+# Setting rg as the default source for fzf files, which follows .gitignore
+export FZF_DEFAULT_COMMAND='rg --files'
+
 # fzf key bindings and completion
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
