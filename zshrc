@@ -84,7 +84,8 @@ precmd_auto_title_tmux_window() {
     fi
 
     local TITLE=${PWD:t}
-    tmux rename-window "$TITLE"
+    local window_id=$(tmux display -p '#{window_index}')
+    tmux rename-window -t $window_id "$TITLE"
 }
 
 # if you are running a command, make your tmux window title the command you're running
@@ -120,7 +121,10 @@ preexec_auto_title_tmux_window() {
     else
         CMD=$CMDS[1]
     fi
+
+    local window_id=$(tmux display -p '#{window_index}')
     tmux rename-window "$CMD"
+    tmux rename-window -t $window_id "$CMD"
 }
 
 preexec_functions+='preexec_auto_title_tmux_window'
