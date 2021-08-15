@@ -77,6 +77,12 @@ export SAVEHIST=100000
 typeset -ga precmd_functions
 typeset -ga preexec_functions
 
+# Setting an env variable to remember this window id, so that when this process finishes and precmd is called it
+# updates the correct window title (and not the one currently in used which might not be the same anymore)
+if [ ! -z "$TMUX" ]; then
+    export MY_TMUX_WINDOW_ID=$(tmux display -p '#{window_index}')
+fi
+
 # if you are at a zsh prompt, make your tmux window title your current directory
 precmd_auto_title_tmux_window() {
     if [ -z "$TMUX" ]; then
@@ -84,9 +90,7 @@ precmd_auto_title_tmux_window() {
     fi
 
     local TITLE=${PWD:t}
-    # Using shell parameter expansion to default to the current window, otherwise $MY_TMUX_WINDOW_ID
-    local window_id=${MY_TMUX_WINDOW_ID:-$(tmux display -p '#{window_index}')}
-    tmux rename-window -t $window_id "$TITLE"
+    tmux rename-window -t ${MY_TMUX_WINDOW_ID} "$TITLE"
 }
 
 # if you are running a command, make your tmux window title the command you're running
@@ -123,10 +127,7 @@ preexec_auto_title_tmux_window() {
         CMD=$CMDS[1]
     fi
 
-    # Setting an env variable to remember this window id, so that when this process finishes and precmd is called it
-    # doesn't update the correct window title (and not the one currently in used which might not be the same anymore)
-    export MY_TMUX_WINDOW_ID=$(tmux display -p '#{window_index}')
-    tmux rename-window -t $MY_TMUX_WINDOW_ID "$CMD"
+    tmux rename-window -t ${MY_TMUX_WINDOW_ID} "$CMD"
 }
 
 preexec_functions+='preexec_auto_title_tmux_window'
