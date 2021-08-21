@@ -24,7 +24,7 @@ vnoremap <up> <Nop>
 " Buffers
 nnoremap <C-h> :bp<CR>
 nnoremap <C-l> :bn<CR>
-nnoremap <Leader>w :bd<CR>
+nnoremap <Leader>w :bp\|bd #<CR>
 
 " Replace word under cursor
 nnoremap <Leader>r :%s/\<<C-r><C-w>\>//g<Left><Left>
