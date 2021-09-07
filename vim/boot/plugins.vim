@@ -36,6 +36,8 @@ let g:JavaComplete_ImportOrder = ['*', 'java.', 'javax.']
 " YouCompleteMe
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_auto_hover = ''
+map <Leader>d <plug>(YCMHover)
 
 " Vebugger
 nnoremap <Bslash>n :VBGstepOver<CR>
