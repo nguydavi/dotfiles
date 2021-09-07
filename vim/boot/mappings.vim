@@ -39,6 +39,3 @@ inoremap <S-Tab> <BS>
 " Loop through windows
 nnoremap <Tab> <C-w>w
 nnoremap <S-Tab> <C-w>W
-
-" Show git blame
-nnoremap <Leader>b :Git blame<CR>
