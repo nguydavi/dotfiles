@@ -38,6 +38,9 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_auto_hover = ''
 map <Leader>d <plug>(YCMHover)
+map <Leader>g :YcmCompleter GoToDefinition<CR>
+map <Leader>G :YcmCompleter GoToDeclaration<CR>
+map <Leader>i :YcmCompleter GoToImplementation<CR>
 
 " Vebugger
 nnoremap <Bslash>n :VBGstepOver<CR>
