@@ -1,6 +1,6 @@
 " Ack
 let g:ackprg = 'rg --vimgrep'
-let g:ack_qhandler = "botright copen 40"
+let g:ack_qhandler = "botright copen 20"
 map <Leader>a :Ack!<Space>
 map <Leader>A :Ack! <C-r><C-w>
 
