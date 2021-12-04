@@ -9,7 +9,7 @@ local time=[%{$fg_bold[magenta]%}%T%{$reset_color%}]
 local host_info=%{$fg_bold[grey]%}[%{$reset_color%}%{$fg_bold[${host_color}]%}%n@%m%{$reset_color%}%{$fg_bold[grey]%}]%{$reset_color%}
 local current_path=%{$fg_bold[blue]%}%10c%{$reset_color%}
 local input_prefix=%{$fg_bold[cyan]%}❯%{$reset_color%}
-local return_status=%{$fg[magenta]%}%(?..{failed})%{$reset_color%}
+local return_status=%{$fg[magenta]%}%(?..{%?})%{$reset_color%}
 
 # Manually adding the ZSH suffix as it doesn't seem to be there
 PROMPT='${time}${host_info} ${current_path} $(git_prompt_info) $(git_prompt_status)${ZSH_THEME_GIT_PROMPT_SUFFIX} $(virtualenv_prompt_info) ${return_status}
