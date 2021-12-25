@@ -29,6 +29,7 @@ nnoremap <Leader>w :bp\|bd #<CR>
 " Replace word under cursor
 nnoremap <Leader>r :%s/\<<C-r><C-w>\>//g<Left><Left>
 vnoremap <Leader>r :s/\<\>//g<Left><Left><Left><Left><Left>
+" Keep capitalization with abolish plugin
 nnoremap <Leader>R :%S/<C-r><C-w>//g<Left><Left>
 vnoremap <Leader>R :S///g<Left><Left><Left><Left><Left>
 
