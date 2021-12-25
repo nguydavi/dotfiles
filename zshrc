@@ -62,14 +62,13 @@ then
     # ls --color not supported on Mac
     unalias ls
 
-    alias go='open'
     # for colored ls
     export CLICOLOR=1
     export LSCOLORS=ExFxCxDxBxegedabagacad
 
 elif [[ "$(uname)" == "Linux" ]]
 then
-    alias go='gnome-open'
+    alias open='gnome-open'
 fi
 
 ######################### history options ############################
