@@ -14,6 +14,7 @@ call vundle#begin()
     Plugin 'Valloric/YouCompleteMe'
     Plugin 'artur-shaik/vim-javacomplete2'
     Plugin 'vim-airline/vim-airline'
+    Plugin 'fatih/vim-go'
     Plugin 'idanarye/vim-vebugger'
     Plugin 'junegunn/fzf'
     Plugin 'junegunn/fzf.vim'

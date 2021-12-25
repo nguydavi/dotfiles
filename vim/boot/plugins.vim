@@ -60,3 +60,10 @@ let g:cpp_class_scope_highlight = 1
 let g:cpp_member_variable_highlight = 1
 
 autocmd FileType python nnoremap <Bslash>r :VBGstartPDB %<CR>
+
+" Vim go
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+autocmd FileType go nmap <Leader>k <Plug>(go-coverage-toggle)
+autocmd FileType go nmap <Leader>r :GoRename 
