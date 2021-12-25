@@ -76,6 +76,8 @@ clone_repo https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # Install Vim plugins
 vim +PluginInstall +qall
+# Install Go dependencies for vim-go
+vim +GoInstallBinaries +qall
 
 # fzf
 clone_repo https://github.com/junegunn/fzf.git ~/.fzf
