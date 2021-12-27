@@ -61,3 +61,6 @@ let g:LargeFile = 100
 
 " Turn on syntax highlighting
 syntax on
+
+" Change auto-complete menu color
+highlight Pmenu ctermbg=gray guibg=gray
