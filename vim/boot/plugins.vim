@@ -62,6 +62,7 @@ let g:cpp_member_variable_highlight = 1
 autocmd FileType python nnoremap <Bslash>r :VBGstartPDB %<CR>
 
 " Vim go
+let g:go_def_mapping_enabled = 0
 let g:go_highlight_types = 1
 let g:go_highlight_fields = 1
 let g:go_highlight_functions = 1
