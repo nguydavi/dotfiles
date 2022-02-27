@@ -33,6 +33,9 @@ autocmd FileType java setlocal omnifunc=javacomplete#Complete
 let g:JavaComplete_ImportSortType = 'packageName'
 let g:JavaComplete_ImportOrder = ['*', 'java.', 'javax.']
 
+" Rust
+let g:rustfmt_autosave = 1
+
 " YouCompleteMe
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1

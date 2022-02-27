@@ -20,6 +20,7 @@ call vundle#begin()
     Plugin 'junegunn/fzf.vim'
     Plugin 'mileszs/ack.vim'
     Plugin 'octol/vim-cpp-enhanced-highlight'
+    Plugin 'rust-lang/rust.vim'
     Plugin 'scrooloose/nerdtree'
     Plugin 'tpope/vim-abolish'
     Plugin 'tpope/vim-commentary'
