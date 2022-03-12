@@ -15,7 +15,7 @@ autocmd Filetype gitcommit setlocal textwidth=72
 autocmd Filetype python setlocal colorcolumn=101 textwidth=100
 
 " Some file types tabs should be 2 spaces
-autocmd FileType ruby,cucumber setlocal shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType ruby,cucumber,typescript setlocal shiftwidth=2 softtabstop=2 expandtab
 
 " Show trailing whitespaces
 autocmd VimEnter,WinEnter * match Error /\s\+$/
