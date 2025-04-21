@@ -28,22 +28,6 @@ nnoremap <Leader>b :Git blame<CR>
 nmap <C-P> :Files<CR>
 nmap <C-B> :Buffers<CR>
 
-" Javacomplete2
-autocmd FileType java setlocal omnifunc=javacomplete#Complete
-let g:JavaComplete_ImportSortType = 'packageName'
-let g:JavaComplete_ImportOrder = ['*', 'java.', 'javax.']
-
-" Rust
-let g:rustfmt_autosave = 1
-
-" YouCompleteMe
-let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:ycm_auto_hover = ''
-map <Leader>d <plug>(YCMHover)
-map <Leader>g :YcmCompleter GoToDefinition<CR>
-map <Leader>G :YcmCompleter GoToDeclaration<CR>
-map <Leader>i :YcmCompleter GoToImplementation<CR>
 
 " Vebugger
 nnoremap <Bslash>n :VBGstepOver<CR>
@@ -64,10 +48,40 @@ let g:cpp_member_variable_highlight = 1
 
 autocmd FileType python nnoremap <Bslash>r :VBGstartPDB %<CR>
 
-" Vim go
-let g:go_def_mapping_enabled = 0
-let g:go_highlight_types = 1
-let g:go_highlight_fields = 1
-let g:go_highlight_functions = 1
-autocmd FileType go nmap <Leader>k <Plug>(go-coverage-toggle)
-autocmd FileType go nmap <Leader>r :GoRename 
+" LSP
+packadd lsp
+inoremap <TAB> <C-n>
+map <Leader>d :LspHover<CR>
+map <Leader>h :LspDiag current<CR>
+map <Leader>g :LspGotoDefinition<CR>
+map <Leader>G :LspGotoDeclaration<CR>
+map <Leader>i :LspGotoImpl<CR>
+map <Leader>r :LspShowReferences<CR>
+map <Leader>ri :LspIncomingCalls<CR>
+map <Leader>ro :LspOutgoingCalls<CR>
+map <Leader>R :LspRename 
+
+" Python language server
+call LspAddServer([#{
+    \ name: 'pylsp',
+    \ filetype: 'python',
+    \ path: '/home/nguydavi/.local/bin/pylsp',
+    \ args: []
+\ }])
+" Go language server
+call LspAddServer([#{
+    \ name: 'golang',
+    \ filetype: ['go', 'gomod'],
+    \ path: '/home/nguydavi/go/bin/gopls',
+    \ args: ['serve'],
+    \ syncInit: v:true
+\ }])
+
+" Rust language server
+call LspAddServer([#{
+    \ name: 'rustlang',
+    \ filetype: ['rust'],
+    \ path: '/home/nguydavi/.cargo/bin/rust-analyzer',
+    \ args: [],
+    \ syncInit: v:true
+\ }])

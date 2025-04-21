@@ -11,16 +11,12 @@ call vundle#begin()
 
     Plugin 'Lokaltog/vim-easymotion'
     Plugin 'Shougo/vimproc.vim'         " required for vim-vebugger
-    Plugin 'Valloric/YouCompleteMe'
-    Plugin 'artur-shaik/vim-javacomplete2'
     Plugin 'vim-airline/vim-airline'
-    Plugin 'fatih/vim-go'
     Plugin 'idanarye/vim-vebugger'
     Plugin 'junegunn/fzf'
     Plugin 'junegunn/fzf.vim'
     Plugin 'mileszs/ack.vim'
     Plugin 'octol/vim-cpp-enhanced-highlight'
-    Plugin 'rust-lang/rust.vim'
     Plugin 'scrooloose/nerdtree'
     Plugin 'tpope/vim-abolish'
     Plugin 'tpope/vim-commentary'
@@ -32,6 +28,7 @@ call vundle#begin()
     Plugin 'vim-airline/vim-airline-themes'
     Plugin 'xolox/vim-easytags'
     Plugin 'xolox/vim-misc'
+    Plugin 'yegappan/lsp'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
