@@ -13,6 +13,7 @@ call vundle#begin()
     Plugin 'Shougo/vimproc.vim'         " required for vim-vebugger
     Plugin 'vim-airline/vim-airline'
     Plugin 'idanarye/vim-vebugger'
+    Plugin 'girishji/vimsuggest'
     Plugin 'junegunn/fzf'
     Plugin 'junegunn/fzf.vim'
     Plugin 'mileszs/ack.vim'
