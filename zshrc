@@ -146,5 +146,8 @@ precmd_functions+='precmd_auto_title_tmux_window'
 # Setting rg as the default source for fzf files, which follows .gitignore
 export FZF_DEFAULT_COMMAND='rg --files'
 
+# Enable auto suggestions
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 # fzf key bindings and completion
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
