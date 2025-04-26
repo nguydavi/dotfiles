@@ -11,7 +11,7 @@ call vundle#begin()
 
     Plugin 'Lokaltog/vim-easymotion'
     Plugin 'Shougo/vimproc.vim'         " required for vim-vebugger
-    Plugin 'vim-airline/vim-airline'
+    Plugin 'catppuccin/vim'
     Plugin 'ervandew/supertab'
     Plugin 'idanarye/vim-vebugger'
     Plugin 'girishji/vimsuggest'
@@ -27,6 +27,7 @@ call vundle#begin()
     Plugin 'tpope/vim-surround'
     Plugin 'tpope/vim-unimpaired'
     Plugin 'tpope/vim-vinegar'
+    Plugin 'vim-airline/vim-airline'
     Plugin 'vim-airline/vim-airline-themes'
     Plugin 'xolox/vim-misc'
     Plugin 'yegappan/lsp'
@@ -34,7 +35,7 @@ call vundle#begin()
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-colorscheme darkblue
+colorscheme catppuccin_macchiato
 
 " Load custom settings
 source ~/.vim/boot/commands.vim
