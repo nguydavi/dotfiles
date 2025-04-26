@@ -49,8 +49,6 @@ let g:cpp_member_variable_highlight = 1
 autocmd FileType python nnoremap <Bslash>r :VBGstartPDB %<CR>
 
 " LSP
-packadd lsp
-inoremap <TAB> <C-n>
 map <Leader>d :LspHover<CR>
 map <Leader>h :LspDiag current<CR>
 map <Leader>g :LspGotoDefinition<CR>
@@ -62,26 +60,26 @@ map <Leader>ro :LspOutgoingCalls<CR>
 map <Leader>R :LspRename 
 
 " Python language server
-call LspAddServer([#{
+autocmd User LspSetup call LspAddServer([#{
     \ name: 'pylsp',
     \ filetype: 'python',
-    \ path: '/home/nguydavi/.local/bin/pylsp',
+    \ path: '/Users/canar/Library/Python/3.9/bin//pylsp',
     \ args: []
 \ }])
 " Go language server
-call LspAddServer([#{
-    \ name: 'golang',
-    \ filetype: ['go', 'gomod'],
-    \ path: '/home/nguydavi/go/bin/gopls',
-    \ args: ['serve'],
-    \ syncInit: v:true
-\ }])
+" autocmd User LspSetup call LspAddServer([#{
+"     \ name: 'golang',
+"     \ filetype: ['go', 'gomod'],
+"     \ path: '/home/nguydavi/go/bin/gopls',
+"     \ args: ['serve'],
+"     \ syncInit: v:true
+" \ }])
 
 " Rust language server
-call LspAddServer([#{
+autocmd User LspSetup call LspAddServer([#{
     \ name: 'rustlang',
     \ filetype: ['rust'],
-    \ path: '/home/nguydavi/.cargo/bin/rust-analyzer',
+    \ path: '/Users/canar/.cargo/bin/rust-analyzer',
     \ args: [],
     \ syncInit: v:true
 \ }])

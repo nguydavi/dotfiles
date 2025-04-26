@@ -12,6 +12,7 @@ call vundle#begin()
     Plugin 'Lokaltog/vim-easymotion'
     Plugin 'Shougo/vimproc.vim'         " required for vim-vebugger
     Plugin 'vim-airline/vim-airline'
+    Plugin 'ervandew/supertab'
     Plugin 'idanarye/vim-vebugger'
     Plugin 'girishji/vimsuggest'
     Plugin 'junegunn/fzf'
@@ -27,7 +28,6 @@ call vundle#begin()
     Plugin 'tpope/vim-unimpaired'
     Plugin 'tpope/vim-vinegar'
     Plugin 'vim-airline/vim-airline-themes'
-    Plugin 'xolox/vim-easytags'
     Plugin 'xolox/vim-misc'
     Plugin 'yegappan/lsp'
 
