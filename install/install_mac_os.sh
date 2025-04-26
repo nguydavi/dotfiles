@@ -13,6 +13,9 @@ source ./install/base_install.sh
     ripgrep \
     termshark
 
+# Install tmux plugins
+~/.tmux/plugins/tpm/bin/install_plugins
+
 # pip
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 /opt/homebrew/bin/python3 get-pip.py

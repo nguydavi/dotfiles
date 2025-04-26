@@ -38,6 +38,8 @@ python3 install.py --all
 # glances
 sudo pip install glances
 
+# Install tmux plugins
+~/.tmux/plugins/tpm/bin/install_plugins
 
 echo
 echo_green 'All done!'

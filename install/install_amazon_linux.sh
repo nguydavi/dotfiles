@@ -24,6 +24,8 @@ go get github.com/gcla/termshark/v2/cmd/termshark
 sudo yum install -y pip
 sudo pip install glances
 
+# Install tmux plugins
+~/.tmux/plugins/tpm/bin/install_plugins
 
 echo_green "All done!"
 echo "Make sure to install the Nerd font 'FantasqueSansMono' https://github.com/ryanoasis/nerd-fonts/releases"
