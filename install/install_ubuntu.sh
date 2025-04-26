@@ -38,8 +38,6 @@ python3 install.py --all
 # glances
 sudo pip install glances
 
-# pytz is needed for tmux-world-clock
-sudo pip install pytz
 
 echo
 echo_green 'All done!'
