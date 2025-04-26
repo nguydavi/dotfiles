@@ -62,7 +62,7 @@ install_symlink ~/.git_template ${PWD}/git_template
 install_symlink ~/.gitconfig ${PWD}/gitconfig
 
 # gdbinit install
-wget -qP ~ https://git.io/.gdbinit
+curl -L https://git.io/.gdbinit --output ~/.gdbinit
 install_symlink ~/.gdbinit.d ${PWD}/gdbinit.d
 
 # i3 install
