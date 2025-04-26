@@ -6,12 +6,14 @@ source ./install/base_install.sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 /opt/homebrew/bin/brew install \
-    git-delta \
+    ag \
+    cmake \
     glances \
     jq \
     lsd \
     ripgrep \
-    termshark
+    termshark \
+    tmux
 
 # Install tmux plugins
 ~/.tmux/plugins/tpm/bin/install_plugins
@@ -21,6 +23,7 @@ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 /opt/homebrew/bin/python3 get-pip.py
 rm get-pip.py
 
+pip install Pygments
 pip install python-lsp-server
 
 echo_green "All done!"
