@@ -22,7 +22,6 @@ install_latest_release() {
 }
 
 sudo apt-get -y install \
-    git-delta \
     jq \
     pip \
     ripgrep \

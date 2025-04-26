@@ -9,7 +9,6 @@ The following need manual installation depending on the platform
 * YouCompleteMe https://github.com/ycm-core/YouCompleteMe#installation
 * Ripgrep https://github.com/BurntSushi/ripgrep#installation
 * termshark https://github.com/gcla/termshark#install-packages
-* delta diff https://github.com/dandavison/delta#installation
 * lsd https://github.com/Peltoche/lsd#installation
 * jq https://github.com/stedolan/jq
 * glances https://github.com/nicolargo/glances#installation

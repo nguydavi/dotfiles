@@ -1,18 +1,2 @@
 [init]
 	templatedir = ~/.git_template
-
-[pager]
-    diff = delta
-    log = delta
-    reflog = delta
-    show = delta
-
-[delta]
-    plus-style = "bold green"
-    minus-style = "bold red"
-    syntax-theme = Monokai Extended
-    navigate = true
-    line-numbers = true
-
-[interactive]
-    diffFilter = delta --color-only
