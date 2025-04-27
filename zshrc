@@ -67,6 +67,14 @@ then
     export CLICOLOR=1
     export LSCOLORS=ExFxCxDxBxegedabagacad
 
+    path=(
+        /Users/canar/Library/Python/3.9/bin/
+        /opt/homebrew/bin/
+        ~/.cargo/bin
+        /Library/TeX/texbin
+        $path
+    )
+
 elif [[ "$(uname)" == "Linux" ]]
 then
     alias open='gnome-open'
