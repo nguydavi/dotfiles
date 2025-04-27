@@ -7,6 +7,7 @@ source ./install/base_install.sh
 
 /opt/homebrew/bin/brew install \
     ag \
+    basictex \
     cmake \
     glances \
     jq \
