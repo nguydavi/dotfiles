@@ -78,3 +78,6 @@ autocmd User LspSetup call LspAddServer([#{
     \ args: [],
     \ syncInit: v:true
 \ }])
+
+" Copilot
+map <Leader>c :Copilot<CR>

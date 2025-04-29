@@ -15,6 +15,7 @@ call vundle#begin()
     Plugin 'ervandew/supertab'
     Plugin 'idanarye/vim-vebugger'
     Plugin 'girishji/vimsuggest'
+    Plugin 'github/copilot.vim'
     Plugin 'junegunn/fzf'
     Plugin 'junegunn/fzf.vim'
     Plugin 'mileszs/ack.vim'
