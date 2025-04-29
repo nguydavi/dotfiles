@@ -59,21 +59,16 @@ map <Leader>ri :LspIncomingCalls<CR>
 map <Leader>ro :LspOutgoingCalls<CR>
 map <Leader>R :LspRename 
 
+let pylsp_config = { 'pylsp': { 'plugins': { 'pycodestyle': { 'maxLineLength': 100 } } } }
+
 " Python language server
 autocmd User LspSetup call LspAddServer([#{
     \ name: 'pylsp',
     \ filetype: 'python',
     \ path: '/Users/canar/Library/Python/3.9/bin//pylsp',
-    \ args: []
+    \ args: [],
+    \ workspaceConfig: pylsp_config,
 \ }])
-" Go language server
-" autocmd User LspSetup call LspAddServer([#{
-"     \ name: 'golang',
-"     \ filetype: ['go', 'gomod'],
-"     \ path: '/home/nguydavi/go/bin/gopls',
-"     \ args: ['serve'],
-"     \ syncInit: v:true
-" \ }])
 
 " Rust language server
 autocmd User LspSetup call LspAddServer([#{

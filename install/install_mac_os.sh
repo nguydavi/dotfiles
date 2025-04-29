@@ -20,7 +20,7 @@ source ./install/base_install.sh
 ~/.tmux/plugins/tpm/bin/install_plugins
 
 pip install Pygments
-pip install python-lsp-server
+pip install "python-lsp-server[all]"
 
 echo_green "All done!"
 echo "Make sure to install the Nerd font 'FantasqueSansMono' https://github.com/ryanoasis/nerd-fonts/releases"
