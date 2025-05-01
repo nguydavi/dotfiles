@@ -52,14 +52,17 @@ alias egrep='egrep --color'
 alias fgrep='fgrep --color'
 alias rg='rg --smart-case'
 
+alias dcb="docker compose build"
 alias dcu="docker compose up -d"
 alias dcd="docker compose down"
+alias dcl="docker compose logs"
 alias di="docker inspect"
 alias dim="docker images"
 alias dl="docker logs -f"
 alias dps="docker ps"
 alias drun="docker run -it"
 alias dpsa="docker ps -a"
+alias dkill="docker kill"
 
 dex() {
     docker exec -it $1 ${2:-bash}
