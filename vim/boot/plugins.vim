@@ -21,6 +21,9 @@ map <Leader>/ <Plug>(easymotion-sn)
 let g:easytags_async = 1            " Update tags asynchronously
 let g:easytags_auto_highlight = 0   " Disable tag highlighting
 
+" Supertab
+let g:SuperTabDefaultCompletionType = "<c-n>"
+
 " Fugitive
 nnoremap <Leader>b :Git blame<CR>
 
