@@ -51,6 +51,20 @@ alias ll='lsd -lArh'
 alias egrep='egrep --color'
 alias fgrep='fgrep --color'
 alias rg='rg --smart-case'
+
+alias dcu="docker compose up -d"
+alias dcd="docker compose down"
+alias di="docker inspect"
+alias dim="docker images"
+alias dl="docker logs -f"
+alias dps="docker ps"
+alias drun="docker run -it"
+alias dpsa="docker ps -a"
+
+dex() {
+    docker exec -it $1 ${2:-bash}
+}
+
 # remove default zsh aliases
 unalias rm
 unalias cp
