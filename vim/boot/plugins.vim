@@ -54,6 +54,8 @@ autocmd FileType python nnoremap <Bslash>r :VBGstartPDB %<CR>
 " LSP
 map <Leader>d :LspHover<CR>
 map <Leader>h :LspDiag current<CR>
+map <Leader>] :LspDiag next<CR>
+map <Leader>[ :LspDiag prev<CR>
 map <Leader>g :LspGotoDefinition<CR>
 map <Leader>G :LspGotoDeclaration<CR>
 map <Leader>i :LspGotoImpl<CR>
