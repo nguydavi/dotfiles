@@ -18,7 +18,7 @@ autocmd Filetype python setlocal colorcolumn=101 textwidth=100
 autocmd FileType ruby,cucumber,typescript setlocal shiftwidth=2 softtabstop=2 expandtab
 
 " Show trailing whitespaces
-autocmd VimEnter,WinEnter * match Error /\s\+$/
+autocmd VimEnter,WinEnter * match SpellBad /\s\+$/
 
 " Open quickfix window on :make
 autocmd QuickFixCmdPost [^l]* nested cwindow
