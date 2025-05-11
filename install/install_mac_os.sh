@@ -16,6 +16,8 @@ source ./install/base_install.sh
     termshark \
     tmux
 
+/opt/homebrew/bin/brew install --cask cameracontroller
+
 # Install tmux plugins
 ~/.tmux/plugins/tpm/bin/install_plugins
 
