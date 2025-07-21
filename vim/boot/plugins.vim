@@ -75,6 +75,15 @@ autocmd User LspSetup call LspAddServer([#{
     \ workspaceConfig: pylsp_config,
 \ }])
 
+" Go language server
+autocmd User LspSetup call LspAddServer([#{
+    \ name: 'golang',
+    \ filetype: ['go', 'gomod'],
+    \ path: '/Users/canar/go/bin/gopls',
+    \ args: [],
+    \ syncInit: v:true
+\ }])
+
 " Rust language server
 autocmd User LspSetup call LspAddServer([#{
     \ name: 'rustlang',
