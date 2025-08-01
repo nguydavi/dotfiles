@@ -10,6 +10,7 @@ source ./install/base_install.sh
     basictex \
     cmake \
     glances \
+    hashicorp/tap/terraform-ls \
     jq \
     lsd \
     ripgrep \

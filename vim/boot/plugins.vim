@@ -93,5 +93,14 @@ autocmd User LspSetup call LspAddServer([#{
     \ syncInit: v:true
 \ }])
 
+" Terraform language server
+autocmd User LspSetup call LspAddServer([#{
+    \ name: 'terraform',
+    \ filetype: ['terraform'],
+    \ path: '/opt/homebrew/bin//terraform-ls',
+    \ args: ['serve'],
+    \ syncInit: v:true
+\ }])
+
 " Copilot
 map <Leader>c :Copilot<CR>
