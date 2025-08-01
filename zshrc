@@ -65,6 +65,8 @@ alias drun="docker run -it"
 alias dpsa="docker ps -a"
 alias dkill="docker kill"
 
+alias tf="terraform"
+
 dex() {
     docker exec -it $1 ${2:-bash}
 }
