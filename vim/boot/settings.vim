@@ -51,6 +51,8 @@ set wildmode=list:longest,full               " list all options, match to the lo
 set helpfile=$VIMRUNTIME/doc/help.txt
 set path+=.,..,../..,../../..,../../../..,/usr/include
 
+set completeopt=menu,menuone,noinsert,noselect  " prevents auto-insert of first match
+
 " Suffixes that get lower priority when doing tab completion for filenames.
 " These are files I am not likely to want to edit or read.
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc,.class
