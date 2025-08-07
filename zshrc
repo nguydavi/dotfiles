@@ -61,9 +61,11 @@ alias di="docker inspect"
 alias dim="docker images"
 alias dl="docker logs -f"
 alias dps="docker ps"
-alias drun="docker run -it"
 alias dpsa="docker ps -a"
+alias drun="docker run -it"
+alias dstop="docker stop"
 alias dkill="docker kill"
+alias dprune="docker container prune -f"
 
 alias tf="terraform"
 
