@@ -67,6 +67,23 @@ alias dstop="docker stop"
 alias dkill="docker kill"
 alias dprune="docker container prune -f"
 
+alias k="kubectl"
+alias kg="kubectl get"
+# kubectl get all does not include PV, PVCs, config maps, secrets, etc.
+# Removing events as they are not actually resources
+alias kga="kubectl get $(kubectl api-resources --verbs=list --namespaced -o name | grep -v event | sort | paste -sd, -) --show-kind --show-labels"
+# Including all resources, including non-namespaced ones
+alias kgall="kubectl get $(kubectl api-resources --verbs=list -o name | grep -v event | sort | paste -sd, -) --show-kind --show-labels"
+alias kgp="kubectl get pods --show-labels"
+alias kgs="kubectl get services --show-labels"
+alias kd="kubectl describe"
+alias ka="kubectl apply -f"
+alias kl="kubectl logs -f"
+alias kr="kubectl rollout"
+alias krsd="kubectl rollout status deployment"
+alias krhd="kubectl rollout history deployment"
+alias ke="kubectl exec -it"
+
 alias tf="terraform"
 
 dex() {
