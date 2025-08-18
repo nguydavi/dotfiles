@@ -51,6 +51,11 @@ let g:cpp_member_variable_highlight = 1
 
 autocmd FileType python nnoremap <Bslash>r :VBGstartPDB %<CR>
 
+" vimsuggest
+let s:vim_suggest = {}
+let s:vim_suggest.cmd = {'onspace': ['.*']}
+autocmd VimEnter * call g:VimSuggestSetOptions(s:vim_suggest)
+
 " LSP
 map <Leader>d :LspHover<CR>
 map <Leader>h :LspDiag current<CR>
