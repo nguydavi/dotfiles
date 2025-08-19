@@ -53,19 +53,22 @@ alias egrep='egrep --color'
 alias fgrep='fgrep --color'
 alias rg='rg --smart-case'
 
-alias dcb="docker compose build"
-alias dcu="docker compose up -d"
-alias dcd="docker compose down"
-alias dcl="docker compose logs"
+alias db="docker build"
 alias di="docker inspect"
 alias dim="docker images"
 alias dl="docker logs -f"
 alias dps="docker ps"
 alias dpsa="docker ps -a"
 alias drun="docker run -it"
+alias dexec="docker exec -it"
 alias dstop="docker stop"
 alias dkill="docker kill"
 alias dprune="docker container prune -f"
+
+alias dcb="docker compose build"
+alias dcu="docker compose up -d"
+alias dcd="docker compose down"
+alias dcl="docker compose logs"
 
 alias k="kubectl"
 alias kg="kubectl get"
