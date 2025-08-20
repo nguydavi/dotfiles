@@ -85,7 +85,7 @@ alias kl="kubectl logs -f"
 alias kr="kubectl rollout"
 alias krsd="kubectl rollout status deployment"
 alias krhd="kubectl rollout history deployment"
-alias ke="kubectl exec -it"
+alias kexec="kubectl exec -it"
 
 alias tf="terraform"
 
