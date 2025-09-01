@@ -70,14 +70,19 @@ alias dcu="docker compose up -d"
 alias dcd="docker compose down"
 alias dcl="docker compose logs"
 
+if kubectl api-resources &> /dev/null; then
+    # kubectl get all does not include PV, PVCs, config maps, secrets, etc.
+    # Removing events as they are not actually resources
+    # Note the command substitution $() will be run when opening a new shell (and requires Kubernetes to be running)
+    alias kga="kubectl get $(kubectl api-resources --verbs=list --namespaced -o name | grep -v event | sort | paste -sd, -) --show-kind --show-labels"
+    # Including all resources, including non-namespaced ones
+    alias kgall="kubectl get $(kubectl api-resources --verbs=list -o name | grep -v event | sort | paste -sd, -) --show-kind --show-labels"
+else
+    echo "k8s not running yet, skipping kga and kgall aliases"
+fi
+
 alias k="kubectl"
 alias kg="kubectl get"
-# kubectl get all does not include PV, PVCs, config maps, secrets, etc.
-# Removing events as they are not actually resources
-# Note the command substitution $() will be run when opening a new shell (and requires Kubernetes to be running)
-alias kga="kubectl get $(kubectl api-resources --verbs=list --namespaced -o name | grep -v event | sort | paste -sd, -) --show-kind --show-labels"
-# Including all resources, including non-namespaced ones
-alias kgall="kubectl get $(kubectl api-resources --verbs=list -o name | grep -v event | sort | paste -sd, -) --show-kind --show-labels"
 alias kgp="kubectl get pods --show-labels"
 alias kgs="kubectl get services --show-labels"
 alias kd="kubectl describe"
