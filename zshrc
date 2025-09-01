@@ -74,6 +74,7 @@ alias k="kubectl"
 alias kg="kubectl get"
 # kubectl get all does not include PV, PVCs, config maps, secrets, etc.
 # Removing events as they are not actually resources
+# Note the command substitution $() will be run when opening a new shell (and requires Kubernetes to be running)
 alias kga="kubectl get $(kubectl api-resources --verbs=list --namespaced -o name | grep -v event | sort | paste -sd, -) --show-kind --show-labels"
 # Including all resources, including non-namespaced ones
 alias kgall="kubectl get $(kubectl api-resources --verbs=list -o name | grep -v event | sort | paste -sd, -) --show-kind --show-labels"
