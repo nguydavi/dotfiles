@@ -9,6 +9,7 @@ call vundle#begin()
     " let Vundle manage Vundle, required
     Plugin 'gmarik/Vundle.vim'
 
+    Plugin 'Einenlum/yaml-revealer'
     Plugin 'Lokaltog/vim-easymotion'
     Plugin 'Shougo/vimproc.vim'         " required for vim-vebugger
     Plugin 'catppuccin/vim'

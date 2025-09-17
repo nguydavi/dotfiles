@@ -31,6 +31,8 @@ nnoremap <Leader>b :Git blame<CR>
 nmap <C-P> :Files<CR>
 nmap <C-B> :Buffers<CR>
 
+" Yaml revealer
+let g:yaml_revealer_display_mode = 'statusline'
 
 " Vebugger
 nnoremap <Bslash>n :VBGstepOver<CR>
