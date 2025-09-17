@@ -25,4 +25,4 @@ autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost l* nested lwindow
 
 " Add yaml revealer in status line
-autocmd FileType yaml let g:airline_section_c = '%t%m %{YamlRevealerStatusLine()} %r'
+autocmd FileType yaml let g:airline_section_c = '%f%m %{YamlRevealerStatusLine()} %r'
