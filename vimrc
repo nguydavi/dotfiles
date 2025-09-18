@@ -12,6 +12,7 @@ call vundle#begin()
     " Completion
     Plugin 'ervandew/supertab'
     Plugin 'github/copilot.vim'
+    Plugin 'girishji/vimcomplete'
     Plugin 'girishji/vimsuggest'
     Plugin 'yegappan/lsp'
     " Motion
