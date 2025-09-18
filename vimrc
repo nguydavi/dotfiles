@@ -9,30 +9,37 @@ call vundle#begin()
     " let Vundle manage Vundle, required
     Plugin 'gmarik/Vundle.vim'
 
-    Plugin 'Einenlum/yaml-revealer'
-    Plugin 'Lokaltog/vim-easymotion'
-    Plugin 'Shougo/vimproc.vim'         " required for vim-vebugger
-    Plugin 'catppuccin/vim'
+    " Completion
     Plugin 'ervandew/supertab'
-    Plugin 'idanarye/vim-vebugger'
-    Plugin 'girishji/vimsuggest'
     Plugin 'github/copilot.vim'
+    Plugin 'girishji/vimsuggest'
+    Plugin 'yegappan/lsp'
+    " Motion
+    Plugin 'Lokaltog/vim-easymotion'
+
+    " Search & Files
     Plugin 'junegunn/fzf'
     Plugin 'junegunn/fzf.vim'
     Plugin 'mileszs/ack.vim'
-    Plugin 'octol/vim-cpp-enhanced-highlight'
     Plugin 'scrooloose/nerdtree'
+    Plugin 'tpope/vim-vinegar'
+
+    " Specific for a filetype
+    Plugin 'Einenlum/yaml-revealer'
+    Plugin 'tpope/vim-fugitive'
+
+    " Theme
+    Plugin 'catppuccin/vim'
+    Plugin 'vim-airline/vim-airline'
+    Plugin 'vim-airline/vim-airline-themes'
+
+    " Utilities when updating text/code
     Plugin 'tpope/vim-abolish'
     Plugin 'tpope/vim-commentary'
-    Plugin 'tpope/vim-fugitive'
     Plugin 'tpope/vim-repeat'
     Plugin 'tpope/vim-surround'
     Plugin 'tpope/vim-unimpaired'
-    Plugin 'tpope/vim-vinegar'
-    Plugin 'vim-airline/vim-airline'
-    Plugin 'vim-airline/vim-airline-themes'
-    Plugin 'xolox/vim-misc'
-    Plugin 'yegappan/lsp'
+
 
 call vundle#end()            " required
 filetype plugin indent on    " required
