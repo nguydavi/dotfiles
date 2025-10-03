@@ -47,7 +47,6 @@ clone_repo() {
 PWD=$(pwd)
 install_symlink ~/.vimrc ${PWD}/vimrc
 install_symlink ~/.vim ${PWD}/vim
-install_symlink ~/.screenrc ${PWD}/screenrc
 install_symlink ~/.tmux.conf ${PWD}/tmux.conf
 
 # Install Oh My Zsh
@@ -56,18 +55,6 @@ if [ ! -e ~/.oh-my-zsh ]; then
 fi
 install_symlink ~/.zshrc ${PWD}/zshrc
 install_symlink ~/.oh-my-zsh/themes/nguydavi.zsh-theme ${PWD}/nguydavi.zsh-theme
-
-# Git config install
-install_symlink ~/.git_template ${PWD}/git_template
-install_symlink ~/.gitconfig ${PWD}/gitconfig
-
-# gdbinit install
-curl -L https://git.io/.gdbinit --output ~/.gdbinit
-install_symlink ~/.gdbinit.d ${PWD}/gdbinit.d
-
-# i3 install
-mkdir -p ~/.i3
-install_symlink ~/.i3/config ${PWD}/i3config
 
 # Misc repos
 clone_repo https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
