@@ -77,7 +77,7 @@ let pylsp_config = { 'pylsp': { 'plugins': { 'pycodestyle': { 'maxLineLength': 1
 autocmd User LspSetup call LspAddServer([#{
     \ name: 'pylsp',
     \ filetype: 'python',
-    \ path: '/Users/canar/Library/Python/3.9/bin//pylsp',
+    \ path: exepath('pylsp'),
     \ args: [],
     \ workspaceConfig: pylsp_config,
 \ }])
@@ -86,7 +86,7 @@ autocmd User LspSetup call LspAddServer([#{
 autocmd User LspSetup call LspAddServer([#{
     \ name: 'golang',
     \ filetype: ['go', 'gomod'],
-    \ path: '/Users/canar/go/bin/gopls',
+    \ path: exepath('gopls'),
     \ args: [],
     \ syncInit: v:true
 \ }])
@@ -95,7 +95,7 @@ autocmd User LspSetup call LspAddServer([#{
 autocmd User LspSetup call LspAddServer([#{
     \ name: 'rustlang',
     \ filetype: ['rust'],
-    \ path: '/Users/canar/.cargo/bin/rust-analyzer',
+    \ path: exepath('rust-analyzer'),
     \ args: [],
     \ syncInit: v:true
 \ }])
@@ -104,7 +104,7 @@ autocmd User LspSetup call LspAddServer([#{
 autocmd User LspSetup call LspAddServer([#{
     \ name: 'terraform',
     \ filetype: ['terraform'],
-    \ path: '/opt/homebrew/bin//terraform-ls',
+    \ path: exepath('terraform-ls'),
     \ args: ['serve'],
     \ syncInit: v:true
 \ }])
