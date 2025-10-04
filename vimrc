@@ -15,6 +15,7 @@ call vundle#begin()
     Plugin 'girishji/vimcomplete'
     Plugin 'girishji/vimsuggest'
     Plugin 'yegappan/lsp'
+
     " Motion
     Plugin 'Lokaltog/vim-easymotion'
 
