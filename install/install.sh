@@ -67,3 +67,10 @@ vim +PluginInstall +qall
 # fzf
 clone_repo https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install --all
+
+# Dedicated installs
+if [ $(uname) = "Darwin" ]; then
+    source ./install_mac_os.sh
+else
+    echo_yellow "No dedicated install script for this OS"
+fi
