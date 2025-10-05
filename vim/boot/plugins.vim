@@ -88,3 +88,4 @@ autocmd User LspSetup call LspAddServer([#{
 
 " Copilot
 map <Leader>c :Copilot<CR>
+imap <C-d> <Plug>(copilot-dismiss)
