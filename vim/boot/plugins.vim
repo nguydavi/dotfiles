@@ -17,10 +17,6 @@ map <Leader>f <Plug>(easymotion-f)
 map <Leader>F <Plug>(easymotion-F)
 map <Leader>/ <Plug>(easymotion-sn)
 
-" Easytags
-let g:easytags_async = 1            " Update tags asynchronously
-let g:easytags_auto_highlight = 0   " Disable tag highlighting
-
 " Supertab
 let g:SuperTabDefaultCompletionType = "<c-n>"
 
@@ -33,25 +29,6 @@ nmap <C-B> :Buffers<CR>
 
 " Yaml revealer
 let g:yaml_revealer_display_mode = 'statusline'
-
-" Vebugger
-nnoremap <Bslash>n :VBGstepOver<CR>
-nnoremap <Bslash>s :VBGstepIn<CR>
-nnoremap <Bslash>c :VBGcontinue<CR>
-nnoremap <Bslash>f :VBGstepOut<CR>
-nnoremap <Bslash><CR> :VBGrepeat<CR>
-
-nnoremap <Bslash>d :VBGclearBreakpoints<CR>
-nnoremap <Bslash>b :VBGtoggleBreakpointThisLine<CR>
-nnoremap <Bslash>e :VBGeval 
-nnoremap <Bslash>x :VBGexecute 
-nnoremap <Bslash>k :VBGkill<CR>
-
-" Vim cpp enhanced highlight
-let g:cpp_class_scope_highlight = 1
-let g:cpp_member_variable_highlight = 1
-
-autocmd FileType python nnoremap <Bslash>r :VBGstartPDB %<CR>
 
 " vimsuggest
 let s:vim_suggest = {}

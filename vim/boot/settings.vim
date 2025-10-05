@@ -44,7 +44,6 @@ set wildmenu                  " This is used with wildmode(full) to cycle option
 
 " Longer Set options
 set listchars=tab:▸\ ,eol:¬                  " prefix tabs with a > and trails with - in list mode
-set tags+=./.tags;/,./tags;/                 " set ctags
 set whichwrap+=h,l                           " arrow keys can wrap in normal and insert modes
 set wildmode=list:longest,full               " list all options, match to the longest
 
