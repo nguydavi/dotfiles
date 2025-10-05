@@ -14,6 +14,7 @@
     ipython \
     jq \
     lsd \
+    ripgrep \
     termshark \
     tig \
     tree \
