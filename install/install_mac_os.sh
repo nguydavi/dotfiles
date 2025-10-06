@@ -39,7 +39,7 @@ go install golang.org/x/tools/gopls@latest
 rustup component add rust-analyzer
 
 # Installing font from https://github.com/ryanoasis/nerd-fonts?tab=readme-ov-file#option-2-homebrew-fonts
-# We use FantasqueSansMono from it
+# We use FantasqueSansMono for non-ASCII characters
 brew install font-hack-nerd-font
 
 echo_green "All done!"
