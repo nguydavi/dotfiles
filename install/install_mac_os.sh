@@ -38,5 +38,8 @@ go install golang.org/x/tools/gopls@latest
 
 rustup component add rust-analyzer
 
+# Installing font from https://github.com/ryanoasis/nerd-fonts?tab=readme-ov-file#option-2-homebrew-fonts
+# We use FantasqueSansMono from it
+brew install font-hack-nerd-font
+
 echo_green "All done!"
-echo "Make sure to install the Nerd font 'FantasqueSansMono' https://github.com/ryanoasis/nerd-fonts/releases"
