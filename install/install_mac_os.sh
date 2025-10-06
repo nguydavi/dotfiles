@@ -13,6 +13,7 @@
     go \
     ipython \
     jq \
+    kubectx \
     lsd \
     ripgrep \
     termshark \
