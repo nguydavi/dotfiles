@@ -5,7 +5,6 @@
 
 # Installing tools
 /opt/homebrew/bin/brew install \
-    ag \
     awscli \
     basictex \
     cmake \
