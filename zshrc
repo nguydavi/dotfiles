@@ -1,22 +1,9 @@
-######################### zsh boot & settings ########################
-ZSH=$HOME/.oh-my-zsh        # path to oh-my-zsh configuration
-ZSH_THEME="nguydavi"
+##################### Zinit #####################
+source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
 
-plugins=(
-    colored-man-pages
-    common-aliases
-    compleat
-    cp
-    git
-    history-substring-search
-    mvn
-    virtualenv
-    zsh-autosuggestions
-)
-
-source $ZSH/oh-my-zsh.sh
-
-export PATH=
+##################### PATH #####################
 path=(
     /usr/local/sbin
     /usr/local/bin
@@ -29,95 +16,8 @@ path=(
     ~/go/bin
 )
 
-DIRSTACKSIZE=20             # number of directories in your pushd/popd stack
-setopt ALWAYS_TO_END        # push that cursor on completions
-setopt AUTO_NAME_DIRS       # change directories  to variable names
-setopt AUTO_PUSHD           # push directories on every cd
-setopt NO_BEEP              # self explanatory
-
-######################### terminal options ###########################
-# Use vim for everything
-export EDITOR=vim
-export GIT_EDITOR=vim
-export VISUAL=vim
-export TERM=xterm-256color  # use 256 color terminal for 'screen' to spawn those
-
-# make search up and down work, so partially type and hit up/down to find relevant stuff
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
-bindkey '^[[Z' autosuggest-accept
-
-# aliases
-alias ll='lsd -lArh'
-alias egrep='egrep --color'
-alias fgrep='fgrep --color'
-alias rg='rg --smart-case'
-
-alias db="docker build"
-alias di="docker inspect"
-alias dim="docker images"
-alias dl="docker logs -f"
-alias dps="docker ps"
-alias dpsa="docker ps -a"
-alias drun="docker run -it"
-alias dexec="docker exec -it"
-alias dstop="docker stop"
-alias dkill="docker kill"
-alias dprune="docker container prune -f"
-
-alias dcb="docker compose build"
-alias dcu="docker compose up -d"
-alias dcd="docker compose down"
-alias dcl="docker compose logs"
-
-if kubectl api-resources &> /dev/null; then
-    # kubectl get all does not include PV, PVCs, config maps, secrets, etc.
-    # Removing events as they are not actually resources
-    # Note the command substitution $() will be run when opening a new shell (and requires Kubernetes to be running)
-    alias kga="kubectl get $(kubectl api-resources --verbs=list --namespaced -o name | grep -v event | sort | paste -sd, -) --show-kind --show-labels"
-    # Including all resources, including non-namespaced ones
-    alias kgall="kubectl get $(kubectl api-resources --verbs=list -o name | grep -v event | sort | paste -sd, -) --show-kind --show-labels"
-else
-    echo "k8s not running yet, skipping kga and kgall aliases"
-fi
-
-alias k="kubectl"
-alias kg="kubectl get"
-alias kgp="kubectl get pods --show-labels"
-alias kgs="kubectl get services --show-labels"
-alias kd="kubectl describe"
-alias ka="kubectl apply -f"
-alias kl="kubectl logs -f"
-alias kr="kubectl rollout"
-alias krsd="kubectl rollout status deployment"
-alias krhd="kubectl rollout history deployment"
-alias kexec="kubectl exec -it"
-alias kexp="kubectl explain"
-alias kctx="kubectx"
-alias kns="kubens"
-
-alias tf="terraform"
-
-dex() {
-    docker exec -it $1 ${2:-bash}
-}
-
-# remove default zsh aliases
-unalias rm
-unalias cp
-
-# Highlight selection when using Tab
-zstyle ':completion:*' menu select
-
 if [[ "$(uname)" == "Darwin" ]]
 then
-    # ls --color not supported on Mac
-    unalias ls
-
-    # for colored ls
-    export CLICOLOR=1
-    export LSCOLORS=ExFxCxDxBxegedabagacad
-
     path=(
         /Users/canar/Library/Python/3.9/bin/
         /opt/homebrew/bin/
@@ -126,13 +26,39 @@ then
         /opt/homebrew/opt/node@22/bin
         $path
     )
-
-elif [[ "$(uname)" == "Linux" ]]
-then
-    alias open='gnome-open'
 fi
 
-######################### history options ############################
+##################### Plugins #####################
+zinit snippet OMZP::colored-man-pages
+zinit snippet OMZP::docker
+zinit snippet OMZP::docker-compose
+zinit snippet OMZP::fzf
+zinit snippet OMZP::git
+zinit snippet OMZP::kubectl
+zinit snippet OMZP::terraform
+zinit light MichaelAquilina/zsh-you-should-use
+zinit light zsh-users/zsh-autosuggestions
+zinit light zsh-users/zsh-history-substring-search
+zinit light zsh-users/zsh-syntax-highlighting
+
+##################### Aliases #####################
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ll='lsd -lArh'
+alias grep='grep --color'
+alias egrep='egrep --color'
+alias fgrep='fgrep --color'
+alias rg='rg --smart-case'
+alias rgf='rg --files | rg'
+
+##################### Binds #####################
+# zsh-history-substring-search with Up/Down arrows
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+# Accept zsh-autosuggestion with Shift+Tab
+bindkey '^[[Z' autosuggest-accept
+
+##################### Settings #####################
 setopt EXTENDED_HISTORY         # store time in history
 setopt HIST_EXPIRE_DUPS_FIRST   # unique events are more useful to me
 setopt HIST_VERIFY              # make those history commands nice
@@ -143,7 +69,16 @@ setopt HISTIGNOREDUPS           # ignore duplicates of the previous event
 export HISTSIZE=100000
 export SAVEHIST=100000
 
-##################### precmd & preexec functions #####################
+# Use vim for everything
+export EDITOR=vim
+export GIT_EDITOR=vim
+export VISUAL=vim
+
+# Highlight selection when using Tab
+zmodload zsh/complist
+zstyle ':completion:*' menu select=1
+
+##################### Tmux window auto title #####################
 typeset -ga precmd_functions
 typeset -ga preexec_functions
 
@@ -203,14 +138,7 @@ preexec_auto_title_tmux_window() {
 preexec_functions+='preexec_auto_title_tmux_window'
 precmd_functions+='precmd_auto_title_tmux_window'
 
-# Setting rg as the default source for fzf files, which follows .gitignore
-export FZF_DEFAULT_COMMAND='rg --files'
-
-# Enable auto suggestions
-source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-# fzf key bindings and completion
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /opt/homebrew/bin/terraform terraform
+##################### Footer #####################
+# Tab completion to be init after all plugins have contributed their completion functions
+autoload -Uz compinit
+compinit
