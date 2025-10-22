@@ -19,6 +19,7 @@
     tig \
     tree \
     tmux \
+    vivid \
     zoxide
 
 /opt/homebrew/bin/brew install --cask cameracontroller

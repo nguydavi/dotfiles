@@ -77,6 +77,9 @@ export EDITOR=vim
 export GIT_EDITOR=vim
 export VISUAL=vim
 
+# Color output on the theme
+export LS_COLORS="$(vivid generate catppuccin-macchiato)"
+
 # Disable completion menu from zsh so fzf-tab takes over (otherwise we should set this to `menu select=1`)
 zstyle ':completion:*' menu no
 # Enable filename colorizing on completion suggestions
