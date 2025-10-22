@@ -18,7 +18,8 @@
     termshark \
     tig \
     tree \
-    tmux
+    tmux \
+    zoxide
 
 /opt/homebrew/bin/brew install --cask cameracontroller
 

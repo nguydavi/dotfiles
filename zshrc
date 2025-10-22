@@ -152,3 +152,6 @@ compinit
 # Terraform completion
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C $(command -v terraform) terraform
+
+# Load zoxide after completion is init
+eval "$(zoxide init zsh)"
