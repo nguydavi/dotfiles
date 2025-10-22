@@ -19,7 +19,6 @@ path=(
 if [[ "$(uname)" == "Darwin" ]]
 then
     path=(
-        /Users/canar/Library/Python/3.9/bin/
         /opt/homebrew/bin/
         ~/.cargo/bin
         /Library/TeX/texbin

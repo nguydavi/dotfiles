@@ -26,6 +26,9 @@
 # Rustup & Rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
+# uv for python
+pip install uv
+
 # Install tmux plugins
 ~/.tmux/plugins/tpm/bin/install_plugins
 
