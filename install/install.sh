@@ -53,7 +53,6 @@ install_symlink ~/.tmux.conf ${PWD}/tmux.conf
 bash -c "$(curl --fail --show-error --silent --location https://raw.githubusercontent.com/zdharma-continuum/zinit/HEAD/scripts/install.sh)"
 
 install_symlink ~/.zshrc ${PWD}/zshrc
-install_symlink ~/.oh-my-zsh/themes/nguydavi.zsh-theme ${PWD}/nguydavi.zsh-theme
 
 # Misc repos
 clone_repo https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
