@@ -29,15 +29,19 @@ then
 fi
 
 ##################### Plugins #####################
+zinit snippet OMZP::aws
 zinit snippet OMZP::colored-man-pages
 zinit snippet OMZP::docker
 zinit snippet OMZP::docker-compose
 zinit snippet OMZP::fzf
 zinit snippet OMZP::git
+zinit snippet OMZP::golang
 zinit snippet OMZP::kubectl
 zinit snippet OMZP::terraform
+zinit light Aloxaf/fzf-tab
 zinit light MichaelAquilina/zsh-you-should-use
 zinit light zsh-users/zsh-autosuggestions
+zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-history-substring-search
 zinit light zsh-users/zsh-syntax-highlighting
 
@@ -74,9 +78,12 @@ export EDITOR=vim
 export GIT_EDITOR=vim
 export VISUAL=vim
 
-# Highlight selection when using Tab
-zmodload zsh/complist
-zstyle ':completion:*' menu select=1
+# Disable completion menu from zsh so fzf-tab takes over (otherwise we should set this to `menu select=1`)
+zstyle ':completion:*' menu no
+# Enable filename colorizing on completion suggestions
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+# Use tmux popup to show menu if we're in tmux
+zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 
 ##################### Tmux window auto title #####################
 typeset -ga precmd_functions
@@ -142,3 +149,6 @@ precmd_functions+='precmd_auto_title_tmux_window'
 # Tab completion to be init after all plugins have contributed their completion functions
 autoload -Uz compinit
 compinit
+# Terraform completion
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C $(command -v terraform) terraform
