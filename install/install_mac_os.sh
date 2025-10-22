@@ -36,8 +36,7 @@ pip install uv
 # Installing LSPs
 /opt/homebrew/bin/brew install terraform-ls
 
-pip install Pygments
-pip install "python-lsp-server[all]"
+/opt/homebrew/bin/brew install python-lsp-server
 
 go install golang.org/x/tools/gopls@latest
 
