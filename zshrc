@@ -89,6 +89,7 @@ bindkey -v '^[b' backward-word          # move back a word with Alt/Opt+Left wit
 bindkey -v '^[f' forward-word           # move forward a word with Alt/Opt+Right without leaving vi insert mode
 
 ##################### Settings #####################
+# History settings
 setopt EXTENDED_HISTORY         # store time in history
 setopt HIST_EXPIRE_DUPS_FIRST   # unique events are more useful to me
 setopt HIST_VERIFY              # make those history commands nice
@@ -98,6 +99,12 @@ setopt HISTIGNOREDUPS           # ignore duplicates of the previous event
 
 export HISTSIZE=100000
 export SAVEHIST=100000
+
+# Changing directories
+export DIRSTACKSIZE=20          # number of directories in the pushd/popd stack
+setopt AUTO_CD                  # no need to 'cd' to move
+setopt AUTO_NAME_DIRS           # allows aliases of dirs (also reflected in prompt path)
+setopt AUTO_PUSHD               # push directories on every cd
 
 # Use vim for everything
 export EDITOR=vim
