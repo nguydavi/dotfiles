@@ -26,22 +26,19 @@
 /opt/homebrew/bin/brew install --cask cameracontroller
 
 # Rustup & Rust
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+/usr/bin/curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 # uv for python
-pip install uv
+/opt/homebrew/bin//pip3 install uv
 
 # Install tmux plugins
 ~/.tmux/plugins/tpm/bin/install_plugins
 
 # Installing LSPs
 /opt/homebrew/bin/brew install terraform-ls
-
 /opt/homebrew/bin/brew install python-lsp-server
-
-go install golang.org/x/tools/gopls@latest
-
-rustup component add rust-analyzer
+/opt/homebrew/bin//go install golang.org/x/tools/gopls@latest
+~/.cargo/bin/rustup component add rust-analyzer
 
 # Monaco font that has a bold variant (otherwise it looks blurry when artificially bolded)
 git clone git@github.com:vjpr/monaco-bold.git /tmp/monaco-bold
