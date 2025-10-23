@@ -81,6 +81,11 @@ bindkey '^[[B' history-substring-search-down
 # Accept zsh-autosuggestion with Shift+Tab
 bindkey '^[[Z' autosuggest-accept
 
+# Update some bindings in vi mode to be more practical
+bindkey -v '^?' backward-delete-char    # delete a char with backspace in vi insert mode
+bindkey -v '^[b' backward-word          # move back a word with Alt/Opt+Left without leaving vi insert mode
+bindkey -v '^[f' forward-word           # move forward a word with Alt/Opt+Right without leaving vi insert mode
+
 ##################### Settings #####################
 setopt EXTENDED_HISTORY         # store time in history
 setopt HIST_EXPIRE_DUPS_FIRST   # unique events are more useful to me
@@ -96,6 +101,9 @@ export SAVEHIST=100000
 export EDITOR=vim
 export GIT_EDITOR=vim
 export VISUAL=vim
+
+# Remove '/' from word boundaries so when we jump words we stop at '/'
+export WORDCHARS="${WORDCHARS/\/}"
 
 # Color output on the theme
 export LS_COLORS="$(vivid generate catppuccin-macchiato)"
