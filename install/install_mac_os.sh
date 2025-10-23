@@ -8,6 +8,7 @@
     awscli \
     basictex \
     cmake \
+    ghostty \
     glances \
     go \
     ipython \
@@ -42,8 +43,12 @@ go install golang.org/x/tools/gopls@latest
 
 rustup component add rust-analyzer
 
-# Installing font from https://github.com/ryanoasis/nerd-fonts?tab=readme-ov-file#option-2-homebrew-fonts
-# We use FantasqueSansMono for non-ASCII characters
-brew install font-hack-nerd-font
+# Monaco font that has a bold variant (otherwise it looks blurry when artificially bolded)
+git clone git@github.com:vjpr/monaco-bold.git /tmp/monaco-bold
+cp /tmp/monaco-bold/MonacoB/MonacoB*.otf ~/Library/Fonts/
+rm -rf /tmp/monaco-bold
+
+# Configs
+install_symlink "~/Library/Application Support/com.mitchellh.ghostty/config" ${PWD}/ghostty.config
 
 echo_green "All done!"
