@@ -117,6 +117,9 @@ export VISUAL=vim
 # Remove '/' from word boundaries so when we jump words we stop at '/'
 export WORDCHARS="${WORDCHARS/\/}"
 
+# Smart case search in less
+export LESS='-i'
+
 # Color output on the theme
 export LS_COLORS="$(vivid generate catppuccin-macchiato)"
 
