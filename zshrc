@@ -78,6 +78,8 @@ alias rgf='rg --files | rg'
 # zsh-history-substring-search with Up/Down arrows
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
+bindkey -M vicmd 'k' history-substring-search-up
+bindkey -M vicmd 'j' history-substring-search-down
 # Accept zsh-autosuggestion with Shift+Tab
 bindkey '^[[Z' autosuggest-accept
 
