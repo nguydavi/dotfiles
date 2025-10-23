@@ -26,6 +26,8 @@ path=(
 
 if [[ "$(uname)" == "Darwin" ]]
 then
+    # Homebrew specific env variables and completions of formulae installed via Homebrew
+    eval "$(/opt/homebrew/bin/brew shellenv)"
     path=(
         /opt/homebrew/bin/
         ~/.cargo/bin
