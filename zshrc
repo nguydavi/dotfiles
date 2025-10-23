@@ -40,6 +40,7 @@ fi
 # * directly writing to $ZSH_CACHE_DIR/completions/ (eg. docker, kubectl)
 # * via fpath (eg. zsh-completions) - zinit detects those `zinit completions`
 # if completions are added to the same command, the order of loading matters (the first one found in fpath "wins")
+# Can check the one in used with something like `which -a _kubectl`
 zinit snippet OMZP::aws
 zinit snippet OMZP::colored-man-pages
 zinit snippet OMZP::docker
