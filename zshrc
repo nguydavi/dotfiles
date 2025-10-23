@@ -36,6 +36,10 @@ then
 fi
 
 ##################### Plugins #####################
+# Note that plugins are adding completions in different ways,
+# * directly writing to $ZSH_CACHE_DIR/completions/ (eg. docker, kubectl)
+# * via fpath (eg. zsh-completions) - zinit detects those `zinit completions`
+# if completions are added to the same command, the order of loading matters (the first one found in fpath "wins")
 zinit snippet OMZP::aws
 zinit snippet OMZP::colored-man-pages
 zinit snippet OMZP::docker
@@ -45,6 +49,13 @@ zinit snippet OMZP::git
 zinit snippet OMZP::golang
 zinit snippet OMZP::kubectl
 zinit snippet OMZP::terraform
+
+# Add completions explicitly because some plugins don't do it themselves
+zinit ice as"completion" wait lucid
+zinit snippet OMZP::terraform/_terraform
+zinit ice as"completion" wait lucid
+zinit snippet OMZP::docker-compose/_docker-compose
+
 zinit light Aloxaf/fzf-tab
 zinit light MichaelAquilina/zsh-you-should-use
 zinit light romkatv/powerlevel10k
@@ -160,9 +171,6 @@ precmd_functions+='precmd_auto_title_tmux_window'
 # Tab completion to be init after all plugins have contributed their completion functions
 autoload -Uz compinit
 compinit
-# Terraform completion
-autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C $(command -v terraform) terraform
 
 # Load zoxide after completion is init
 eval "$(zoxide init zsh)"
