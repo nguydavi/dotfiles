@@ -68,7 +68,6 @@ zinit light zsh-users/zsh-history-substring-search
 zinit light zsh-users/zsh-syntax-highlighting
 
 ##################### Aliases #####################
-alias ..='cd ..'
 alias ...='cd ../..'
 alias ll='lsd -lArh'
 alias grep='grep --color'
