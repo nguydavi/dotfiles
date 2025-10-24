@@ -24,10 +24,9 @@ path=(
     ~/go/bin
 )
 
+##################### OS specific #####################
 if [[ "$(uname)" == "Darwin" ]]
 then
-    # Homebrew specific env variables and completions of formulae installed via Homebrew
-    eval "$(/opt/homebrew/bin/brew shellenv)"
     path=(
         /opt/homebrew/bin/
         ~/.cargo/bin
@@ -35,6 +34,12 @@ then
         /opt/homebrew/opt/node@22/bin
         $path
     )
+
+    # Enable color output for various commands
+    export CLICOLOR=1
+
+    # Homebrew specific env variables and completions of formulae installed via Homebrew
+    eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
 ##################### Plugins #####################
