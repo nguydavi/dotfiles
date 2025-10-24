@@ -11,6 +11,7 @@
     ghostty \
     glances \
     go \
+    grc \
     ipython \
     jq \
     kubectx \
@@ -45,6 +46,14 @@
 git clone git@github.com:vjpr/monaco-bold.git /tmp/monaco-bold
 cp /tmp/monaco-bold/MonacoB/MonacoB*.otf ~/Library/Fonts/
 rm -rf /tmp/monaco-bold
+
+# Take the latest grc because what's on master is broken (and newmaster has better colours)
+# We can remove these once newmaster is merged into master
+git clone -b newmaster git@github.com:garabik/grc.git /tmp/grc
+cp /tmp/grc/grc.zsh /opt/homebrew/etc/grc.zsh
+cp /tmp/grc/grc.conf /opt/homebrew/etc/grc.conf
+cp /tmp/grc/colourfiles/* /opt/homebrew/Cellar/grc/*/share/grc/
+rm -rf /tmp/grc
 
 # Configs
 install_symlink "~/Library/Application Support/com.mitchellh.ghostty/config" ${PWD}/ghostty.config

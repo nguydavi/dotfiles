@@ -76,6 +76,17 @@ alias fgrep='fgrep --color'
 alias rg='rg --smart-case'
 alias rgf='rg --files | rg'
 
+# Color output for many commands using grc
+# It creates functions as to not override existing aliases
+# Just in case colouring is causing issues we can find the original command with `{which|type|whence} -a $command` or
+# `command -v $command`
+[[ -s "/opt/homebrew/etc/grc.zsh" ]] && source /opt/homebrew/etc/grc.zsh
+# Override curl to add color to output by redirecting stderr to stdout
+curl() {
+    # Not calling curl here to not cause infinite recursion
+    ${commands[curl]} "$@" 2>&1 | grcat conf.curl
+}
+
 ##################### Binds #####################
 # Most binds are in vi mode as that's what is set based from EDITOR & VISUAL env variable
 
