@@ -44,7 +44,6 @@ fi
 # if completions are added to the same command, the order of loading matters (the first one found in fpath "wins")
 # Can check the one in used with something like `which -a _kubectl`
 zinit snippet OMZP::aws
-zinit snippet OMZP::colored-man-pages
 zinit snippet OMZP::docker
 zinit snippet OMZP::docker-compose
 zinit snippet OMZP::fzf
@@ -119,8 +118,10 @@ export VISUAL=vim
 # Remove '/' from word boundaries so when we jump words we stop at '/'
 export WORDCHARS="${WORDCHARS/\/}"
 
-# Smart case search in less
-export LESS='-i'
+# Pager settings
+export LESS='-i'                # ignore case in searches
+export PAGER='lnav -q'
+export MANPAGER='lnav -q'
 
 # Color output on the theme
 export LS_COLORS="$(vivid generate catppuccin-macchiato)"

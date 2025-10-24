@@ -14,6 +14,7 @@
     ipython \
     jq \
     kubectx \
+    lnav \
     lsd \
     ripgrep \
     termshark \
