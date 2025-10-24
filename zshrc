@@ -79,7 +79,7 @@ alias grep='grep --color'
 alias egrep='egrep --color'
 alias fgrep='fgrep --color'
 alias rg='rg --smart-case'
-alias rgf='rg --files | rg'
+alias rgf='rg --files --hidden -L | rg'
 
 # Color output for many commands using grc
 # It creates functions as to not override existing aliases
