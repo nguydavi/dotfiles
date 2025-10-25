@@ -136,8 +136,10 @@ export WORDCHARS="${WORDCHARS/\/}"
 
 # Pager settings
 export LESS='-i'                # ignore case in searches
-export PAGER='lnav -q'
-export MANPAGER='lnav -q'
+
+export BAT_THEME="Catppuccin Macchiato"
+export PAGER='bat --paging=always --plain'
+export MANPAGER="sh -c 'col -bx | bat --language man --plain'"
 
 # Color output on the theme
 export LS_COLORS="$(vivid generate catppuccin-macchiato)"

@@ -7,6 +7,7 @@
 /opt/homebrew/bin/brew install \
     awscli \
     basictex \
+    bat \
     cmake \
     ghostty \
     glances \
