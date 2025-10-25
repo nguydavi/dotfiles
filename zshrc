@@ -111,6 +111,8 @@ bindkey -v '^[[Z' autosuggest-accept
 bindkey -v '^?' backward-delete-char    # delete a char with backspace in vi insert mode
 bindkey -v '^[b' backward-word          # move back a word with Alt/Opt+Left without leaving vi insert mode
 bindkey -v '^[f' forward-word           # move forward a word with Alt/Opt+Right without leaving vi insert mode
+bindkey -v '^w' backward-kill-word      # delete previous word with Ctrl+w in vi insert mode
+bindkey -v '^A' beginning-of-line       # move to beginning of line with Ctrl+A in vi insert mode
 
 ##################### Settings #####################
 # History settings
