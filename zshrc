@@ -137,6 +137,8 @@ export EDITOR=vim
 export GIT_EDITOR=vim
 export VISUAL=vim
 
+export KEYTIMEOUT=10            # Reduce delay when switching to vi command mode in the shell
+
 # Remove '/' from word boundaries so when we jump words we stop at '/'
 export WORDCHARS="${WORDCHARS/\/}"
 
