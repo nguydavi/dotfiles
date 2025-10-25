@@ -52,8 +52,9 @@ rm -rf /tmp/monaco-bold
 # We can remove these once newmaster is merged into master
 git clone -b newmaster git@github.com:garabik/grc.git /tmp/grc
 cp /tmp/grc/grc.zsh /opt/homebrew/etc/grc.zsh
-cp /tmp/grc/grc.conf /opt/homebrew/etc/grc.conf
 cp /tmp/grc/colourfiles/* /opt/homebrew/Cellar/grc/*/share/grc/
+# Do not color 'kubectl debug'
+sed -e 's#\((?!edit|exec|run|\)go-template#\1debug|go-template#' /tmp/grc/grc.conf > /opt/homebrew/etc/grc.conf
 rm -rf /tmp/grc
 
 # Configs
