@@ -81,6 +81,10 @@ alias fgrep='fgrep --color'
 alias rg='rg --smart-case'
 alias rgf='rg --files --hidden -L | rg'
 
+rgman() {
+    rg --search-zip "$1" /usr/share/man
+}
+
 # Color output for many commands using grc
 # It creates functions as to not override existing aliases
 # Just in case colouring is causing issues we can find the original command with `{which|type|whence} -a $command` or
