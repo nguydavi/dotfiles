@@ -16,16 +16,15 @@
 /opt/homebrew/bin/brew install \
     bat \
     btop \
+    eza \
     grc \
     ipython \
     kubectx \
     lnav \
-    lsd \
     ripgrep \
     termshark \
     tig \
     tldr \
-    tree \
     vivid \
     zoxide
 

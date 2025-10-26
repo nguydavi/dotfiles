@@ -74,12 +74,13 @@ zinit light zsh-users/zsh-syntax-highlighting
 
 ##################### Aliases #####################
 alias ...='cd ../..'
-alias ll='lsd -lArh'
+alias ll='eza --all --long --color --icons --git --git-repos --group-directories-first --binary'
 alias grep='grep --color'
 alias egrep='egrep --color'
 alias fgrep='fgrep --color'
 alias rg='rg --smart-case'
 alias rgf='rg --files --hidden -L | rg'
+alias tree='ll --tree --level=3'
 
 rgman() {
     rg --search-zip "$1" /usr/share/man
