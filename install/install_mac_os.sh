@@ -7,9 +7,7 @@
 /opt/homebrew/bin/brew install \
     awscli \
     basictex \
-    cmake \
     ghostty \
-    glances \
     go \
     jq \
     tmux
