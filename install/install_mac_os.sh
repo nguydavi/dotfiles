@@ -3,18 +3,22 @@
 # Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-# Installing tools
+# Installing must-have formulae
 /opt/homebrew/bin/brew install \
     awscli \
     basictex \
-    bat \
     cmake \
     ghostty \
     glances \
     go \
+    jq \
+    tmux
+
+# Installing utility tools
+/opt/homebrew/bin/brew install \
+    bat \
     grc \
     ipython \
-    jq \
     kubectx \
     lnav \
     lsd \
@@ -22,7 +26,6 @@
     termshark \
     tig \
     tree \
-    tmux \
     vivid \
     zoxide
 
