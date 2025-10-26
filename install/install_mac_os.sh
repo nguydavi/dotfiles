@@ -17,6 +17,7 @@
 # Installing utility tools
 /opt/homebrew/bin/brew install \
     bat \
+    btop \
     grc \
     ipython \
     kubectx \
@@ -25,6 +26,7 @@
     ripgrep \
     termshark \
     tig \
+    tldr \
     tree \
     vivid \
     zoxide
