@@ -22,13 +22,13 @@ path=(
     /usr/local/go/bin
     ~/.local/bin
     ~/go/bin
+    ~/.cargo/bin
 )
 
 ##################### OS specific #####################
 if [[ "$(uname)" == "Darwin" ]]
 then
     path=(
-        ~/.cargo/bin
         /Library/TeX/texbin
         /opt/homebrew/opt/node@22/bin
         $path
