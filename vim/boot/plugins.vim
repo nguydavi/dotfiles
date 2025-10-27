@@ -89,3 +89,22 @@ autocmd User LspSetup call LspAddServer([#{
 " Copilot
 map <Leader>c :Copilot<CR>
 imap <C-d> <Plug>(copilot-dismiss)
+
+"" Set Shift+Tab to accept Copilot suggestion or fallback to Supertab
+let g:copilot_no_tab_map = v:true
+
+function! s:CopilotSuperTabFallback() abort
+  if exists('*SuperTab')
+    return "\<C-R>=SuperTab('p')\<CR>"
+  endif
+  return ''
+endfunction
+
+function! s:CopilotAcceptOrSuperTab() abort
+  if exists('*copilot#Accept')
+    return copilot#Accept(function('s:CopilotSuperTabFallback'))
+  endif
+  return s:CopilotSuperTabFallback()
+endfunction
+
+autocmd VimEnter * inoremap <silent><script><expr> <S-Tab> <SID>CopilotAcceptOrSuperTab()
