@@ -26,7 +26,7 @@ if [[ $# -gt 0 ]]; then
     exit 1
 fi
 
-cmd='./install/install.sh'
+cmd='./install/bootstrap.sh'
 if [[ "$drop_into_shell" == true ]]; then
     cmd+="; exec bash"
 fi
