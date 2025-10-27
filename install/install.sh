@@ -18,6 +18,20 @@ echo_green() {
     echo_color 2 "$message"
 }
 
+require_commands() {
+    local missing=()
+    for cmd in "$@"; do
+        if ! command -v "$cmd" >/dev/null 2>&1; then
+            missing+=("$cmd")
+        fi
+    done
+
+    if [ ${#missing[@]} -ne 0 ]; then
+        echo "Error: missing required commands: ${missing[*]}" >&2
+        exit 1
+    fi
+}
+
 install_symlink() {
     local symlink=$1
     local target=$2
@@ -43,6 +57,9 @@ clone_repo() {
 
     git clone "$repo" "$target_dir"
 }
+
+# Ensure essential tooling is available before continuing
+require_commands curl git vim zsh
 
 PWD=$(pwd)
 install_symlink ~/.vimrc ${PWD}/vimrc
