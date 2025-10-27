@@ -4,6 +4,8 @@ ARG USER=testuser
 
 # Avoid prompts from apt
 ENV DEBIAN_FRONTEND=noninteractive
+# Ensure UTF-8 locale otherwise it won't display nerd font properly
+ENV LANG=C.UTF-8
 
 RUN apt-get update && \
     apt-get install -y curl git sudo vim zsh && \
