@@ -82,7 +82,8 @@ vim -e +PluginInstall +qall || true
 
 # fzf
 clone_repo https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install --all
+# zshrc is already configured with the OMZP fzf plugin
+~/.fzf/install --all --no-update-rc
 
 # Dedicated installs
 if [ $(uname) = "Darwin" ]; then
