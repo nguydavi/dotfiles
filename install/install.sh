@@ -51,7 +51,7 @@ install_symlink ~/.tmux.conf ${PWD}/tmux.conf
 
 # Install Zinit
 NO_INPUT=true NO_ANNEXES=true bash -c "$(curl --fail --show-error --silent --location https://raw.githubusercontent.com/zdharma-continuum/zinit/HEAD/scripts/install.sh)"
-zsh -c 'zinit self-update'
+zsh -c 'source "$HOME/.local/share/zinit/zinit.git/zinit.zsh" && zinit self-update'
 
 install_symlink ~/.zshrc ${PWD}/zshrc
 install_symlink ~/.p10k.zsh ${PWD}/p10k.zsh
@@ -60,8 +60,8 @@ install_symlink ~/.p10k.zsh ${PWD}/p10k.zsh
 clone_repo https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 clone_repo https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
-# Install Vim plugins
-vim +PluginInstall +qall
+# Install Vim plugins without interactive prompts, ignoring errors (expected since no plugins are installed yet)
+vim -e +PluginInstall +qall || true
 
 # fzf
 clone_repo https://github.com/junegunn/fzf.git ~/.fzf
@@ -69,7 +69,7 @@ clone_repo https://github.com/junegunn/fzf.git ~/.fzf
 
 # Dedicated installs
 if [ $(uname) = "Darwin" ]; then
-    source ./install_mac_os.sh
+    source ${PWD}/install/install_mac_os.sh
 else
     echo_yellow "No dedicated install script for this OS"
 fi
