@@ -38,7 +38,7 @@ brew install --cask
     maccy
 
 # Rustup & Rust
-/usr/bin/curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
 # Install tmux plugins
 ~/.tmux/plugins/tpm/bin/install_plugins
