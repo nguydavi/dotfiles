@@ -49,14 +49,14 @@ brew install python-lsp-server
 go install golang.org/x/tools/gopls@latest
 ~/.cargo/bin/rustup component add rust-analyzer
 
-# Monaco font that has a bold variant (otherwise it looks blurry when artificially bolded)
-git clone git@github.com:vjpr/monaco-bold.git /tmp/monaco-bold
+# monaco-bold is a monaco font that has a bold variant (otherwise it looks blurry when artificially bolded)
+git clone https://github.com/vjpr/monaco-bold.git /tmp/monaco-bold
 cp /tmp/monaco-bold/MonacoB/MonacoB*.otf ~/Library/Fonts/
 rm -rf /tmp/monaco-bold
 
 # Take the latest grc because what's on master is broken (and newmaster has better colours)
 # We can remove these once newmaster is merged into master
-git clone -b newmaster git@github.com:garabik/grc.git /tmp/grc
+git clone -b newmaster https://github.com/garabik/grc.git /tmp/grc
 cp /tmp/grc/grc.zsh ${HOMEBREW_PREFIX}/etc/grc.zsh
 cp /tmp/grc/colourfiles/* ${HOMEBREW_CELLAR}/grc/*/share/grc/
 # Do not color 'kubectl debug'
