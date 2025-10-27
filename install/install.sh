@@ -50,7 +50,7 @@ install_symlink ~/.vim ${PWD}/vim
 install_symlink ~/.tmux.conf ${PWD}/tmux.conf
 
 # Install Zinit
-bash -c "$(curl --fail --show-error --silent --location https://raw.githubusercontent.com/zdharma-continuum/zinit/HEAD/scripts/install.sh)"
+NO_INPUT=true NO_ANNEXES=true bash -c "$(curl --fail --show-error --silent --location https://raw.githubusercontent.com/zdharma-continuum/zinit/HEAD/scripts/install.sh)"
 zsh -c 'zinit self-update'
 
 install_symlink ~/.zshrc ${PWD}/zshrc

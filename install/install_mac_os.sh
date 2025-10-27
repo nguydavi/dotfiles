@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Homebrew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+NONINTERACTIVE=true /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 # Installing must-have formulae
 /opt/homebrew/bin/brew install \
@@ -31,7 +31,7 @@
 /opt/homebrew/bin/brew install --cask cameracontroller
 
 # Rustup & Rust
-/usr/bin/curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+/usr/bin/curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
 # uv for python
 /opt/homebrew/bin//pip3 install uv
