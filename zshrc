@@ -39,6 +39,11 @@ then
 
     # Homebrew specific env variables and completions of formulae installed via Homebrew
     eval "$(/opt/homebrew/bin/brew shellenv)"
+else
+    # Linux doesn't have the equivalent of CLICOLOR, so we set aliases
+    alias ls='ls --color'
+    # Homebrew specific env variables and completions of formulae installed via Homebrew
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 
 ##################### Plugins #####################
