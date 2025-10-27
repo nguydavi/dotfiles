@@ -28,7 +28,10 @@ fi
 
 cmd='./install/bootstrap.sh'
 if [[ "$drop_into_shell" == true ]]; then
-    cmd+="; exec bash"
+    cmd+='; zsh -c '\'
+    # stock vim on ubuntu is missing patches making my config show errors; installing the latest version with brew
+    cmd+='; /home/linuxbrew/.linuxbrew/bin/brew install vim'
+    cmd+='; exec zsh'\'
 fi
 
 user=testuser
