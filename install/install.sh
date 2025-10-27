@@ -71,5 +71,6 @@ clone_repo https://github.com/junegunn/fzf.git ~/.fzf
 if [ $(uname) = "Darwin" ]; then
     source ${PWD}/install/install_mac_os.sh
 else
-    echo_yellow "No dedicated install script for this OS"
+    source ${PWD}/install/port_linux.sh
+    source ${PWD}/install/install_linux.sh
 fi
