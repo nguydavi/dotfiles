@@ -27,6 +27,7 @@ brew install \
     termshark \
     tig \
     tldr \
+    uv \
     vivid \
     zoxide
 
@@ -38,9 +39,6 @@ brew install --cask
 
 # Rustup & Rust
 /usr/bin/curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-
-# uv for python
-/opt/homebrew/bin//pip3 install uv
 
 # Install tmux plugins
 ~/.tmux/plugins/tpm/bin/install_plugins
