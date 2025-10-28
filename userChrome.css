@@ -15,3 +15,17 @@
   margin-top: calc(30px - var(--uc-toolbar-height));
 }
 :root[inFullscreen] #navigator-toolbox{ margin-top: 11px }
+
+/**
+ * Hide the left sidebar and the header (looks better with sidebery).
+ *
+ * Can find the id with the Browser toolbox
+ * https://firefox-source-docs.mozilla.org/devtools-user/browser_toolbox/index.html
+ */
+#sidebar-panel-header {
+  display: none !important;
+}
+
+#sidebar-main {
+  display: none !important;
+}
