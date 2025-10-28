@@ -12,6 +12,6 @@
 }
 
 #nav-bar{
-  margin-top: calc(0px - var(--uc-toolbar-height));
+  margin-top: calc(30px - var(--uc-toolbar-height));
 }
 :root[inFullscreen] #navigator-toolbox{ margin-top: 11px }
