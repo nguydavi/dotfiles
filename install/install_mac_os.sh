@@ -35,6 +35,7 @@ brew install --cask
     basictex \
     cameracontroller \
     ghostty \
+    karabiner-elements \
     maccy
 
 # Rustup & Rust
@@ -65,5 +66,7 @@ rm -rf /tmp/grc
 
 # Configs
 install_symlink "~/Library/Application Support/com.mitchellh.ghostty/config" ${PWD}/ghostty.config
+mkdir -p ~/.config/karabiner
+install_symlink "~/.config/karabiner" ${PWD}/karabiner.json
 
 echo_green "All done!"
