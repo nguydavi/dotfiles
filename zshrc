@@ -94,7 +94,7 @@ rgman() {
 # It creates functions as to not override existing aliases
 # Just in case colouring is causing issues we can find the original command with `{which|type|whence} -a $command` or
 # `command -v $command`
-[[ -s "/opt/homebrew/etc/grc.zsh" ]] && source /opt/homebrew/etc/grc.zsh
+[[ -s "${HOMEBREW_PREFIX}/etc/grc.zsh" ]] && source ${HOMEBREW_PREFIX}/etc/grc.zsh
 # Override curl to add color to output by redirecting stderr to stdout
 curl() {
     # Not calling curl here to not cause infinite recursion
