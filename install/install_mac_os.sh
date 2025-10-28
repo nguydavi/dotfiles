@@ -35,9 +35,11 @@ brew install \
 brew install --cask
     basictex \
     cameracontroller \
+    docker-desktop \
     ghostty \
     karabiner-elements \
-    maccy
+    maccy \
+    rectangle
 
 # Rustup & Rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
