@@ -32,7 +32,7 @@ brew install \
     vivid \
     zoxide
 
-brew install --cask
+brew install --cask \
     basictex \
     cameracontroller \
     docker-desktop \
