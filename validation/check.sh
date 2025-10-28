@@ -39,3 +39,4 @@ image_id=$(docker build --quiet --build-arg USER=${user} "${script_dir}")
 # Mounting the repo as volume so local changes are can be tested
 docker run -it --rm --volume "$(pwd)":/home/${user}/dotfiles ${image_id} \
     bash -c "${cmd}"
+docker rmi ${image_id}
