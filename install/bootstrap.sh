@@ -35,15 +35,15 @@ require_commands() {
 install_symlink() {
     local symlink=$1
     local target=$2
-    if [ -L $symlink ]; then
-        echo_yellow "Warning: symlink for $symlink exists"
+    if [ -L "$symlink" ]; then
+        echo_yellow "Note: symlink for $symlink exists. Skipping."
         return 0
-    elif [ -e $symlink ]; then
+    elif [ -e "$symlink" ]; then
         echo_yellow "Warning: $symlink exists. Backing up to ${symlink}_orig"
-        mv $symlink ${symlink}_orig
+        mv "$symlink" "${symlink}_orig"
     fi
 
-    ln -s $target $symlink
+    ln -s "$target" "$symlink"
     echo "Symlink for $symlink done"
 }
 

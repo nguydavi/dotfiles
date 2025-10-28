@@ -70,7 +70,7 @@ cp /tmp/grc/colourfiles/* ${HOMEBREW_CELLAR}/grc/*/share/grc/
 rm -rf /tmp/grc
 
 # Configs
-install_symlink "~/Library/Application Support/com.mitchellh.ghostty/config" ${PWD}/ghostty.config
+install_symlink ~/Library/Application\ Support/com.mitchellh.ghostty/config ${PWD}/ghostty.config
 mkdir -p ~/.config/karabiner
 install_symlink ~/.config/karabiner/karabiner.json ${PWD}/karabiner.json
 
