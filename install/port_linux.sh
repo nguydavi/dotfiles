@@ -14,7 +14,7 @@ script_dir="$(dirname $(realpath $0))"
 # * We don't install fonts nor ghostty on Linux as we assume it'll be a remote server
 sed -e 's#/opt/homebrew#/home/linuxbrew/.linuxbrew#g' \
     -e '/termshark/d' \
-    -e '/cask/,+4d' \
+    -e '/cask/,/^$/d' \
     -e '/monaco-bold/d' \
     -e '/ghostty/d' \
     ${script_dir}/install_mac_os.sh > ${script_dir}/install_linux.sh
