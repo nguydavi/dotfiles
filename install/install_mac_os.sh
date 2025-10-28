@@ -61,10 +61,12 @@ rm -rf /tmp/monaco-bold
 # Take the latest grc because what's on master is broken (and newmaster has better colours)
 # We can remove these once newmaster is merged into master
 git clone -b newmaster https://github.com/garabik/grc.git /tmp/grc
-cp /tmp/grc/grc.zsh ${HOMEBREW_PREFIX}/etc/grc.zsh
-cp /tmp/grc/colourfiles/* ${HOMEBREW_CELLAR}/grc/*/share/grc/
 # Do not color 'kubectl debug'
 sed -e 's#\((?!edit|exec|run|\)go-template#\1debug|go-template#' /tmp/grc/grc.conf > ${HOMEBREW_PREFIX}/etc/grc.conf
+# Remove background colors that makes text unreadable
+sed -i '' -Ee 's/ ?on_[a-z]+ ?//g' /tmp/grc/colourfiles/*
+cp /tmp/grc/grc.zsh ${HOMEBREW_PREFIX}/etc/grc.zsh
+cp /tmp/grc/colourfiles/* ${HOMEBREW_CELLAR}/grc/*/share/grc/
 rm -rf /tmp/grc
 
 # Configs
