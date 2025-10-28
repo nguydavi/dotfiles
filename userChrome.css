@@ -1,0 +1,17 @@
+/**
+ * Hides the horizontal tab bar on macOS, so we can use sidebery with tree style tabs.
+ * Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/hide_tabs_toolbar_osx.css
+ */
+:root{ --uc-toolbar-height: 32px; }
+:root:not([uidensity="compact"]){ --uc-toolbar-height: 34px }
+
+#TabsToolbar > *{ visibility: collapse !important }
+#TabsToolbar > .titlebar-buttonbox-container{
+  visibility: visible !important;
+  height:var(--uc-toolbar-height) !important;
+}
+
+#nav-bar{
+  margin-top: calc(0px - var(--uc-toolbar-height));
+}
+:root[inFullscreen] #navigator-toolbox{ margin-top: 11px }
