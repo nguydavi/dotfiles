@@ -13,6 +13,11 @@ cd dotfiles
 ./validation/check.sh -d
 ```
 
+```
+# Rerunning on an already setup machine should also pass (idempotent scripts)
+./install/bootstrap.sh
+```
+
 # Manual Steps
 
 ## Firefox
