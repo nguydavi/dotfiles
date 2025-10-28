@@ -21,6 +21,7 @@ brew install \
     eza \
     grc \
     ipython \
+    k9s \
     kubectx \
     lnav \
     ripgrep \
