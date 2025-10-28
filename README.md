@@ -19,7 +19,10 @@ cd dotfiles
 * Install https://github.com/mbnuqw/sidebery
 * Go to `about:config` and set `toolkit.legacyUserProfileCustomizations.stylesheets` to `true`
 * Find the root profile folder `about:profiles`
-* Create a `chrome` there and copy `userChrome.css` from this repo into it
+* Create a `chrome` there and make a symlink for `userChrome.css` from this repo
+    ```sh
+    ln -s ~/dotfiles/userChrome.css ~/Library/Application\ Support/Firefox/Profiles/abcdefg123.default-release/chrome/userChrome.css
+    ```
 
 ### Sidebery
 * For important work, make sure to enable snapshot backups
