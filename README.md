@@ -24,6 +24,10 @@ cd dotfiles
     ln -s ~/dotfiles/userChrome.css ~/Library/Application\ Support/Firefox/Profiles/abcdefg123.default-release/chrome/userChrome.css
     ```
 
+More info at
+* https://github.com/mbnuqw/sidebery/wiki/Firefox-Styles-Snippets-(via-userChrome.css)
+* https://github.com/MrOtherGuy/firefox-csshacks?tab=readme-ov-file#setup
+
 ### Sidebery
 * For important work, make sure to enable snapshot backups
 
