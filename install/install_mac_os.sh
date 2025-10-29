@@ -23,6 +23,7 @@ brew install \
     ipython \
     k9s \
     kubectx \
+    lazydocker \
     lnav \
     ripgrep \
     termshark \
