@@ -28,6 +28,9 @@ cd dotfiles
     ```sh
     ln -s ~/dotfiles/userChrome.css ~/Library/Application\ Support/Firefox/Profiles/abcdefg123.default-release/chrome/userChrome.css
     ```
+* Go on https://github.com/catppuccin/firefox
+    * Install Firefox Color
+    * Choose Macchiato Sapphire
 
 More info at
 * https://github.com/mbnuqw/sidebery/wiki/Firefox-Styles-Snippets-(via-userChrome.css)
