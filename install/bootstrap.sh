@@ -60,6 +60,9 @@ clone_repo() {
 
 # Ensure essential tooling is available before continuing
 require_commands curl git vim zsh
+# Refresh sudo credentials, it should be valid throughout the script so we don't ask again
+echo "Requesting sudo permissions.."
+sudo --validate
 
 PWD=$(pwd)
 install_symlink ~/.vimrc ${PWD}/vimrc
