@@ -25,7 +25,6 @@ set nocompatible              " Use Vim defaults (much better!)
 set nofen                     " disable folds
 set noshowmode                " do not show what mode we are in
 set noswapfile                " disable swap files
-set notimeout                 " i like to be pokey
 set number                    " show line numbers
 set pastetoggle=<F2>          " Switch for paste mode
 set ttimeout                  " timeout on key-codes
@@ -38,6 +37,7 @@ set showmatch                 " Show matching brackets.
 set softtabstop=4             " Why are tabs so big?  This fixes it
 set tabstop=4                 " Make sure tab are 4 spaces
 set textwidth=120             " This wraps a line with a break when you reach 80 chars
+set timeoutlen=500            " time to wait for a mapped sequence to complete, useful with 'which-key' plugin
 set shiftwidth=4              " Goes along with tabstop
 set virtualedit=block         " let blocks be in virutal edit mode
 set wildmenu                  " This is used with wildmode(full) to cycle options
