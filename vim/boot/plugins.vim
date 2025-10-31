@@ -44,6 +44,9 @@ let s:vim_suggest = {}
 let s:vim_suggest.cmd = {'onspace': ['.*']}
 autocmd VimEnter * call g:VimSuggestSetOptions(s:vim_suggest)
 
+" Which-key
+nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
+
 " LSP
 map <Leader>d :LspHover<CR>
 map <Leader>h :LspDiag current<CR>

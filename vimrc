@@ -14,6 +14,7 @@ call vundle#begin()
     Plugin 'github/copilot.vim'
     Plugin 'girishji/vimcomplete'
     Plugin 'girishji/vimsuggest'
+    Plugin 'liuchengxu/vim-which-key'
     Plugin 'yegappan/lsp'
 
     " Motion
