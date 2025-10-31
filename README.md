@@ -1,6 +1,6 @@
 # Install
 ```
-git clone git@github.com:nguydavi/dotfiles.git
+git clone https://github.com/nguydavi/dotfiles.git
 cd dotfiles
 ./install/bootstrap.sh
 ```
