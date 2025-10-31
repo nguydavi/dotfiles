@@ -34,9 +34,6 @@ then
         $path
     )
 
-    # Enable color output for various commands
-    export CLICOLOR=1
-
     # Homebrew specific env variables and completions of formulae installed via Homebrew
     eval "$(/opt/homebrew/bin/brew shellenv)"
 else
@@ -76,11 +73,7 @@ zinit light zsh-users/zsh-syntax-highlighting
 
 ##################### Aliases #####################
 alias ...='cd ../..'
-alias ll='eza --all --long --color --icons --git --git-repos --group-directories-first --binary'
-alias ls='ls --color'
-alias grep='grep --color'
-alias egrep='egrep --color'
-alias fgrep='fgrep --color'
+alias ll='eza --all --long --icons --git --git-repos --group-directories-first --binary'
 alias rg='rg --smart-case'
 alias rgf='rg --files --hidden -L | rg'
 alias tree='ll --tree --level=3'
@@ -89,16 +82,30 @@ rgman() {
     rg --search-zip "$1" /usr/share/man
 }
 
-# Color output for many commands using grc
-# It creates functions as to not override existing aliases
-# Just in case colouring is causing issues we can find the original command with `{which|type|whence} -a $command` or
-# `command -v $command`
-[[ -s "${HOMEBREW_PREFIX}/etc/grc.zsh" ]] && source ${HOMEBREW_PREFIX}/etc/grc.zsh
-# Override curl to add color to output by redirecting stderr to stdout
-curl() {
-    # Not calling curl here to not cause infinite recursion
-    ${commands[curl]} "$@" 2>&1 | grcat conf.curl
-}
+# Disable all colors if needed, in line with the no-color standard. Can be useful if ANSI control codes are not handled
+# properly.
+# https://no-color.org/
+alias nocolors='NO_COLOR=1 exec zsh'
+if [ -z "$NO_COLOR" ] || [ "$NO_COLOR" -ne 1 ]; then
+    alias ls='ls --color'
+    alias grep='grep --color'
+    alias egrep='egrep --color'
+    alias fgrep='fgrep --color'
+
+    # Disable color output for various commands on OSX
+    unset CLICOLOR
+
+    # Color output for many commands using grc
+    # It creates functions as to not override existing aliases
+    # Just in case colouring is causing issues we can find the original command with `{which|type|whence} -a $command` or
+    # `command -v $command`
+    [[ -s "${HOMEBREW_PREFIX}/etc/grc.zsh" ]] && source ${HOMEBREW_PREFIX}/etc/grc.zsh
+    # Override curl to add color to output by redirecting stderr to stdout
+    curl() {
+        # Not calling curl here to not cause infinite recursion
+        ${commands[curl]} "$@" 2>&1 | grcat conf.curl
+    }
+fi
 
 ##################### Binds #####################
 # Most binds are in vi mode as that's what is set based from EDITOR & VISUAL env variable
