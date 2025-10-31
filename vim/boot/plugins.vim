@@ -27,6 +27,9 @@ nnoremap <Leader>b :Git blame<CR>
 nmap <C-P> :Files<CR>
 nmap <C-B> :Buffers<CR>
 
+" Peekaboo
+let g:peekaboo_window = "vert bo 120new"
+
 " Yaml revealer
 let g:yaml_revealer_display_mode = 'statusline'
 

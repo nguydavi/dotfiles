@@ -36,6 +36,7 @@ call vundle#begin()
     Plugin 'vim-airline/vim-airline-themes'
 
     " Utilities when updating text/code
+    Plugin 'junegunn/vim-peekaboo'
     Plugin 'tpope/vim-abolish'
     Plugin 'tpope/vim-commentary'
     Plugin 'tpope/vim-repeat'
