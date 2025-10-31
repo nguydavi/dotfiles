@@ -37,6 +37,7 @@ call vundle#begin()
 
     " Utilities when updating text/code
     Plugin 'junegunn/vim-peekaboo'
+    Plugin 'mbbill/undotree'
     Plugin 'tpope/vim-abolish'
     Plugin 'tpope/vim-commentary'
     Plugin 'tpope/vim-repeat'

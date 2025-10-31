@@ -30,6 +30,12 @@ nmap <C-B> :Buffers<CR>
 " Peekaboo
 let g:peekaboo_window = "vert bo 120new"
 
+" Undotree
+map <Leader>u :UndotreeToggle<CR>
+let g:undotree_WindowLayout = 2
+let g:undotree_SplitWidth = 60
+let g:undotree_SetFocusWhenToggle = 1
+
 " Yaml revealer
 let g:yaml_revealer_display_mode = 'statusline'
 
