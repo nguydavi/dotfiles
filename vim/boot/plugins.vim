@@ -13,8 +13,7 @@ let g:airline_powerline_fonts = 1                   " Use powerline fonts
 let g:airline_theme='murmur'
 
 " Context
-" Doesn't work well with yaml
-let g:context_filetype_blacklist = ['nerdtree', 'gitcommit', 'help', 'yaml']
+let g:context_filetype_blacklist = ['nerdtree', 'gitcommit', 'help']
 
 " Easymotion
 map <Leader>/ <Plug>(easymotion-sn)
@@ -38,9 +37,6 @@ map <Leader>u :UndotreeToggle<CR>
 let g:undotree_WindowLayout = 2
 let g:undotree_SplitWidth = 60
 let g:undotree_SetFocusWhenToggle = 1
-
-" Yaml revealer
-let g:yaml_revealer_display_mode = 'statusline'
 
 " vimsuggest
 let s:vim_suggest = {}

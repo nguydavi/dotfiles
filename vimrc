@@ -28,7 +28,6 @@ call vundle#begin()
     Plugin 'tpope/vim-vinegar'
 
     " Specific for a filetype
-    Plugin 'Einenlum/yaml-revealer'
     Plugin 'tpope/vim-fugitive'
     Plugin 'wellle/context.vim'
 
