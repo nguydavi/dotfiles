@@ -1,8 +1,8 @@
 " Ack
 let g:ackprg = 'rg --vimgrep'
 let g:ack_qhandler = "botright copen 20"
-map <Leader>a :Ack!<Space>          " Ack prompt
-map <Leader>A :Ack! <C-r><C-w>      " Ack word under cursor
+map <Leader>a :Ack!<Space>
+map <Leader>A :Ack! <C-r><C-w>
 
 " Airline
 let g:airline#extensions#tabline#buffer_nr_show = 1

@@ -3,8 +3,8 @@ let mapleader = " "
 map <Space> <Leader>
 
 " Clipboard
-nnoremap <Leader>C "+yy     " Copy current line to system clipboard
-nnoremap <Leader>v "+p      " Paste from system clipboard
+nnoremap <Leader>c "+yy
+nnoremap <Leader>v "+p
 vnoremap <Leader>c "+y
 
 " Unmap the arrow keys
@@ -24,7 +24,7 @@ vnoremap <up> <Nop>
 " Buffers
 nnoremap <C-h> :bp<CR>
 nnoremap <C-l> :bn<CR>
-nnoremap <Leader>w :bp\|bd #<CR>    " Close current buffer and go to previous
+nnoremap <Leader>w :bp\|bd #<CR>
 
 " Replace word under cursor
 nnoremap <Leader>r :%s/\<<C-r><C-w>\>//g<Left><Left>
