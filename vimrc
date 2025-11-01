@@ -30,6 +30,7 @@ call vundle#begin()
     " Specific for a filetype
     Plugin 'Einenlum/yaml-revealer'
     Plugin 'tpope/vim-fugitive'
+    Plugin 'wellle/context.vim'
 
     " Theme
     Plugin 'catppuccin/vim'

@@ -12,6 +12,10 @@ let g:airline#extensions#tabline#tab_nr_type = 0    " Display tab number
 let g:airline_powerline_fonts = 1                   " Use powerline fonts
 let g:airline_theme='murmur'
 
+" Context
+" Doesn't work well with yaml
+let g:context_filetype_blacklist = ['nerdtree', 'gitcommit', 'help', 'yaml']
+
 " Easymotion
 map <Leader>f <Plug>(easymotion-f)
 map <Leader>F <Plug>(easymotion-F)
