@@ -30,7 +30,6 @@ if [[ "$(uname)" == "Darwin" ]]
 then
     path=(
         /Library/TeX/texbin
-        /opt/homebrew/opt/node@22/bin
         $path
     )
 
