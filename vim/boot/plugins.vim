@@ -28,7 +28,7 @@ nnoremap <Leader>b :Git blame<CR>
 " Fzf
 nmap <C-P> :Files<CR>
 nmap <C-B> :Buffers<CR>
-map <Leader>m :Maps<CR>     " Helpful to search through key mappings
+map <Leader>m :Maps<CR>
 
 " Peekaboo
 let g:peekaboo_window = "vert bo 120new"
