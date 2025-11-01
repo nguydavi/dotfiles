@@ -61,7 +61,7 @@ map <Leader>i :LspGotoImpl<CR>
 map <Leader>r :LspShowReferences<CR>
 map <Leader>I :LspIncomingCalls<CR>
 map <Leader>O :LspOutgoingCalls<CR>
-map <Leader>R :LspRename 
+map <Leader>R :LspRename<Space>
 
 let pylsp_config = { 'pylsp': { 'plugins': { 'pycodestyle': { 'maxLineLength': 100 } } } }
 
