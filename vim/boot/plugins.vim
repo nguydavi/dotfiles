@@ -17,8 +17,6 @@ let g:airline_theme='murmur'
 let g:context_filetype_blacklist = ['nerdtree', 'gitcommit', 'help', 'yaml']
 
 " Easymotion
-map <Leader>f <Plug>(easymotion-f)
-map <Leader>F <Plug>(easymotion-F)
 map <Leader>/ <Plug>(easymotion-sn)
 
 " Supertab
