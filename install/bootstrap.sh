@@ -83,12 +83,6 @@ clone_repo https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 # Install Vim plugins without interactive prompts, ignoring errors (expected since no plugins are installed yet)
 vim -e +PluginInstall +qall || true
 
-# Removing a broken commit from context.vim
-cd ${PWD}/vim/bundle/context.vim
-git fetch --depth=1000 # The plugin may have been cloned with a shallow depth
-git revert db2f8bfab3f9a7259d398aa6590c95674b4dffeb --no-commit
-cd -
-
 # fzf
 clone_repo https://github.com/junegunn/fzf.git ~/.fzf
 # zshrc is already configured with the OMZP fzf plugin

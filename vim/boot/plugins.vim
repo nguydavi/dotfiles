@@ -14,6 +14,9 @@ let g:airline_theme='murmur'
 
 " Context
 let g:context_filetype_blacklist = ['nerdtree', 'gitcommit', 'help']
+"" Locally reverting https://github.com/wellle/context.vim/commit/db2f8bfab3f9a7259d398aa6590c95674b4dffeb
+"" It breaks for yaml files and anything that resembles labels such as `try:` in Python
+let g:context_skip_regex = '^\([<=>]\{7\}\|\s*\($\|#\|//\|/\*\|\*\($\|\s\|/\)\)\)'
 
 " Easymotion
 map <Leader>/ <Plug>(easymotion-sn)
