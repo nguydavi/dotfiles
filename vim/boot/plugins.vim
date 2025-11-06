@@ -100,6 +100,15 @@ autocmd User LspSetup call LspAddServer([#{
     \ syncInit: v:true
 \ }])
 
+" Bazel
+autocmd User LspSetup call LspAddServer([#{
+    \ name: 'bazel',
+    \ filetype: ['bzl'],
+    \ path: exepath('bazel-lsp'),
+    \ args: [],
+    \ syncInit: v:true
+\ }])
+
 " Copilot
 map <Leader>c :Copilot<CR>
 imap <C-d> <Plug>(copilot-dismiss)

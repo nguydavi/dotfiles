@@ -53,6 +53,7 @@ brew install terraform-ls
 brew install python-lsp-server
 go install golang.org/x/tools/gopls@latest
 ~/.cargo/bin/rustup component add rust-analyzer
+curl https://github.com/cameron-martin/bazel-lsp/releases/download/v0.6.4/bazel-lsp-0.6.4-osx-arm64 -L -o ~/.local/bin/bazel-lsp
 
 # monaco-bold is a monaco font that has a bold variant (otherwise it looks blurry when artificially bolded)
 git clone https://github.com/vjpr/monaco-bold.git /tmp/monaco-bold
