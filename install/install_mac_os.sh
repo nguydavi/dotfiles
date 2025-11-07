@@ -17,6 +17,7 @@ brew install \
 # Installing utility tools
 brew install \
     bat \
+    bazel \
     btop \
     eza \
     grc \
