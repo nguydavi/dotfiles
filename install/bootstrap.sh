@@ -43,6 +43,7 @@ install_symlink() {
         mv "$symlink" "${symlink}_orig"
     fi
 
+    mkdir -p $(dirname "$symlink")
     ln -s "$target" "$symlink"
     echo "Symlink for $symlink done"
 }
