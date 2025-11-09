@@ -23,5 +23,6 @@ sed -e 's#/opt/homebrew#/home/linuxbrew/.linuxbrew#g' \
     -e '/monaco-bold/d' \
     -e "s/sed -i ''/sed -i''/g" \
     -e '/ghostty/d' \
+    -e '/karabiner/d' \
     ${script_dir}/install_mac_os.sh > ${script_dir}/install_linux.sh
 chmod +x ${script_dir}/install_linux.sh
