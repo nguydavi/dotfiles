@@ -6,6 +6,9 @@ set -e
 
 script_dir="$(dirname $(realpath $0))"
 
+# For bazel-lsp
+mkdir -p ~/.local/bin
+
 # Notes
 # * Homebrew on Linux is installed to /home/linuxbrew/.linuxbrew (trying to set a symlink from /opt/homebrew to it
 #       confuses brew and it thinks it's on mac)
@@ -15,6 +18,7 @@ script_dir="$(dirname $(realpath $0))"
 sed -e 's#/opt/homebrew#/home/linuxbrew/.linuxbrew#g' \
     -e '/termshark/d' \
     -e '/cask/,/^$/d' \
+    -e 's/bazel-lsp-0.6.4-osx-arm64/bazel-lsp-0.6.4-linux-arm64/g' \
     -e '/monaco-bold/d' \
     -e "s/sed -i ''/sed -i''/g" \
     -e '/ghostty/d' \
