@@ -4,7 +4,8 @@
 
 set -e
 
-script_dir="$(dirname $(realpath $0))"
+# Take the script path even if it is sourced
+script_dir="$(dirname $(realpath ${BASH_SOURCE[0]}))"
 
 # For bazel-lsp
 mkdir -p ~/.local/bin
