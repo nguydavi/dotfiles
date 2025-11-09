@@ -2,7 +2,7 @@
 ```
 git clone https://github.com/nguydavi/dotfiles.git
 cd dotfiles
-./install.sh
+./install/bootstrap.sh
 ```
 
 # Validation
@@ -15,7 +15,7 @@ cd dotfiles
 
 ```
 # Rerunning on an already setup machine should also pass (idempotent scripts)
-./install.sh
+./install/bootstrap.sh
 ```
 
 # Manual Steps
