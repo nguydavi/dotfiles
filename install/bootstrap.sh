@@ -65,7 +65,8 @@ require_commands curl git vim zsh
 echo "Requesting sudo permissions.."
 sudo --validate
 
-cd $(dirname "$0")
+# Take the parent dir
+cd $(dirname $(dirname "$0"))
 PWD=$(pwd)
 install_symlink ~/.vimrc ${PWD}/vimrc
 install_symlink ~/.vim ${PWD}/vim
