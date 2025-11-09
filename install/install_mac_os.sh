@@ -78,4 +78,7 @@ install_symlink ~/Library/Application\ Support/com.mitchellh.ghostty/config ${PW
 mkdir -p ~/.config/karabiner
 install_symlink ~/.config/karabiner/karabiner.json ${PWD}/karabiner.json
 
+# Ensure we have the latest version of vim installed
+brew install vim && brew upgrade vim
+
 echo_green "All done!"
