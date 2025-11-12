@@ -20,6 +20,7 @@ brew install \
     bazel \
     btop \
     eza \
+    gh \
     grc \
     ipython \
     k9s \
