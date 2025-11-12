@@ -29,6 +29,7 @@ call vundle#begin()
 
     " Specific for a filetype
     Plugin 'tpope/vim-fugitive'
+    Plugin 'tpope/vim-rhubarb'
     Plugin 'wellle/context.vim'
 
     " Theme

@@ -26,6 +26,7 @@ let g:SuperTabDefaultCompletionType = "<c-n>"
 
 " Fugitive
 nnoremap <Leader>b :Git blame<CR>
+nnoremap <Leader>B :GBrowse<CR>
 
 " Fzf
 nmap <C-P> :Files<CR>
