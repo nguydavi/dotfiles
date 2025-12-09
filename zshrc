@@ -151,7 +151,7 @@ export VISUAL=vim
 export KEYTIMEOUT=10            # Reduce delay when switching to vi command mode in the shell
 
 # Remove some characters from word boundaries so when we jump words we stop at at these chars
-export WORDCHARS=${WORDCHARS//[\/-]}
+export WORDCHARS=${WORDCHARS//[\/-=]}
 
 # Pager settings
 export LESS='-i'                # ignore case in searches
