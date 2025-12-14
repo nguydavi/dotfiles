@@ -47,6 +47,8 @@ fi
 # * via explicit snippet (eg. terraform) which adds to ~/.local/share/zinit/completions (also detected by zinit)
 # if completions are added to the same command, the order of loading matters (the first one found in fpath "wins")
 # Can check the one in used with something like `which -a _kubectl`
+# It is also useful to debug completion write a command and press "^X?" will write debug into a file
+# See https://zsh.sourceforge.io/Doc/Release/Completion-System.html#index-_005fcomplete_005fdebug-_0028_005eX_003f_0029
 zinit snippet OMZP::aws
 zinit snippet OMZP::bazel
 zinit snippet OMZP::docker
