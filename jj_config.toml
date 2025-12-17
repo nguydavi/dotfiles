@@ -1,0 +1,58 @@
+#:schema https://docs.jj-vcs.dev/latest/config-schema.json
+
+[user]
+name = "David Nguyen"
+email = "david.nguyen@datadoghq.com"
+
+[[--scope]]
+--when.repositories = ["/Users/david.nguyen/dd"]
+
+[--scope.signing]
+behavior = "own"
+backend = "ssh"
+key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIC+MNGBrTEwWXjCWynzMdFGu4tt1dI1ZE5ghj6RORt75"
+
+[revset-aliases]
+'wip' = 'trunk()..bookmarks(regex:"^dang/.*")'
+'wip_heads' = 'heads(wip)'
+'wip_roots' = 'roots(wip)'
+'branch(b)' = 'trunk()..bookmarks(b)'
+'me' = 'author(exact:"david.nguyen@datadoghq.com")'
+
+[templates]
+git_push_bookmark = """
+  truncate_end(
+    244,
+    separate(
+      "/",
+      "dang",
+      jira_issue_prefix(description),
+      first_line_suffix(description),
+    ),
+  )
+"""
+
+[template-aliases]
+"jira_issue_prefix(description)" = """
+  description
+    .match(regex:"^[[:upper:]]+-[[:digit:]]+[[:blank:]]+")
+    .replace(regex:"[[:blank:]]+", "")
+"""
+"first_line_suffix(description)" = """
+  description
+    .first_line()
+    .remove_prefix(jira_issue_prefix(description))
+    .lower()
+    .replace(regex:"[[:^word:]]", "-")
+    .replace(regex:"-+", "-")
+    .replace(regex:"^-|-$", "")
+"""
+
+[fsmonitor]
+backend = "watchman"
+[fsmonitor.watchman]
+register-snapshot-trigger = true
+
+[ui]
+default-command = "log"
+revsets-use-glob-by-default = true

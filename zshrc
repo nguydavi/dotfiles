@@ -56,6 +56,7 @@ zinit snippet OMZP::docker-compose
 zinit snippet OMZP::fzf
 zinit snippet OMZP::git
 zinit snippet OMZP::golang
+zinit snippet OMZP::jj
 zinit snippet OMZP::kubectl
 zinit snippet OMZP::terraform
 
