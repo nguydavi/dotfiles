@@ -13,11 +13,14 @@ backend = "ssh"
 key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIC+MNGBrTEwWXjCWynzMdFGu4tt1dI1ZE5ghj6RORt75"
 
 [revset-aliases]
-'wip' = 'trunk()..bookmarks(regex:"^dang/.*")'
+'wip' = 'trunk()..'
 'wip_heads' = 'heads(wip)'
-'wip_roots' = 'roots(wip)'
 'branch(b)' = 'trunk()..bookmarks(b)'
 'me' = 'author(exact:"david.nguyen@datadoghq.com")'
+
+[aliases]
+'mm' = ['new', 'wip_heads', '-m', 'megamerge']
+'rb' = ['rebase', '-r', 'wip', '-d', 'trunk()']
 
 [templates]
 git_push_bookmark = """
@@ -53,6 +56,12 @@ backend = "watchman"
 [fsmonitor.watchman]
 register-snapshot-trigger = true
 
+[colors]
+"diff removed token" = { underline = false }
+"diff added token" = { underline = false }
+"diff token" = { underline = false }
+
 [ui]
 default-command = "log"
+diff-formatter = ":git"
 revsets-use-glob-by-default = true
