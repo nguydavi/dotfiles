@@ -5,7 +5,7 @@ name = "David Nguyen"
 email = "david.nguyen@datadoghq.com"
 
 [[--scope]]
---when.repositories = ["/Users/david.nguyen/dd"]
+--when.repositories = ["/Users/david.nguyen"]
 
 [--scope.signing]
 behavior = "own"
