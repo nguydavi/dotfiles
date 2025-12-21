@@ -16,6 +16,9 @@ key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIC+MNGBrTEwWXjCWynzMdFGu4tt1dI1ZE5ghj
 'wip' = 'trunk()..'
 'wip_heads' = 'heads(wip)'
 'branch(b)' = 'trunk()..bookmarks(b)'
+# Find two specific commits and their merge commits to see which one was included first
+'cmp(x, y)' = 'roots(merges() & x::)|roots(merges() & y::)|x|y'
+# The same as mine() but slightly shorter
 'me' = 'author(exact:"david.nguyen@datadoghq.com")'
 
 [aliases]
