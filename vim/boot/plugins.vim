@@ -44,6 +44,7 @@ let g:undotree_SetFocusWhenToggle = 1
 
 " Vim-go
 let g:go_highlight_types = 1
+let g:go_highlight_extra_types = 1
 let g:go_highlight_fields = 1
 let g:go_highlight_functions = 1
 let g:go_def_mapping_enabled = 0        " allows default behaviour for 'gd'
