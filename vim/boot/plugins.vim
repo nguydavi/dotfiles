@@ -42,6 +42,13 @@ let g:undotree_WindowLayout = 2
 let g:undotree_SplitWidth = 60
 let g:undotree_SetFocusWhenToggle = 1
 
+" Vim-go
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_def_mapping_enabled = 0 " allows default behaviour for 'gd'
+let g:go_code_completion_enabled = 0 " Use LSP instead
+
 " vimsuggest
 let s:vim_suggest = {}
 let s:vim_suggest.cmd = {'onspace': ['.*']}

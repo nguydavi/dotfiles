@@ -28,6 +28,7 @@ call vundle#begin()
     Plugin 'tpope/vim-vinegar'
 
     " Specific for a filetype
+    Plugin 'fatih/vim-go'
     Plugin 'tpope/vim-fugitive'
     Plugin 'tpope/vim-rhubarb'
     Plugin 'wellle/context.vim'
