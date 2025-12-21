@@ -46,8 +46,13 @@ let g:undotree_SetFocusWhenToggle = 1
 let g:go_highlight_types = 1
 let g:go_highlight_fields = 1
 let g:go_highlight_functions = 1
-let g:go_def_mapping_enabled = 0 " allows default behaviour for 'gd'
-let g:go_code_completion_enabled = 0 " Use LSP instead
+let g:go_def_mapping_enabled = 0        " allows default behaviour for 'gd'
+let g:go_code_completion_enabled = 0    " Use LSP instead
+
+map <Leader>D :GoDocBrowser<CR>
+map <Leader>f :GoDecls<CR>
+map <Leader>F :GoDeclsDir<CR>
+map <Leader>t :GoAlternate<CR>
 
 " vimsuggest
 let s:vim_suggest = {}

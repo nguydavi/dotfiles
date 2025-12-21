@@ -51,6 +51,9 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 # Install tmux plugins
 ~/.tmux/plugins/tpm/bin/install_plugins
 
+# Install Go dependencies for vim-go
+vim +GoInstallBinaries +qall
+
 # Installing LSPs
 brew install terraform-ls
 brew install python-lsp-server
