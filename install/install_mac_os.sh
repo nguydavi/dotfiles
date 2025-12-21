@@ -23,6 +23,7 @@ brew install \
     gh \
     grc \
     ipython \
+    jj \
     k9s \
     kubectx \
     lazydocker \
