@@ -20,6 +20,9 @@ key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIC+MNGBrTEwWXjCWynzMdFGu4tt1dI1ZE5ghj
 'merge(x)' = 'roots(merges() & trunk() & x::)'
 # Find two specific commits and their merge commits to see which one was included first
 'cmp(x, y)' = 'merge(x)|merge(y)|x|y'
+'mymerges' = 'children(mine()) & merges() & ::trunk()'
+# Check which of my merges included a specific commit x
+'check(x)' = 'mymerges|x'
 'me' = 'mine()'
 
 [aliases]
