@@ -24,6 +24,7 @@ key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIC+MNGBrTEwWXjCWynzMdFGu4tt1dI1ZE5ghj
 # Check which of my merges included a specific commit x
 'check(x)' = 'mymerges|x'
 'me' = 'mine()'
+'allme' = 'mymerges|me'
 
 [aliases]
 'mm' = ['new', 'wip_heads', '-m', 'megamerge']
