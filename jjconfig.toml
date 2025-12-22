@@ -16,14 +16,20 @@ key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIC+MNGBrTEwWXjCWynzMdFGu4tt1dI1ZE5ghj
 'wip' = 'trunk()..'
 'wip_heads' = 'heads(wip)'
 'branch(b)' = 'trunk()..bookmarks(b)'
+# Get the merge commit that introduced a specific commit x into trunk
+'merge(x)' = 'roots(merges() & trunk() & x::)'
 # Find two specific commits and their merge commits to see which one was included first
-'cmp(x, y)' = 'roots(merges() & x::)|roots(merges() & y::)|x|y'
+'cmp(x, y)' = 'merge(x)|merge(y)|x|y'
 'me' = 'mine()'
 
 [aliases]
 'mm' = ['new', 'wip_heads', '-m', 'megamerge']
-'rb' = ['rebase', '-r', 'wip', '-d', 'trunk()']
+'rba' = ['rebase', '-r', 'wip', '-d', 'trunk()']
 'a' = ['log', '-r', 'all()']
+
+[git]
+# Prevent pushing work in progress or anything explicitly labeled "private"
+private-commits = "description(glob:'wip:*') | description(glob:'private:*')"
 
 [templates]
 git_push_bookmark = """
