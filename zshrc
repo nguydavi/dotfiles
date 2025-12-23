@@ -76,7 +76,7 @@ zinit light zsh-users/zsh-syntax-highlighting
 
 ##################### Aliases #####################
 alias ...='cd ../..'
-alias ll='eza --all --long --icons --git --git-repos --group-directories-first --binary'
+alias ll='eza --all --long --icons --group-directories-first --binary'
 alias rg='rg --smart-case'
 alias rgf='rg --files --hidden -L | rg'
 alias tree='ll --tree --level=3'
