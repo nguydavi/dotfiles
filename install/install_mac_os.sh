@@ -60,6 +60,7 @@ brew install terraform-ls
 brew install python-lsp-server
 go install golang.org/x/tools/gopls@latest
 ~/.cargo/bin/rustup component add rust-analyzer
+mkdir -p ~/.local/bin
 curl https://github.com/cameron-martin/bazel-lsp/releases/download/v0.6.4/bazel-lsp-0.6.4-osx-arm64 -L -o ~/.local/bin/bazel-lsp
 chmod +x ~/.local/bin/bazel-lsp
 
