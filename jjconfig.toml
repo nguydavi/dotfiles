@@ -63,6 +63,34 @@ git_push_bookmark = """
     .replace(regex:"-+", "-")
     .replace(regex:"^-|-$", "")
 """
+# Based on builtin_log_oneline with some modifications. Can be used in prompt
+# https://github.com/jj-vcs/jj/blob/06bd4ceb8e2aabf0639ac60cacf810e796ede6b6/cli/src/config/templates.toml#L159-L189
+"compact_log_oneline" = """
+if(self.root(),
+  format_root_commit(self),
+  label(
+    separate(" ",
+      if(self.current_working_copy(), "working_copy"),
+      if(self.immutable(), "immutable", "mutable"),
+      if(self.conflict(), "conflicted"),
+    ),
+    separate(" ",
+      if(self.immutable(), label("warning heading", "immutable")),
+      format_short_change_id_with_hidden_and_divergent_info(self),
+      if(self.empty(), empty_commit_marker),
+      if(self.description(),
+        self.description().first_line(),
+        label(if(self.empty(), "empty"), description_placeholder),
+      ),
+      self.bookmarks(),
+      self.tags(),
+      self.working_copies(),
+      if(self.conflict(), label("conflict", "conflict")),
+    ) ++ "\n",
+  )
+)
+"""
+
 
 [fsmonitor]
 backend = "watchman"

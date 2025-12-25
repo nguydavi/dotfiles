@@ -34,6 +34,7 @@
     # =========================[ Line #1 ]=========================
     # os_icon               # os identifier
     dir                     # current directory
+    p10k_jj                 # jj status
     vcs                     # git status
     # =========================[ Line #2 ]=========================
     newline                 # \n

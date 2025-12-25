@@ -233,6 +233,28 @@ preexec_auto_title_tmux_window() {
 preexec_functions+='preexec_auto_title_tmux_window'
 precmd_functions+='precmd_auto_title_tmux_window'
 
+##################### jj prompt #####################
+# Is used in p10k left prompt
+# Based from https://zerowidth.com/2025/async-zsh-jujutsu-prompt-with-p10k/
+prompt_p10k_jj() {
+    local workspace log_oneline display
+    command -v jj >/dev/null 2>&1 || return
+    # Show jj prompt segment only when in a jujutsu workspace, show git otherwise
+    if workspace=$(jj workspace root 2>/dev/null); then
+        p10k display "*/jj=show"
+        p10k display "*/vcs=hide"
+    else
+        p10k display "*/jj=hide"
+        p10k display "*/vcs=show"
+        return
+    fi
+
+    log_oneline=$(jj log --ignore-working-copy --no-graph --color always --revisions @ -T 'compact_log_oneline')
+    # the prompt doesn’t know to ignore ANSI color codes extra characters from jj for width calculations
+    display=$(echo "$log_oneline" | sed 's/\x1b\[[0-9;]*m/%{&%}/g')
+    p10k segment -t "$display"
+}
+
 ##################### Footer #####################
 # Tab completion to be init after all plugins have contributed their completion functions
 autoload -Uz compinit
