@@ -2,10 +2,13 @@
 
 [user]
 name = "David Nguyen"
-email = "david.nguyen@datadoghq.com"
+email = "david2456@gmail.com"
 
 [[--scope]]
---when.repositories = ["/Users/david.nguyen"]
+--when.repositories = ["/Users/david.nguyen/go/src/github.com/DataDog"]
+
+[--scope.user]
+email = "david.nguyen@datadoghq.com"
 
 [--scope.signing]
 behavior = "own"
