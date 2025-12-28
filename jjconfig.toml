@@ -116,3 +116,7 @@ register-snapshot-trigger = true
 default-command = "log"
 diff-formatter = ":git"
 revsets-use-glob-by-default = true
+
+[fix.tools.gofmt]
+command = ["gofmt"]
+patterns = ["glob:'**/*.go'"]
