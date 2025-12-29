@@ -58,6 +58,7 @@ zinit snippet OMZP::git
 zinit snippet OMZP::golang
 zinit snippet OMZP::jj
 zinit snippet OMZP::kubectl
+zinit snippet OMZP::rust
 zinit snippet OMZP::terraform
 
 # Add completions explicitly because some plugins don't do it themselves
