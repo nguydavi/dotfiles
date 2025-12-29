@@ -16,7 +16,7 @@ backend = "ssh"
 key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIC+MNGBrTEwWXjCWynzMdFGu4tt1dI1ZE5ghj6RORt75"
 
 [revset-aliases]
-'wip' = 'trunk()..'
+'wip' = 'mutable()'
 'wip_heads' = 'heads(wip)'
 'branch(b)' = 'trunk()..bookmarks(b)'
 # Get the merge commit that introduced a specific commit x into trunk
