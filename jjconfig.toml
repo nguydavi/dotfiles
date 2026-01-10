@@ -121,3 +121,11 @@ revsets-use-glob-by-default = true
 [fix.tools.gofmt]
 command = ["gofmt"]
 patterns = ["glob:'**/*.go'"]
+
+[fix.tools.1-ruff-lint]
+command = ["uv", "run", "ruff", "check", "--fix", "--quiet", "--stdin-filename=$path", "-"]
+patterns = ["glob:'**/*.py'"]
+
+[fix.tools.2-ruff-format]
+command = ["uv", "run", "ruff", "format", "--stdin-filename=$path", "-"]
+patterns = ["glob:'**/*.py'"]
