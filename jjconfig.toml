@@ -33,6 +33,7 @@ key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIC+MNGBrTEwWXjCWynzMdFGu4tt1dI1ZE5ghj
 'mm' = ['new', 'wip_heads', '-m', 'megamerge']
 'rba' = ['rebase', '-r', 'wip', '-d', 'trunk()']
 'a' = ['log', '-r', 'all()']
+'tug' = ["bookmark", "move", "--from", "heads(::@- & bookmarks())", "--to", "@"]
 
 [git]
 # Prevent pushing work in progress or anything explicitly labeled "private"
