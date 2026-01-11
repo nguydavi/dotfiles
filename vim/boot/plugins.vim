@@ -49,6 +49,7 @@ let g:go_highlight_fields = 1
 let g:go_highlight_functions = 1
 let g:go_def_mapping_enabled = 0        " allows default behaviour for 'gd'
 let g:go_code_completion_enabled = 0    " Use LSP instead
+let g:go_fmt_autosave = 0               " Use LSP format instead
 
 map <Leader>D :GoDocBrowser<CR>
 map <Leader>t :GoAlternate<CR>
@@ -76,6 +77,7 @@ map <Leader>O :LspOutgoingCalls<CR>
 map <Leader>R :LspRename<Space>
 
 let pylsp_config = { 'pylsp': { 'plugins': { 'pycodestyle': { 'maxLineLength': 100 } } } }
+autocmd BufWritePre * silent! LspFormat     " Autoformat on save
 
 " Python language server
 autocmd User LspSetup call LspAddServer([#{
