@@ -51,8 +51,6 @@ let g:go_def_mapping_enabled = 0        " allows default behaviour for 'gd'
 let g:go_code_completion_enabled = 0    " Use LSP instead
 
 map <Leader>D :GoDocBrowser<CR>
-map <Leader>f :GoDecls<CR>
-map <Leader>F :GoDeclsDir<CR>
 map <Leader>t :GoAlternate<CR>
 
 " vimsuggest
@@ -65,6 +63,7 @@ nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
 
 " LSP
 map <Leader>d :LspHover<CR>
+map <Leader>f :LspDocumentSymbol<CR>
 map <Leader>h :LspDiag current<CR>
 map <Leader>] :LspDiag next<CR>
 map <Leader>[ :LspDiag prev<CR>
