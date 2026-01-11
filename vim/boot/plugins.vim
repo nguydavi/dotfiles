@@ -76,16 +76,33 @@ map <Leader>I :LspIncomingCalls<CR>
 map <Leader>O :LspOutgoingCalls<CR>
 map <Leader>R :LspRename<Space>
 
-let pylsp_config = { 'pylsp': { 'plugins': { 'pycodestyle': { 'maxLineLength': 100 } } } }
 autocmd BufWritePre * silent! LspFormat     " Autoformat on save
 
-" Python language server
+" Python language server (completions, go-to-definition)
 autocmd User LspSetup call LspAddServer([#{
     \ name: 'pylsp',
     \ filetype: 'python',
     \ path: exepath('pylsp'),
     \ args: [],
-    \ workspaceConfig: pylsp_config,
+    \ workspaceConfig: #{
+    \    pylsp: #{
+    \        plugins: #{
+    \            ruff: #{ enabled: v:false },
+    \        }
+    \    }
+    \ },
+\ }])
+
+" Ruff language server (linting, formatting)
+autocmd User LspSetup call LspAddServer([#{
+    \ name: 'ruff',
+    \ filetype: 'python',
+    \ path: exepath('ruff'),
+    \ args: ['server'],
+    \ initializationOptions: #{
+    \    settings: #{
+    \    }
+    \ },
 \ }])
 
 " Go language server

@@ -58,6 +58,7 @@ vim +GoInstallBinaries +qall
 # Installing LSPs
 brew install terraform-ls
 brew install python-lsp-server
+uv tool install ruff@latest
 go install golang.org/x/tools/gopls@latest
 ~/.cargo/bin/rustup component add rust-analyzer
 mkdir -p ~/.local/bin
