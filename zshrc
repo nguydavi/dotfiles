@@ -260,8 +260,13 @@ prompt_p10k_jj() {
 
 ##################### Footer #####################
 # Tab completion to be init after all plugins have contributed their completion functions
+# Regenerate zcompdump once a day. See https://gist.github.com/ctechols/ca1035271ad134841284
 autoload -Uz compinit
-compinit
+if [[ -n ${ZDOTDIR}/.zcompdump(#qN.mh+24) ]]; then
+    compinit;
+else
+    compinit -C;
+fi;
 
 # Load zoxide after completion is init
 _evalcache zoxide init zsh
