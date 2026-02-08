@@ -25,21 +25,6 @@ path=(
     ~/.cargo/bin
 )
 
-##################### OS specific #####################
-if [[ "$(uname)" == "Darwin" ]]
-then
-    path=(
-        /Library/TeX/texbin
-        $path
-    )
-
-    # Homebrew specific env variables and completions of formulae installed via Homebrew
-    eval "$(/opt/homebrew/bin/brew shellenv)"
-else
-    # Homebrew specific env variables and completions of formulae installed via Homebrew
-    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-fi
-
 ##################### Plugins #####################
 # Note that plugins are adding completions in different ways,
 # * directly writing to $ZSH_CACHE_DIR/completions/ (eg. docker, kubectl)
@@ -69,11 +54,28 @@ zinit snippet OMZP::docker-compose/_docker-compose
 
 zinit light Aloxaf/fzf-tab
 zinit light MichaelAquilina/zsh-you-should-use
+# Cache calls that don't often change like 'eval "$(...)"' with _evalcache. Can be cleared with # _evalcache_clear
+zinit light mroth/evalcache
 zinit light romkatv/powerlevel10k
 zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-history-substring-search
 zinit light zsh-users/zsh-syntax-highlighting
+
+##################### OS specific #####################
+if [[ "$(uname)" == "Darwin" ]]
+then
+    path=(
+        /Library/TeX/texbin
+        $path
+    )
+
+    # Homebrew specific env variables and completions of formulae installed via Homebrew
+    _evalcache /opt/homebrew/bin/brew shellenv
+else
+    # Homebrew specific env variables and completions of formulae installed via Homebrew
+    _evalcache /home/linuxbrew/.linuxbrew/bin/brew shellenv
+fi
 
 ##################### Aliases #####################
 alias ...='cd ../..'
@@ -262,7 +264,7 @@ autoload -Uz compinit
 compinit
 
 # Load zoxide after completion is init
-eval "$(zoxide init zsh)"
+_evalcache zoxide init zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
