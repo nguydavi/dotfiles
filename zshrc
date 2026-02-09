@@ -25,6 +25,21 @@ path=(
     ~/.cargo/bin
 )
 
+##################### OS specific #####################
+if [[ "$(uname)" == "Darwin" ]]
+then
+    path=(
+        /Library/TeX/texbin
+        $path
+    )
+
+    # Homebrew specific env variables and completions of formulae installed via Homebrew
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+else
+    # Homebrew specific env variables and completions of formulae installed via Homebrew
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
+
 ##################### Plugins #####################
 # Note that plugins are adding completions in different ways,
 # * directly writing to $ZSH_CACHE_DIR/completions/ (eg. docker, kubectl)
@@ -61,21 +76,6 @@ zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-history-substring-search
 zinit light zsh-users/zsh-syntax-highlighting
-
-##################### OS specific #####################
-if [[ "$(uname)" == "Darwin" ]]
-then
-    path=(
-        /Library/TeX/texbin
-        $path
-    )
-
-    # Homebrew specific env variables and completions of formulae installed via Homebrew
-    _evalcache /opt/homebrew/bin/brew shellenv
-else
-    # Homebrew specific env variables and completions of formulae installed via Homebrew
-    _evalcache /home/linuxbrew/.linuxbrew/bin/brew shellenv
-fi
 
 ##################### Aliases #####################
 alias ...='cd ../..'
