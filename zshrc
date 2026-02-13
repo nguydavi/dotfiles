@@ -242,13 +242,11 @@ precmd_functions+='precmd_auto_title_tmux_window'
 prompt_p10k_jj() {
     local workspace log_oneline display
     command -v jj >/dev/null 2>&1 || return
-    # Show jj prompt segment only when in a jujutsu workspace, show git otherwise
+    # Show jj prompt segment only when in a jujutsu workspace
     if workspace=$(jj workspace root 2>/dev/null); then
         p10k display "*/jj=show"
-        p10k display "*/vcs=hide"
     else
         p10k display "*/jj=hide"
-        p10k display "*/vcs=show"
         return
     fi
 
