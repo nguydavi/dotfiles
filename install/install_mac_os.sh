@@ -86,8 +86,6 @@ install_symlink ~/Library/Application\ Support/com.mitchellh.ghostty/config ${PW
 mkdir -p ~/.config/karabiner
 install_symlink ~/.config/karabiner/karabiner.json ${PWD}/karabiner.json
 install_symlink ~/.config/jj/config.toml ${PWD}/jjconfig.toml
-## To avoid issues like https://github.com/jj-vcs/jj/issues/7210
-git config --global maintenance.strategy none
 install_symlink ~/.config/ccstatusline/settings.json ${PWD}/ccstatusline_settings.json
 
 # Ensure we have the latest version of vim installed
