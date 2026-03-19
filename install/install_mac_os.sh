@@ -35,6 +35,7 @@ brew install \
     tldr \
     uv \
     vivid \
+    watchman \
     zoxide
 
 brew install --cask \
