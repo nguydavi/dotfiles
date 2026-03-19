@@ -140,6 +140,7 @@ setopt INC_APPEND_HISTORY       # immediately insert history into history file
 setopt SHARE_HISTORY            # share history between processes
 setopt HISTIGNOREDUPS           # ignore duplicates of the previous event
 
+export HSTFILE=~/.zsh_history
 export HISTSIZE=100000
 export SAVEHIST=100000
 
