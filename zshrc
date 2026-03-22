@@ -49,16 +49,22 @@ fi
 # Can check the one in used with something like `which -a _kubectl`
 # It is also useful to debug completion write a command and press "^X?" will write debug into a file
 # See https://zsh.sourceforge.io/Doc/Release/Completion-System.html#index-_005fcomplete_005fdebug-_0028_005eX_003f_0029
+zinit snippet OMZL::clipboard.zsh
+
 zinit snippet OMZP::aws
 zinit snippet OMZP::bazel
+zinit snippet OMZP::copyfile
+zinit snippet OMZP::copypath
 zinit snippet OMZP::docker
 zinit snippet OMZP::docker-compose
+zinit snippet OMZP::extract
 zinit snippet OMZP::fzf
 zinit snippet OMZP::git
 zinit snippet OMZP::golang
 zinit snippet OMZP::jj
 zinit snippet OMZP::kubectl
 zinit snippet OMZP::rust
+zinit snippet OMZP::ssh-agent
 zinit snippet OMZP::terraform
 
 # Add completions explicitly because some plugins don't do it themselves
