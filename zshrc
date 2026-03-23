@@ -266,27 +266,26 @@ prompt_p10k_jj() {
 ##################### ssh colors #####################
 # Change background color when ssh or mosh to easily identify that we're in a remote session.
 # See https://github.com/ghostty-org/ghostty/discussions/3457#discussioncomment-12106873
-reset_colors() {
+_reset_colors() {
     printf '\033]21;foreground;background;0;1;2;3;4;5;6;7;8;9;10;11;12;13;14;15\033\\'
 }
 
-set_ssh_colors() {
+_set_ssh_colors() {
     printf '\e]11;#2A1F3D\a'
 }
 
-ssh() {
-    set_ssh_colors
+_remote_colors() {
+    local cmd=$1
+    shift
+
+    _set_ssh_colors
     # Call the original command to avoid calling this function recursively.
-    command ssh "$@"
-    reset_colors
+    command ${cmd} "$@"
+    _reset_colors
 }
 
-mosh() {
-    set_ssh_colors
-    # Call the original command to avoid calling this function recursively.
-    command mosh "$@"
-    reset_colors
-}
+ssh() { _remote_colors ssh "$@" }
+mosh() { _remote_colors mosh "$@" }
 
 ##################### Footer #####################
 # Tab completion to be init after all plugins have contributed their completion functions
