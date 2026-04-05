@@ -75,6 +75,7 @@ zinit snippet OMZP::docker-compose/_docker-compose
 
 zinit light Aloxaf/fzf-tab
 zinit light MichaelAquilina/zsh-you-should-use
+zinit light atuinsh/atuin
 # Cache calls that don't often change like 'eval "$(...)"' with _evalcache. Can be cleared with # _evalcache_clear
 zinit light mroth/evalcache
 zinit light romkatv/powerlevel10k
@@ -122,11 +123,6 @@ fi
 ##################### Binds #####################
 # Most binds are in vi mode as that's what is set based from EDITOR & VISUAL env variable
 
-# zsh-history-substring-search with Up/Down arrows
-bindkey -v '^[[A' history-substring-search-up
-bindkey -v '^[[B' history-substring-search-down
-bindkey -M vicmd 'k' history-substring-search-up
-bindkey -M vicmd 'j' history-substring-search-down
 # Accept zsh-autosuggestion with Shift+Tab
 bindkey -v '^[[Z' autosuggest-accept
 

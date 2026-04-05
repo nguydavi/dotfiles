@@ -16,6 +16,7 @@ brew install \
 
 # Installing utility tools
 brew install \
+    atuin \
     bat \
     bazel \
     btop \
