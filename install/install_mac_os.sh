@@ -89,6 +89,7 @@ mkdir -p ~/.config/karabiner
 install_symlink ~/.config/karabiner/karabiner.json ${PWD}/karabiner.json
 install_symlink ~/.config/jj/config.toml ${PWD}/jjconfig.toml
 install_symlink ~/.config/ccstatusline/settings.json ${PWD}/ccstatusline_settings.json
+install_symlink ~/.config/atuin/config.toml ${PWD}/atuin_config.toml
 
 # Ensure we have the latest version of vim installed
 brew install vim && brew upgrade vim
