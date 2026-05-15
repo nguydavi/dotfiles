@@ -1,0 +1,19 @@
+theme = "catppuccin_macchiato"
+
+[editor]
+bufferline = "always"
+color-modes = true
+mouse = false
+rulers = [120]
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[keys.normal.space]
+B = ":sh gh browse %{buffer_name}:%{cursor_line}"
+w = ":buffer-close"
+
+[keys.normal.C-w]
+tab = "rotate_view"
