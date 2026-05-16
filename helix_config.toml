@@ -12,13 +12,16 @@ insert = "bar"
 normal = "block"
 select = "underline"
 
+[editor.soft-wrap]
+enable = true
+
 [keys.normal]
 esc = ["collapse_selection", "keep_primary_selection"] # deselect all and keep primary cursor same as ";,"
 C-h = "goto_next_buffer"
 C-l = "goto_previous_buffer"
 
 [keys.normal.space]
-B = ":sh gh browse %{buffer_name}:%{cursor_line}"
+B = ":echo %sh{gh browse %{buffer_name}:%{cursor_line} || gh browse --no-browser %{buffer_name}:%{cursor_line}}" # print URL in case we are in en env without a browser
 w = ":buffer-close"
 
 [keys.normal.C-w]
