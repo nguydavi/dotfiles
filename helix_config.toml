@@ -1,6 +1,7 @@
 theme = "catppuccin_macchiato"
 
 [editor]
+auto-pairs = false
 bufferline = "always"
 color-modes = true
 mouse = false
@@ -10,6 +11,11 @@ rulers = [120]
 insert = "bar"
 normal = "block"
 select = "underline"
+
+[keys.normal]
+esc = ["collapse_selection", "keep_primary_selection"] # deselect all and keep primary cursor same as ";,"
+C-h = "goto_next_buffer"
+C-l = "goto_previous_buffer"
 
 [keys.normal.space]
 B = ":sh gh browse %{buffer_name}:%{cursor_line}"
