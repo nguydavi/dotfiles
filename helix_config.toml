@@ -22,6 +22,8 @@ enable = true
 
 [keys.normal]
 esc = ["collapse_selection", "keep_primary_selection"] # deselect all and keep primary cursor same as ";,"
+x = ["extend_to_line_bounds", "select_mode"]
+X = ["extend_to_line_bounds", "select_mode"]
 C-b = ':sh git blame "-L $(( %{cursor_line} - 5 < 1 ? 1 : %{cursor_line} - 5 )),$(( %{cursor_line} + 5 ))" %{buffer_name}'
 C-h = "goto_previous_buffer"
 C-l = "goto_next_buffer"
@@ -32,3 +34,7 @@ w = ":buffer-close"
 
 [keys.normal.C-w]
 tab = "rotate_view"
+
+[keys.select]
+x = ["extend_line"]
+X = ["extend_line_above"]
