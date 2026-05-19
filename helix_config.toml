@@ -28,6 +28,14 @@ C-b = ':sh git blame "-L $(( %{cursor_line} - 5 < 1 ? 1 : %{cursor_line} - 5 )),
 C-h = "goto_previous_buffer"
 C-l = "goto_next_buffer"
 
+# Vim motions
+0 = "goto_line_start"
+"^" = "goto_first_nonwhitespace"
+"$" = "goto_line_end"
+G = "goto_last_line"
+H = "goto_window_top"
+L = "goto_window_bottom"
+
 [keys.normal.space]
 B = ":echo %sh{gh browse %{buffer_name}:%{cursor_line} || gh browse --no-browser %{buffer_name}:%{cursor_line}}" # print URL in case we are in en env without a browser
 w = ":buffer-close"
