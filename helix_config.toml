@@ -46,3 +46,6 @@ tab = "rotate_view"
 [keys.select]
 x = ["extend_line"]
 X = ["extend_line_above"]
+
+[keys.select.g]
+q = ":reflow"
