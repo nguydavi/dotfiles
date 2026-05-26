@@ -8,6 +8,7 @@ cursorline = true
 end-of-line-diagnostics = "hint"
 jump-label-alphabet = "jfkdls;aurieowpqnvmcxz"
 mouse = false
+rainbow-brackets = true
 rulers = [120]
 
 [editor.cursor-shape]
