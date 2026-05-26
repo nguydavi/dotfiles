@@ -48,5 +48,11 @@ tab = "rotate_view"
 x = ["extend_line"]
 X = ["extend_line_above"]
 
+# Vim motions
+0 = "extend_to_line_start"
+"^" = "extend_to_first_nonwhitespace"
+"$" = "extend_to_line_end"
+G = "extend_to_last_line"
+
 [keys.select.g]
 q = ":reflow"
