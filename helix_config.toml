@@ -19,6 +19,9 @@ select = "underline"
 [editor.inline-diagnostics]
 cursor-line = "hint"
 
+[editor.statusline]
+right= ["diagnostics", "selections", "register", "position", "position-percentage", "file-encoding"]
+
 [editor.soft-wrap]
 enable = true
 
