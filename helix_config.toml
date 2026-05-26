@@ -6,6 +6,7 @@ bufferline = "always"
 color-modes = true
 cursorline = true
 end-of-line-diagnostics = "hint"
+jump-label-alphabet = "jfkdls;aurieowpqnvmcxz"
 mouse = false
 rulers = [120]
 
