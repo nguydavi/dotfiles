@@ -36,6 +36,8 @@ X = ["extend_to_line_bounds", "select_mode"]
 C-b = ':sh git blame "-L $(( %{cursor_line} - 5 < 1 ? 1 : %{cursor_line} - 5 )),$(( %{cursor_line} + 5 ))" %{buffer_name}'
 C-h = "goto_previous_buffer"
 C-l = "goto_next_buffer"
+C-r = ":reload-all"
+C-t = ':sh name=$(echo -n %{buffer_name}) && tmux rename-window "hx: ${name:0:10}"' # manually set until helix supports hooks or plugins
 
 # Vim motions
 0 = "goto_line_start"
