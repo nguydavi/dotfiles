@@ -8,14 +8,14 @@ NONINTERACTIVE=true /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Installing must-have formulae
-brew install \
+brew install --yes \
     awscli \
     go \
     jq \
     tmux
 
 # Installing utility tools
-brew install \
+brew install --yes \
     atuin \
     bat \
     bazel \
@@ -40,7 +40,7 @@ brew install \
     watchman \
     zoxide
 
-brew install --cask \
+brew install --yes --cask \
     basictex \
     cameracontroller \
     docker-desktop \
@@ -59,8 +59,8 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 vim +GoInstallBinaries +qall
 
 # Installing LSPs
-brew install terraform-ls
-brew install python-lsp-server
+brew install --yes terraform-ls
+brew install --yes python-lsp-server
 uv tool install ruff@latest
 go install golang.org/x/tools/gopls@latest
 ~/.cargo/bin/rustup component add rust-analyzer
@@ -95,6 +95,6 @@ install_symlink ~/.config/helix/config.toml ${PWD}/helix_config.toml
 install_symlink ~/.pi/agent/settings.json ${PWD}/pi_settings.json
 
 # Ensure we have the latest version of vim installed
-brew install vim && brew upgrade vim
+brew install --yes vim && brew upgrade vim
 
 echo_green "All done!"
