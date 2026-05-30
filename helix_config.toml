@@ -4,6 +4,7 @@ theme = "catppuccin_macchiato"
 auto-pairs = false
 bufferline = "always"
 color-modes = true
+completion-timeout = 5
 cursorline = true
 end-of-line-diagnostics = "hint"
 jump-label-alphabet = "jfkdls;aurieowpqnvmcxz"
