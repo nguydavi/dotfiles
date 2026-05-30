@@ -39,6 +39,11 @@ key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIC+MNGBrTEwWXjCWynzMdFGu4tt1dI1ZE5ghj
 # Prevent pushing work in progress or anything explicitly labeled "private"
 private-commits = "description(glob:'wip:*') | description(glob:'private:*')"
 
+[signing]
+key = "~/.ssh/id_ed25519"
+behavior = "own"
+backend = "ssh"
+
 [templates]
 draft_commit_description = '''
 concat(
