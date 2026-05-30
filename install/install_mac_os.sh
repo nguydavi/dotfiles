@@ -92,6 +92,7 @@ install_symlink ~/.config/jj/config.toml ${PWD}/jjconfig.toml
 install_symlink ~/.config/ccstatusline/settings.json ${PWD}/ccstatusline_settings.json
 install_symlink ~/.config/atuin/config.toml ${PWD}/atuin_config.toml
 install_symlink ~/.config/helix/config.toml ${PWD}/helix_config.toml
+install_symlink ~/.pi/agent/settings.json ${PWD}/pi_settings.json
 
 # Ensure we have the latest version of vim installed
 brew install vim && brew upgrade vim

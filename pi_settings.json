@@ -1,0 +1,21 @@
+{
+  "lastChangelogVersion": "0.78.1",
+  "defaultProvider": "openai",
+  "defaultModel": "gpt-5.5",
+  "packages": [
+    "npm:@ff-labs/pi-fff",
+    "npm:pi-subagents",
+    "npm:pi-mcp-adapter",
+    "npm:context-mode",
+    "npm:pi-simplify",
+    "npm:pi-code-review",
+    "npm:pi-autoresearch",
+    "npm:pi-btw"
+  ],
+  "editorPaddingX": 1,
+  "terminal": {
+    "showTerminalProgress": true
+  },
+  "defaultThinkingLevel": "medium",
+  "hideThinkingBlock": false
+}
