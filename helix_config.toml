@@ -47,6 +47,8 @@ C-t = ':sh name=$(basename %{buffer_name} | cut -c1-10) && tmux rename-window "h
 G = "goto_last_line"
 H = "goto_window_top"
 L = "goto_window_bottom"
+"{" = "goto_prev_paragraph"
+"}" = "goto_next_paragraph"
 
 [keys.normal.space]
 B = ":echo %sh{gh browse %{buffer_name}:%{cursor_line} || gh browse --no-browser %{buffer_name}:%{cursor_line}}" # print URL in case we are in en env without a browser
@@ -64,6 +66,8 @@ X = ["extend_line_above"]
 "^" = "extend_to_first_nonwhitespace"
 "$" = "extend_to_line_end"
 G = "extend_to_last_line"
+"{" = "goto_prev_paragraph"
+"}" = "goto_next_paragraph"
 
 [keys.select.g]
 q = ":reflow"
