@@ -64,7 +64,8 @@ zinit snippet OMZP::golang
 zinit snippet OMZP::jj
 zinit snippet OMZP::kubectl
 zinit snippet OMZP::rust
-zinit snippet OMZP::ssh-agent
+# Only start a local ssh-agent when NOT in an inbound SSH session
+[[ -z $SSH_CONNECTION ]] && zinit snippet OMZP::ssh-agent
 zinit snippet OMZP::terraform
 
 # Add completions explicitly because some plugins don't do it themselves
